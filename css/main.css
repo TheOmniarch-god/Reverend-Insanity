@@ -151,7 +151,7 @@
   .artist-portrait{width:44px;height:44px;border-radius:50%;flex:none;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.45);display:flex;align-items:center;justify-content:center;font-family:var(--tg-font-family-heading);font-size:1.15rem;color:#fff}
   .foot-band{position:relative;margin-top:0.55rem;padding-top:0.5rem;font-size:var(--tg-font-size-x-small);color:rgba(255,255,255,0.92);border-top:1px solid rgba(255,255,255,0.25)}
 
-  .tg-mainpage-featured-quote{justify-content:center}
+  .tg-mainpage-featured-quote{justify-content:center;background:linear-gradient(color-mix(in srgb,var(--tg-color-surface-2) 94%,transparent),color-mix(in srgb,var(--tg-color-surface-2) 94%,transparent)),url('../assets/fy_b.jpg') center 30%/cover no-repeat}
   .tg-mainpage-featured-quote::before{content:"”";position:absolute;right:0.4rem;top:0.6rem;font-family:var(--tg-font-family-heading);font-size:380px;line-height:0.75;opacity:var(--tg-opacity-pattern);color:var(--tg-color-emphasized)}
   .tg-mainpage-featured-quote .tg-card-body{margin:1.5rem auto;position:relative}
   .tg-mainpage-featured-quote blockquote{margin:0;border-left:2px solid var(--tg-border-color-base);padding:0 0 0 1rem;font-style:italic;color:var(--tg-color-quote);text-align:left}
@@ -190,7 +190,7 @@
   .poster-slot img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
   .poster-slot span{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6}
 
-  .tg-mainpage-social{text-align:center}
+  .tg-mainpage-social{text-align:center;background:linear-gradient(color-mix(in srgb,var(--tg-color-surface-2) 92%,transparent),color-mix(in srgb,var(--tg-color-surface-2) 92%,transparent)),url('../assets/rz_b.jpg') center 40%/cover no-repeat}
   .tg-mainpage-social .glyph-watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--tg-font-family-heading);font-size:8.5rem;opacity:var(--tg-opacity-pattern);pointer-events:none;color:var(--tg-color-emphasized)}
   .tg-mainpage-social .tg-card-content{position:relative}
   .tg-mainpage-social-discord{margin-top:0.5rem;justify-content:center}
