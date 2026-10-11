@@ -114,7 +114,7 @@
     var html='';
     if(talk){ html = talkHTML(a,slug); }
     else{
-      html += '<div class="wiki-fig">'+(a.img?'<img loading="lazy" src="'+a.img+'" alt="'+esc(a.t)+'">':'<div class="ph"><svg><use href="#glyph-cicada"/></svg></div>')
+      html += '<div class="wiki-fig">'+(a.img?'<img src="'+a.img+'" alt="'+esc(a.t)+'">':'<div class="ph"><svg><use href="#glyph-cicada"/></svg></div>')
         +'<div class="cap">'+(a.img?'Art: '+esc(a.art||'community artist')+' · community archive — '+esc(a.t)+'.':'Image reserved — the container awaits its artwork.')+'</div></div>';
       html += '<h2 class="sec" id="sec-overview"><span class="caret">⌃</span>Overview</h2><div class="sec-body">'+a.b.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'</div>';
       if(a.ib&&a.ib.length) html += '<h2 class="sec" id="sec-details"><span class="caret">⌃</span>Details</h2><div class="sec-body"><table class="wiki-table">'+a.ib.map(function(r){return '<tr><th>'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>';}).join('')+'</table></div>';
