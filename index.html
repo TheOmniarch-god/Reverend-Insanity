@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reverend Insanity Encyclopedia — curated by The Omniarch</title>
+<meta name="description" content="The Reverend Insanity Encyclopedia: a self-contained companion to The Omniarch Translation. Characters, Gu, locations, cultivation, chapters and the Legends of Ren Zu.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reverend Insanity Encyclopedia — curated by The Omniarch">
+<meta property="og:description" content="A self-contained Reverend Insanity encyclopedia built from The Omniarch Translation. Refine · Nurture · Use.">
+<meta property="og:image" content="/assets/header-bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238e2622'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='%23fff' font-family='serif'%3E%E8%9B%8A%3C/text%3E%3C/svg%3E">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+  /* ================= design tokens ================= */
+  :root{
+    --tg-border-color-base:rgba(0,0,0,0.08);
+    --tg-border-color-subtle:rgba(0,0,0,0.05);
+    --tg-border-color-interactive:rgba(0,0,0,0.11);
+    --tg-border-radius-small:4px;
+    --tg-border-radius-medium:8px;
+    --tg-border-radius-large:12px;
+    --tg-border-radius-pill:9999px;
+    --tg-border-radius-circle:50%;
+    --tg-border-base:1px solid var(--tg-border-color-base);
+    --tg-color-emphasized:#201815;
+    --tg-color-base:#2e2a26;
+    --tg-color-subtle:#5a5148;
+    --tg-color-inverted-progressive:#fff;
+    --tg-color-link:#a12c2f;
+    --tg-color-surface-0:#f9f4ee;
+    --tg-color-surface-1:#fffbf6;
+    --tg-color-surface-2:#f6ede0;
+    --tg-color-surface-3:#f0e3cf;
+    --tg-color-surface-4:#e6d9c5;
+    --tg-color-surface-5:#e3d2b8;
+    --tg-color-progressive:#8e2622;
+    --tg-color-progressive--hover:#9d2f2a;
+    --tg-color-progressive--active:#7a1f1c;
+    --tg-color-quote:#8f3040;
+    --tg-font-family-heading:'EB Garamond',Georgia,'Times New Roman',serif;
+    --tg-font-family-body:'Lora',Georgia,'Times New Roman',serif;
+    --tg-font-size-x-small:0.8125rem;
+    --tg-font-size-small:0.875rem;
+    --tg-font-size-medium:1rem;
+    --tg-font-size-large:1.125rem;
+    --tg-font-size-x-large:1.25rem;
+    --tg-font-size-xx-large:1.5rem;
+    --tg-font-weight-regular:400;
+    --tg-font-weight-medium:500;
+    --tg-font-weight-semibold:600;
+    --tg-line-height-xxx-small:1.25;
+    --tg-line-height-xx-small:1.375;
+    --tg-line-height:1.6;
+    --tg-opacity-pattern:0.08;
+  }
+
+  body::before{content:"";position:fixed;inset:0;z-index:-3;background:url('assets/map_a.jpg') center 18%/cover no-repeat;opacity:0.05;filter:grayscale(1);pointer-events:none}
+  *{box-sizing:border-box}
+  html{font-variant-numeric:lining-nums}
+  body{margin:0;background:var(--tg-color-surface-0);color:var(--tg-color-base);font-family:var(--tg-font-family-body);font-size:var(--tg-font-size-medium);line-height:var(--tg-line-height)}
+  a{color:var(--tg-color-link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ul{margin:0.5rem 0;padding-left:1.5rem}
+  li{margin:0.3rem 0}
+  hr{border:0;border-top:var(--tg-border-base);margin:1.25rem 0}
+
+  /* ================= left chrome rail ================= */
+  .rail{position:fixed;top:0;right:0;bottom:0;width:56px;z-index:40;display:flex;flex-direction:column;align-items:center;padding:0.6rem 0;gap:0.35rem;background:var(--tg-color-surface-1);border-left:var(--tg-border-base)}
+  .rail-logo{width:30px;height:30px;border-radius:7px;background:var(--tg-color-progressive);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--tg-font-family-heading);font-size:1.05rem;margin-bottom:0.4rem;box-shadow:0 1px 2px rgba(0,0,0,0.15);text-decoration:none}
+  .rail-logo:hover{text-decoration:none;background:var(--tg-color-progressive--hover)}
+  .rail button{width:34px;height:34px;border:0;border-radius:var(--tg-border-radius-medium);background:transparent;color:var(--tg-color-base);cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .rail button:hover{background:var(--tg-color-surface-3)}
+  .rail button svg{width:18px;height:18px}
+  .rail .spacer{flex:1}
+  .rail-band{position:fixed;left:12px;top:0;bottom:0;width:16px;z-index:0;overflow:hidden;pointer-events:none;color:var(--tg-color-subtle);opacity:0.16;font-family:var(--tg-font-family-heading);font-size:0.7rem;letter-spacing:0.35em;writing-mode:vertical-rl;white-space:nowrap;padding-top:8px}
+  @media(max-width:720px){.rail-band{display:none}.rail{width:38px}}
+
+  .page{max-width:1000px;margin:0 auto;padding:0 calc(1.25rem + 56px) 0 1.25rem;position:relative}
+  @media(max-width:720px){.page{padding-left:1.25rem;padding-right:calc(1.25rem + 44px)}}
+
+  /* ================= hero ================= */
+  .tg-mainpage-header{position:relative;width:100vw;margin-left:calc(50% - 50vw);height:clamp(430px,34vw,560px);background:url('assets/header-bg.jpg') center 30%/cover no-repeat;clear:both;overflow:hidden}
+  .tg-mainpage-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(0deg,var(--tg-color-surface-0) 10%,rgba(0,0,0,0));pointer-events:none}
+  html[data-theme="dark"] .tg-mainpage-header-tagline{text-shadow:0 1px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.85)display:inline-block;padding:0.32rem 0.95rem;border-radius:999px;background:rgba(249,244,238,0.8);backdrop-filter:blur(3px);box-shadow:0 1px 8px rgba(60,40,30,0.18)background:rgba(10,10,14,0.72)}
+  html[data-theme="dark"] .tg-mainpage-header::before{content:"";position:absolute;inset:0;background:rgba(8,8,10,0.45);pointer-events:none}
+  @media(max-width:720px){.tg-mainpage-header{min-height:400px;background-size:cover;background-position:top center}}
+  .tg-mainpage-header{padding-top:clamp(2.6rem,7vw,5.5rem);padding-bottom:2.4rem}
+  .ring{position:absolute;inset:-30px 0 auto 0;display:flex;justify-content:center;pointer-events:none}
+  .ring svg{width:560px;max-width:100%;opacity:0.08;animation:spin 60s linear infinite;color:var(--tg-color-emphasized)}
+  .ring text{font-family:var(--tg-font-family-heading);letter-spacing:0.3em;font-size:13px}
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  .tg-mainpage-content{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .wordmark{display:block}
+  .wordmark-img{height:clamp(150px,22vw,210px);width:auto;filter:drop-shadow(0 2px 6px rgba(120,20,20,0.18))}
+  .wordmark .period{color:var(--tg-color-progressive)}
+  .tg-mainpage-header-tagline{margin-top:0.15rem;color:var(--tg-color-subtle);font-size:var(--tg-font-size-x-small);line-height:var(--tg-line-height-xx-small)text-shadow:0 1px 10px rgba(249,244,238,.9),0 0 3px rgba(249,244,238,.95)}
+  .tg-mainpage-header-search{align-items:center;background-color:var(--tg-color-progressive);border:0;border-radius:var(--tg-border-radius-pill);color:var(--tg-color-inverted-progressive);cursor:pointer;display:flex;font-family:var(--tg-font-family-body);font-size:0.875rem;font-weight:var(--tg-font-weight-medium);gap:0.5rem;line-height:1;margin-top:1.1rem;padding:0.9rem 1.9rem;user-select:none;box-shadow:0 1px 3px rgba(0,0,0,0.18)}
+  .tg-mainpage-header-search svg{width:1rem;height:1rem}
+  .tg-mainpage-header-search .kbd{width:18px;height:18px;display:flex;background-color:var(--tg-color-inverted-progressive);color:var(--tg-color-progressive);border-radius:var(--tg-border-radius-small);align-items:center;justify-content:center;font-size:10px;font-weight:900;opacity:0.6}
+  @media(hover:hover){
+    .tg-mainpage-header-search:hover{background-color:var(--tg-color-progressive--hover)}
+    .tg-mainpage-header-search:active{background-color:var(--tg-color-progressive--active)}
+  }
+  .header-searchbox{display:none;margin-top:0.9rem;width:min(560px,92%);position:relative}
+  .header-searchbox input{width:100%;padding:0.8rem 1.2rem;border-radius:var(--tg-border-radius-pill);border:var(--tg-border-base);background:var(--tg-color-surface-1);font-family:var(--tg-font-family-body);font-size:var(--tg-font-size-medium);color:var(--tg-color-base);outline:2px solid transparent}
+  .header-searchbox input:focus{outline:2px solid var(--tg-color-progressive)}
+  .search-suggest{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--tg-color-surface-1);border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);box-shadow:0 8px 24px rgba(0,0,0,0.12);overflow:hidden;display:none;max-height:320px;overflow-y:auto;text-align:left;z-index:50}
+  .search-suggest button{display:flex;width:100%;gap:0.6rem;align-items:baseline;border:0;background:transparent;padding:0.55rem 1rem;font-family:var(--tg-font-family-body);font-size:var(--tg-font-size-small);color:var(--tg-color-base);cursor:pointer}
+  .search-suggest button:hover{background:var(--tg-color-surface-3)}
+  .search-suggest .kind{margin-left:auto;color:var(--tg-color-subtle);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase}
+
+  /* ================= nav pills ================= */
+  .tg-mainpage-navigation{margin:0.6rem 0}
+  .template-navpills{display:grid;gap:0.5rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));grid-auto-rows:3.25rem;font-size:0.875rem}
+  .template-navpill{transition:transform .16s ease-out;transform:scale(calc(1 + var(--prox,0)*0.02));position:relative;border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);font-weight:var(--tg-font-weight-medium);line-height:var(--tg-line-height-xx-small);overflow:hidden;background:var(--pill,#3b3a36)}
+  .template-navpill .pill-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;background:var(--img) center/cover no-repeat}
+  .template-navpill .pill-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 130% at 88% 20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 60%),linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 28%, rgba(0,0,0,0.14) 60%, rgba(0,0,0,0) 78%)}
+  .template-navpill .pill-bg svg{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;color:#fff;opacity:0.35;transition:transform 100ms ease}
+  .template-navpill:hover .pill-bg svg{transform:translateY(-50%) scale(1.12)}
+  .template-navpill .pill-bg::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.03) 0 2px,transparent 2px 9px)}
+  .template-navpill>a{position:relative;padding:0 1rem;display:flex;align-items:center;height:100%;color:#fff;text-decoration:none;text-shadow:-1px 0 .2em rgba(0,0,0,0.8),0 1px .2em rgba(0,0,0,0.8),1px 0 .2em rgba(0,0,0,0.8),0 -1px .2em rgba(0,0,0,0.8)}
+  .template-navpill:hover{filter:brightness(1.12)}
+  .template-navpill:active{filter:brightness(0.95)}
+
+  /* ================= dividers / flex / cards ================= */
+  .tg-section-divider{margin-top:1rem;margin-bottom:0.5rem;color:var(--tg-color-subtle);display:flex;align-items:center;justify-content:space-between}
+  .tg-section-divider:not(:empty){gap:1rem;white-space:nowrap}
+  .tg-section-divider::before,.tg-section-divider::after{content:"";height:1px;width:100%;background-color:var(--tg-border-color-base)}
+  .tg-section-divider>span{font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-medium)}
+
+  .template-flexbox{display:flex;gap:var(--template-flexbox-gap,0.5rem);flex-wrap:wrap;flex-direction:var(--template-flexbox-direction,row)}
+  .template-flexbox-item{--cols:var(--template-flexbox-columns,3);--gap:var(--template-flexbox-gap,0.5rem);flex:1 1 calc((100% / var(--cols)) - (var(--gap) / var(--cols) * (var(--cols) - 1)));min-width:0}
+  .span-2{flex-grow:2 !important;flex-basis:calc(2*((100% / var(--template-flexbox-columns,3)) - (var(--template-flexbox-gap,0.5rem) / var(--template-flexbox-columns,3) * (var(--template-flexbox-columns,3) - 1))) + var(--template-flexbox-gap,0.5rem)) !important}
+  @media(max-width:1120px){.template-flexbox{--template-flexbox-columns:2 !important}.featured-row .template-flexbox-item{flex:1 1 100%}}
+  @media(max-width:640px){.template-flexbox{--template-flexbox-columns:1 !important}}
+
+  .tg-card{position:relative;background-color:var(--tg-color-surface-2);border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);overflow:hidden;display:flex;flex-direction:column}
+  .template-flexbox-item .tg-card{height:100%}
+  .tg-card-content{padding:1rem}
+  .tg-card-title{color:var(--tg-color-emphasized);font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-x-large);font-weight:var(--tg-font-weight-semibold);line-height:var(--tg-line-height-xxx-small)}
+  .tg-card-caption{margin-top:0.25rem;color:var(--tg-color-subtle);font-size:var(--tg-font-size-x-small);line-height:var(--tg-line-height-xx-small)}
+  .tg-card-title+.tg-card-body,.tg-card-caption+.tg-card-body{margin-top:1rem}
+  .tg-card-label{position:absolute;top:0;left:0;z-index:2;font-size:var(--tg-font-size-x-small)}
+  .tg-card-label>a,.tg-card-label>span{display:flex;align-items:center;height:32px;padding:0 12px;border-bottom-right-radius:var(--tg-border-radius-medium);background:var(--tg-color-progressive);color:var(--tg-color-inverted-progressive);line-height:1;text-decoration:none}
+  .tg-card-label>a:hover{background:var(--tg-color-progressive--hover);text-decoration:none}
+
+  .tg-card-image{position:relative;display:flex;flex-direction:column;flex-grow:1;min-height:15.5rem;background:var(--slot,#40503c)}
+  .slot-art{position:absolute;inset:0;overflow:hidden}
+  .slot-art::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 70% 30%, rgba(255,255,255,0.10), transparent 65%),repeating-linear-gradient(135deg,rgba(255,255,255,0.028) 0 2px,transparent 2px 10px)}
+  .slot-art svg{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:74px;height:74px;color:#fff;opacity:0.16}
+  .slot-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .slot-art img.contain{object-fit:contain;padding:1.4rem 2rem;opacity:0.92}
+  .slot-note{position:absolute;top:8px;right:10px;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+  .tg-card-afterImage{position:relative;margin-top:auto;padding:2.6rem 1rem 0.9rem;color:#fff}
+  .tg-card-afterImage .grad{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top, var(--slot,#40503c) 8%, color-mix(in srgb,var(--slot,#40503c) 70%, transparent) 55%, rgba(0,0,0,0) 100%)}
+  .tg-card-afterImage .inner{position:relative}
+  .tg-card-afterImage a{color:#fff}
+  .tg-card-afterImage .smallcap{font-size:var(--tg-font-size-x-small);opacity:0.9}
+  .tg-card-afterImage .bigcap{font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-x-large);font-weight:var(--tg-font-weight-semibold);line-height:var(--tg-line-height-xxx-small)}
+  .artist-row{display:flex;gap:0.6rem;align-items:center;margin-top:0.35rem}
+  .artist-portrait{width:44px;height:44px;border-radius:50%;flex:none;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.45);display:flex;align-items:center;justify-content:center;font-family:var(--tg-font-family-heading);font-size:1.15rem;color:#fff}
+  .foot-band{position:relative;margin-top:0.55rem;padding-top:0.5rem;font-size:var(--tg-font-size-x-small);color:rgba(255,255,255,0.92);border-top:1px solid rgba(255,255,255,0.25)}
+
+  .tg-mainpage-featured-quote{justify-content:center}
+  .tg-mainpage-featured-quote::before{content:"”";position:absolute;right:0.4rem;top:0.6rem;font-family:var(--tg-font-family-heading);font-size:380px;line-height:0.75;opacity:var(--tg-opacity-pattern);color:var(--tg-color-emphasized)}
+  .tg-mainpage-featured-quote .tg-card-body{margin:1.5rem auto;position:relative}
+  .tg-mainpage-featured-quote blockquote{margin:0;border-left:2px solid var(--tg-border-color-base);padding:0 0 0 1rem;font-style:italic;color:var(--tg-color-quote);text-align:left}
+  .tg-mainpage-featured-quote p{margin:0}
+  .tg-quote-footer{margin-top:1.1rem}
+  .tg-quote-footer cite{color:var(--tg-color-quote);font-size:var(--tg-font-size-x-small);font-style:normal}
+  .tg-quote-footer cite::before{content:"— "}
+
+  .tg-button{display:inline-flex}
+  a.tg-button{border:1px solid var(--tg-border-color-interactive);border-radius:var(--tg-border-radius-small);height:36px;padding:0 1rem;color:var(--tg-color-emphasized);display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;font-size:var(--tg-font-size-small);font-weight:var(--tg-font-weight-medium);text-decoration:none;background:var(--tg-color-surface-2);cursor:pointer}
+  a.tg-button.tg-button--progressive{background:var(--tg-color-progressive);color:var(--tg-color-inverted-progressive);border-color:transparent}
+  a.tg-button:hover{filter:brightness(1.06);text-decoration:none}
+  .tg-button>a,.tg-button>button{border:1px solid transparent;border-radius:var(--tg-border-radius-small);height:36px;padding:0 1rem;color:var(--tg-color-emphasized);display:flex;align-items:center;justify-content:center;gap:0.5rem;line-height:1;font-size:var(--tg-font-size-small);font-weight:var(--tg-font-weight-medium);text-decoration:none;font-family:var(--tg-font-family-body);background:transparent;cursor:pointer}
+  .tg-button>a:hover{background-color:rgba(0,0,0,0.07);text-decoration:none}
+  .tg-button>a:active{background-color:rgba(0,0,0,0.09)}
+  .tg-button.tg-button--framed>a{border-color:var(--tg-border-color-interactive)}
+  .tg-button.tg-button--primary>a{color:var(--tg-color-inverted-progressive);background-color:var(--tg-color-progressive)}
+  .tg-button.tg-button--primary>a:hover{background-color:var(--tg-color-progressive--hover)}
+  .tg-button.tg-button--secondary>a{border-color:var(--tg-color-progressive);color:var(--tg-color-progressive)}
+  .tg-button.tg-button--secondary>a:hover{background-color:var(--tg-color-progressive--hover);color:#fff}
+  .tg-button.tg-button--icon>a{padding:0;width:36px}
+  .tg-button-icon{display:inline-flex;width:18px;height:18px}
+  .tg-button-icon svg{width:18px;height:18px}
+
+  .event-wrap{margin:0.9rem -1rem 0}
+  .event-img{min-height:0;height:360px}
+  .date-strip{display:flex;justify-content:center;flex-wrap:wrap}
+  .date-strip .tg-button>a{min-width:60px}
+
+  .tg-mainpage-editing .tg-card-title{text-align:center}
+  .tg-mainpage-editing .tg-card-caption{margin-top:0.5rem}
+  .tg-mainpage-editing-actions{margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem}
+  .tg-mainpage-editing-image{display:flex;justify-content:center}
+  .poster-slot{width:73px;height:120px;border-radius:var(--tg-border-radius-small);background:var(--tg-color-surface-4);border:1px dashed rgba(0,0,0,0.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3rem;color:var(--tg-color-subtle)}
+  .poster-slot svg{width:2rem;height:2rem;opacity:0.4}
+  .poster-slot img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+  .poster-slot span{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.6}
+
+  .tg-mainpage-social{text-align:center}
+  .tg-mainpage-social .glyph-watermark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--tg-font-family-heading);font-size:8.5rem;opacity:var(--tg-opacity-pattern);pointer-events:none;color:var(--tg-color-emphasized)}
+  .tg-mainpage-social .tg-card-content{position:relative}
+  .tg-mainpage-social-discord{margin-top:0.5rem;justify-content:center}
+  .tg-button.tg-mainpage-social-discord>a{color:#fff;background:#5865F2}
+  .tg-button.tg-mainpage-social-discord>a:hover{background:#8891f2}
+  .tg-button.tg-mainpage-social-discord svg{filter:invert(1)}
+  .tg-mainpage-social .tg-section-divider{margin-top:1rem}
+  .tg-mainpage-social-followus{display:flex;justify-content:center;gap:1.6rem}
+  .tg-mainpage-social-followus .tg-button>a{width:auto;height:auto;padding:0.2rem;border:0;color:#3b3b38}
+  .tg-mainpage-social-followus svg{width:20px;height:20px;opacity:0.85}
+
+  .tg-card--discover .tg-card-content{padding:1rem 1.25rem 1.5rem}
+  .tg-mainpage-browse-header{margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .tg-mainpage-browse-header h2{font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-x-large);font-weight:var(--tg-font-weight-semibold);margin:0;color:var(--tg-color-emphasized)}
+  .tg-mainpage-browse-header .tg-caption{color:var(--tg-color-subtle);font-size:var(--tg-font-size-small)}
+  .tg-mainpage-browse-atoz{display:flex;align-items:center;margin-bottom:0.75rem}
+  .tg-mainpage-browse-atoz-label{margin-right:1rem;white-space:nowrap;color:var(--tg-color-subtle);font-size:var(--tg-font-size-small)}
+  .tg-mainpage-browse-atoz .tg-button{flex:1 1 0;display:flex;justify-content:center;min-width:0}
+  .tg-mainpage-browse-atoz .tg-button>a{width:auto;height:30px;padding:0 0.2rem;font-size:0.95rem;color:var(--tg-color-base);font-family:var(--tg-font-family-heading)}
+  @media(max-width:640px){.tg-mainpage-browse-atoz{flex-wrap:wrap;gap:0.1rem}.tg-mainpage-browse-atoz .tg-button{flex:0 0 auto}}
+  .dir-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 2.25rem}
+  @media(max-width:760px){.dir-grid{grid-template-columns:1fr}}
+  .dir-sec{border-top:var(--tg-border-base);margin-top:0.9rem;padding-top:0.55rem}
+  .dir-sec h3{margin:0 0 0.5rem;display:flex;align-items:center;gap:0.8rem;font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-medium);font-weight:var(--tg-font-weight-semibold);color:var(--tg-color-quote);white-space:nowrap}
+  .dir-sec h3::before,.dir-sec h3::after{content:"";height:1px;width:100%;background:var(--tg-border-color-base)}
+  .dir-sec p{margin:0;font-size:var(--tg-font-size-small);line-height:1.75}
+
+  .settings-link{margin:0.75rem 0 0;font-size:var(--tg-font-size-x-small)}
+
+  .meta-card{margin-top:1.5rem}
+  .meta-card h4{margin:0 0 0.4rem;font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-small);font-weight:var(--tg-font-weight-semibold);color:var(--tg-color-quote)}
+  .meta-card .chip{display:inline-block;border:var(--tg-border-base);background:var(--tg-color-surface-1);border-radius:var(--tg-border-radius-pill);padding:0.45rem 1.1rem;font-size:var(--tg-font-size-x-small)}
+  .meta-card .chip a{color:var(--tg-color-quote)}
+  .meta-two{display:flex;gap:3rem;flex-wrap:wrap;margin-top:1.6rem;font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle)}
+  .meta-two h4{margin:0 0 0.35rem;font-size:var(--tg-font-size-small);font-family:var(--tg-font-family-heading);font-weight:var(--tg-font-weight-semibold);color:var(--tg-color-quote)}
+  .meta-two p{margin:0}
+  .action-tabs{display:flex;justify-content:center;align-items:center;gap:2rem;margin:2rem 0 0;font-size:var(--tg-font-size-small);color:var(--tg-color-base)}
+  .action-tabs a{color:var(--tg-color-base);display:flex;align-items:center;gap:0.45rem;font-weight:var(--tg-font-weight-medium)}
+  .action-tabs svg{width:16px;height:16px;opacity:0.8}
+
+  /* ================= article view ================= */
+  .wiki-view{max-width:1000px;margin:0 auto;padding:2rem 1.25rem 0}
+  @media(max-width:720px){.wiki-view{padding-left:3rem}}
+  .wiki-crumb{display:flex;align-items:center;gap:0.75rem;font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle);margin-bottom:1.25rem}
+  .wiki-article{background:var(--tg-color-surface-1);border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);padding:2rem 2.5rem 1.5rem}
+  @media(max-width:640px){.wiki-article{padding:1.25rem}}
+  .wiki-article h1{font-family:var(--tg-font-family-heading);font-size:2rem;font-weight:var(--tg-font-weight-semibold);color:var(--tg-color-emphasized);margin:0;padding-bottom:0.4rem;border-bottom:var(--tg-border-base)}
+  .wiki-from{color:var(--tg-color-subtle);font-size:var(--tg-font-size-x-small);font-style:italic;margin:0.4rem 0 1.2rem}
+  .wiki-article h2{font-family:var(--tg-font-family-heading);font-size:var(--tg-font-size-xx-large);font-weight:var(--tg-font-weight-semibold);color:var(--tg-color-emphasized);margin:1.6rem 0 0.6rem;padding-bottom:0.25rem;border-bottom:var(--tg-border-base)}
+  .wiki-article p{margin:0.7rem 0}
+  .infobox{float:right;width:280px;margin:0.25rem 0 1rem 1.5rem;background:var(--tg-color-surface-2);border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);overflow:hidden;font-size:var(--tg-font-size-x-small)}
+  @media(max-width:760px){.infobox{float:none;width:100%;margin:0 0 1rem}}
+  .infobox .ib-head{background:var(--tg-color-surface-3);padding:0.5rem 0.9rem;font-family:var(--tg-font-family-heading);font-weight:var(--tg-font-weight-semibold);font-size:var(--tg-font-size-medium);color:var(--tg-color-emphasized);text-align:center}
+  .infobox .ib-img{height:150px;background:var(--tg-color-surface-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;color:var(--tg-color-subtle);border-bottom:var(--tg-border-base)}
+  .infobox .ib-img svg{width:2.6rem;height:2.6rem;opacity:0.3}
+  .infobox .ib-img img{width:100%;height:100%;object-fit:cover}
+  .infobox .ib-img span{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;opacity:0.6}
+  .infobox table{width:100%;border-collapse:collapse}
+  .infobox th,.infobox td{padding:0.4rem 0.9rem;vertical-align:top;text-align:left;line-height:1.45}
+  .infobox tr+tr{border-top:var(--tg-border-color-subtle) solid 1px}
+  .infobox th{color:var(--tg-color-subtle);font-weight:var(--tg-font-weight-medium);width:38%}
+  .wiki-see{margin-top:1.6rem}
+  .wiki-cats{margin-top:1.4rem;padding-top:0.7rem;border-top:var(--tg-border-base);font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle);display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center}
+  .wiki-cats .chip{border:var(--tg-border-base);background:var(--tg-color-surface-2);border-radius:var(--tg-border-radius-small);padding:0.2rem 0.7rem}
+  .wiki-retrieved{margin:1rem 0 0;font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle)}
+  .stub-note{background:var(--tg-color-surface-2);border:var(--tg-border-base);border-left:3px solid var(--tg-color-progressive);border-radius:var(--tg-border-radius-small);padding:0.7rem 1rem;font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle);margin:1rem 0}
+  .index-list{columns:2;column-gap:2.5rem}
+  @media(max-width:640px){.index-list{columns:1}}
+
+  /* ================= footer ================= */
+  .tg-footer{margin-top:2.5rem;background:var(--tg-color-surface-2);border-top:var(--tg-border-base)}
+  .tg-footer .inner{max-width:1000px;margin:0 auto;padding:1.6rem 1.25rem 1.2rem}
+  .tg-footer-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+  .tg-footer-wordmark img{height:56px;width:auto}
+  .tg-footer-wordmark .period{color:var(--tg-color-progressive)}
+  .tg-footer-tag{color:var(--tg-color-subtle);font-size:var(--tg-font-size-x-small);margin-top:0.2rem}
+  .tg-footer-links{display:flex;flex-direction:column;gap:0.35rem;font-size:var(--tg-font-size-small);text-align:right}
+  .tg-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.4rem;color:var(--tg-color-subtle);font-size:var(--tg-font-size-x-small)}
+  .badge-row{display:flex;gap:0.5rem;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:0.4rem;border:var(--tg-border-base);background:var(--tg-color-surface-1);border-radius:var(--tg-border-radius-small);padding:0.25rem 0.6rem;font-size:0.66rem;color:var(--tg-color-subtle)}
+  .badge svg{width:16px;height:16px}
+  .tg-footer-bottom .speak{color:var(--tg-color-quote);font-style:italic}
+  .badge-discord{background:#5865F2;border-color:#5865F2;color:#fff}
+  .badge-cc{background:#111;border-color:#111;color:#fff}
+  .badge-powered{background:var(--tg-color-surface-1)}
+  @media(max-width:720px){.tg-footer .inner{padding-left:1.25rem;padding-right:calc(1.25rem + 44px)}}
+
+  .rail-logo{position:relative;overflow:hidden}
+  .rail-logo .seal-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .28s ease,transform .45s ease}
+  .rail-logo .seal-face svg{width:18px;height:18px}
+  .rail-logo .face-home{opacity:0;transform:rotate(-180deg) scale(.5)}
+  .rail-logo:hover .face-seal,.rail-logo:focus-visible .face-seal{opacity:0;transform:rotate(180deg) scale(.5)}
+  .rail-logo:hover .face-home,.rail-logo:focus-visible .face-home{opacity:1;transform:rotate(0) scale(1)}
+  .drawer{position:fixed;top:8px;right:66px;width:min(560px,calc(100vw - 86px));max-height:calc(100vh - 16px);overflow:auto;background:var(--tg-color-surface-1);border:var(--tg-border-base);border-radius:var(--tg-border-radius-large);box-shadow:0 12px 40px rgba(0,0,0,0.18);z-index:60;opacity:0;visibility:hidden;transform:translateX(14px);transition:opacity .28s ease,transform .28s ease,visibility .28s}
+  .drawer.open{opacity:1;visibility:visible;transform:none}
+  .drawer-close{position:absolute;top:0.55rem;right:0.6rem;border:0;background:transparent;font-size:1rem;cursor:pointer;color:var(--tg-color-subtle);width:30px;height:30px;border-radius:var(--tg-border-radius-small)}
+  .drawer-close:hover{background:var(--tg-color-surface-3)}
+  .drawer-head{display:flex;align-items:center;gap:0.9rem;padding:1rem 1.25rem;border-bottom:var(--tg-border-base)}
+  .seal-mini{width:44px;height:44px;border-radius:9px;background:var(--tg-color-progressive);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--tg-font-family-heading);font-size:1.3rem;flex:none}
+  .drawer-head .wm{height:36px;width:auto}
+  .drawer-stats{margin-left:auto;display:flex;gap:0.9rem;color:var(--tg-color-subtle);font-size:0.72rem;align-items:center}
+  .drawer-stats svg{width:14px;height:14px;vertical-align:-2px;opacity:0.7}
+  .drawer-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;padding:1rem 1.25rem}
+  .drawer-cols h4{font-family:var(--tg-font-family-heading);color:var(--tg-color-quote);font-weight:600;margin:0.2rem 0 0.5rem}
+  .drawer-cols a{display:block;padding:0.35rem 0;color:var(--tg-color-base);font-size:0.9rem}
+  .drawer-cols a:hover{color:var(--tg-color-progressive);text-decoration:none}
+  .drawer-social{display:flex;gap:1.1rem;padding:0.9rem 1.25rem;border-top:var(--tg-border-base)}
+  .drawer-social a{color:#3b3b38}
+  .drawer-social svg{width:18px;height:18px;opacity:0.85}
+  .wiki-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;padding:0.4rem 0 0.9rem;border-bottom:var(--tg-border-base);margin-bottom:1.2rem}
+  .wiki-head h1{font-family:var(--tg-font-family-heading);font-size:2rem;margin:0;color:var(--tg-color-emphasized)}
+  .wiki-sub{color:var(--tg-color-subtle);font-size:var(--tg-font-size-small);margin-top:0.2rem}
+  .wiki-actions{display:flex;gap:1.4rem;align-items:center;font-size:var(--tg-font-size-small);white-space:nowrap}
+  .wiki-actions a{display:flex;gap:0.4rem;align-items:center;color:var(--tg-color-base);cursor:pointer}
+  .wiki-actions svg{width:16px;height:16px;opacity:0.8}
+  .wiki-actions a.dots svg{transition:transform .3s}
+  .wiki-actions a.dots:hover svg{transform:rotate(90deg)}
+  .wiki-cols{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:1.6rem}
+  @media(max-width:900px){.wiki-cols{grid-template-columns:1fr}}
+  .wiki-side .side-box{border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);background:var(--tg-color-surface-1);padding:0.9rem 1rem;margin-bottom:1rem}
+  .wiki-side h4{margin:0 0 0.5rem;font-family:var(--tg-font-family-heading);color:var(--tg-color-subtle);font-weight:600}
+  .toc a,.toc .row{display:flex;justify-content:space-between;align-items:center;padding:0.32rem 0;color:var(--tg-color-base);font-size:var(--tg-font-size-small);border-bottom:var(--tg-border-subtle)}
+  .toc a:last-child,.toc .row:last-child{border-bottom:0}
+  .toc .caret{opacity:.6}
+  h2.sec{display:flex;align-items:center;gap:0.5rem;font-family:var(--tg-font-family-heading);color:var(--tg-color-emphasized);margin:1.6rem 0 0.6rem;font-size:1.3rem}
+  h2.sec .caret{cursor:pointer;opacity:.65}
+  h2.sec.collapsed + .sec-body{display:none}
+  h2.sec.collapsed .caret{transform:rotate(180deg)}
+  .wiki-fig{float:right;width:min(300px,45%);margin:0 0 0.8rem 1.2rem;border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);background:var(--tg-color-surface-1);padding:0.5rem}
+  .wiki-fig img{width:100%;border-radius:6px;display:block}
+  .wiki-fig .ph{height:180px;display:flex;align-items:center;justify-content:center}
+  .wiki-fig .ph svg{width:44px;height:44px;opacity:.4}
+  .wiki-fig .cap{font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle);padding:0.45rem 0.2rem 0;line-height:1.45}
+  @media(max-width:720px){.wiki-fig{float:none;width:100%;margin:0 0 1rem}}
+  table.wiki-table{width:100%;border-collapse:collapse;font-size:var(--tg-font-size-small)}
+  table.wiki-table th{text-align:left;color:var(--tg-color-subtle);padding:0.3rem 0.6rem 0.3rem 0;vertical-align:top;font-weight:600}
+  table.wiki-table td{padding:0.3rem 0;border-bottom:var(--tg-border-subtle)}
+  .talk-banner{border:var(--tg-border-base);background:var(--tg-color-surface-1);border-radius:var(--tg-border-radius-medium);padding:1.1rem 1.2rem;margin-bottom:1.4rem}
+  .talk-banner h3{margin:0 0 0.3rem;font-family:var(--tg-font-family-heading);color:var(--tg-color-emphasized)}
+  .talk-banner p{margin:0 0 0.8rem;color:var(--tg-color-subtle);font-size:var(--tg-font-size-small)}
+  .talk-banner .tg-button{width:100%;justify-content:center}
+  .portal-tabs{display:flex;gap:1.4rem;overflow-x:auto;border-bottom:var(--tg-border-base);padding-bottom:0.5rem;margin:0.2rem 0 1.2rem;font-size:var(--tg-font-size-small)}
+  .portal-tabs a{color:var(--tg-color-base);white-space:nowrap;padding-bottom:0.3rem}
+  .portal-tabs a.on{color:var(--tg-color-progressive);border-bottom:2px solid var(--tg-color-progressive);font-weight:600}
+  .portal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.9rem;margin-bottom:1.6rem}
+  .portal-grid .sq{aspect-ratio:1;border-radius:var(--tg-border-radius-medium);overflow:hidden;border:var(--tg-border-base);background-color:var(--tg-color-surface-3);background-size:cover;background-position:center}
+  .portal-grid .lb{font-weight:600;font-size:var(--tg-font-size-small);margin-top:0.35rem;color:var(--tg-color-emphasized)}
+  .portal-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+  @media(max-width:720px){.portal-boxes{grid-template-columns:1fr}}
+  .portal-box{border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);background:var(--tg-color-surface-1)}
+  .portal-box h4{margin:0;padding:0.6rem 0.9rem;border-bottom:var(--tg-border-subtle);background:var(--tg-color-surface-2);font-family:var(--tg-font-family-heading);border-radius:var(--tg-border-radius-medium) var(--tg-border-radius-medium) 0 0;color:var(--tg-color-emphasized)}
+  .portal-box ul{list-style:none;margin:0;padding:0.6rem 0.9rem}
+  .portal-box li{padding:0.28rem 0;font-size:var(--tg-font-size-small)}
+  .portal-box li::before{content:"▸ ";color:var(--tg-color-progressive)}
+  .action-tabs a.dots svg{transition:transform .3s ease}
+  .action-tabs a.dots:hover svg{transform:rotate(90deg)}
+  .rail .spacer{flex:1}
+  .rail-gear{width:34px;height:34px;border:0;background:transparent;color:var(--tg-color-base);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .rail-gear:hover{background:var(--tg-color-surface-3)}
+  .rail-gear svg{width:18px;height:18px}
+  .tg-card{transition:transform .16s ease-out,box-shadow .25s ease;transform:translateY(calc(var(--prox,0)*-4px));box-shadow:0 calc(var(--prox,0)*14px) calc(var(--prox,0)*32px) rgba(20,10,5,calc(var(--prox,0)*0.22))}
+  .tg-card[data-href]{cursor:pointer}
+  .credit{margin-top:0.4rem;font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle);font-style:italic}
+  .slide-card{position:relative;min-height:24rem}
+  .slide .tg-card-image{height:100%}
+  .slot-art img.contain-pad{object-fit:contain;padding:1.6rem}
+  .slide-dots button{background:rgba(255,255,255,.45)}
+  .slide-dots button.on{background:#fff}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none;display:flex;padding:0.4rem 0.6rem 1.6rem}
+  .slide.on{opacity:1;pointer-events:auto}
+  .omni-card{margin:auto;text-align:center;max-width:340px}
+  .omni-portrait{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:0 auto 0.6rem;border:3px solid var(--tg-color-surface-4);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  .omni-name{font-family:var(--tg-font-family-heading);font-size:1.35rem;font-weight:600;color:var(--tg-color-emphasized)}
+  .omni-name a{color:inherit}
+  .omni-role{font-size:var(--tg-font-size-x-small);color:var(--tg-color-subtle);letter-spacing:.06em;text-transform:uppercase;margin:0.15rem 0 0.5rem}
+  .omni-logo{height:30px;width:auto;margin:0 auto 0.5rem;opacity:.92}
+  .omni-social{display:flex;justify-content:center;gap:1rem;margin-bottom:0.6rem}
+  .omni-social a{color:var(--tg-color-base)}
+  .omni-social svg{width:17px;height:17px;opacity:.8}
+  .omni-text{font-size:var(--tg-font-size-small);color:var(--tg-color-base);line-height:1.55;margin:0}
+  .omni-glyph{width:64px;height:64px;margin:0 auto .6rem;border-radius:50%;background:var(--tg-color-surface-3);display:flex;align-items:center;justify-content:center}
+  .omni-glyph svg{width:28px;height:28px;opacity:.8}
+  .omni-cta{margin-top:.7rem}
+  .slide-dots{position:absolute;left:0;right:0;bottom:0.55rem;display:flex;justify-content:center;gap:0.45rem}
+  .slide-dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--tg-color-surface-4);cursor:pointer;padding:0}
+  .slide-dots button.on{background:var(--tg-color-progressive)}
+  .settings-pop{position:fixed;right:66px;bottom:14px;z-index:70;background:var(--tg-color-surface-1);border:var(--tg-border-base);border-radius:var(--tg-border-radius-large);box-shadow:0 12px 40px rgba(0,0,0,.18);padding:1rem 1.1rem;width:272px;opacity:0;visibility:hidden;transform:translateY(8px) scale(.97);transform-origin:bottom right;transition:opacity .22s ease,transform .22s ease,visibility .22s}
+  .settings-pop.open{opacity:1;visibility:visible;transform:none}
+  .settings-pop h5{margin:0.45rem 0 0.45rem;font-family:var(--tg-font-family-heading);color:var(--tg-color-subtle);font-weight:600;font-size:0.8rem}
+  .settings-pop h5:first-child{margin-top:0}
+  .seg{display:flex;gap:0.45rem}
+  .seg button{flex:1;padding:0.5rem 0.4rem;border:var(--tg-border-base);background:var(--tg-color-surface-1);border-radius:9px;font-family:var(--tg-font-family-heading);font-size:0.85rem;color:var(--tg-color-base);cursor:pointer}
+  .seg button:hover{background:var(--tg-color-surface-3)}
+  .seg button.on{border-color:var(--tg-color-progressive);box-shadow:inset 0 0 0 1px var(--tg-color-progressive);background:var(--tg-color-surface-2)}
+  .seg button.darkchip.on{background:#1d2416;color:#fff}
+  html[data-text="small"]{font-size:92%}
+  html[data-text="large"]{font-size:108%}
+  html[data-width="wide"] .page{max-width:1280px}
+  html[data-width="full"] .page{max-width:none}
+  html[data-theme="dark"]{--tg-color-emphasized:#f4f1e9;--tg-color-base:#dcd8cf;--tg-color-subtle:#a6a29a;--tg-color-surface-0:#0a0a0c;--tg-color-surface-1:#121216;--tg-color-surface-2:#17171c;--tg-color-surface-3:#1e1e24;--tg-color-surface-4:#26262d;--tg-color-surface-5:#2e2e36;--tg-color-link:#e2ac4e;--tg-color-progressive:#c89a3e;--tg-color-progressive--hover:#d7aa50;--tg-color-progressive--active:#b78b35;--tg-color-quote:#cfa143;--tg-border-base:1px solid rgba(255,255,255,0.10);--tg-border-subtle:1px solid rgba(255,255,255,0.07)}
+  html[data-theme="dark"] body::before{opacity:0.04}
+  .logo-dark{display:none}
+  html[data-theme="dark"] .logo-light{display:none}
+  html[data-theme="dark"] .logo-dark{display:inline-block}
+    html[data-theme="dark"] .badge-powered{background:#f4f1e9;color:#222}
+  html[data-theme="dark"] .omni-logo{filter:brightness(1.25)}
+  @media(max-width:720px){.drawer{right:52px;width:calc(100vw - 66px)}.settings-pop{right:52px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="glyph-cicada" viewBox="0 0 64 64"><g fill="currentColor"><ellipse cx="32" cy="40" rx="7" ry="16"/><circle cx="32" cy="20" r="6"/><circle cx="27.5" cy="18" r="1.6" fill="rgba(255,255,255,0.35)"/><circle cx="36.5" cy="18" r="1.6" fill="rgba(255,255,255,0.35)"/><path d="M30 30 C 12 26, 6 40, 12 52 C 20 48, 26 42, 30 34 Z" opacity="0.55"/><path d="M34 30 C 52 26, 58 40, 52 52 C 44 48, 38 42, 34 34 Z" opacity="0.55"/><path d="M32 27 C 22 18, 24 8, 32 6 C 40 8, 42 18, 32 27 Z" opacity="0.4"/></g></symbol>
+    <symbol id="glyph-gu-jar" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M20 14 h24 M22 14 c0 10 -8 14 -8 26 a18 16 0 0 0 36 0 c0 -12 -8 -16 -8 -26"/><path d="M24 8 h16 v6 h-16 z" fill="currentColor" stroke="none" opacity="0.5"/></g><circle cx="32" cy="42" r="4" fill="currentColor" opacity="0.6"/></symbol>
+    <symbol id="glyph-search" viewBox="0 0 16 16"><path fill="currentColor" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></symbol>
+    <symbol id="glyph-menu" viewBox="0 0 16 16"><path fill="currentColor" d="M2 4h12v1.6H2zM2 7.2h12v1.6H2zM2 10.4h12V12H2z"/></symbol>
+        <symbol id="glyph-book" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M32 16 C 26 10, 14 8, 8 10 V 48 C 14 46, 26 48, 32 54 C 38 48, 50 46, 56 48 V 10 C 50 8, 38 10, 32 16 Z"/><path d="M32 16 V 54"/></g></symbol>
+    <symbol id="glyph-person" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="32" cy="20" r="9"/><path d="M12 54 c0 -14 10 -20 20 -20 s20 6 20 20 z"/></g></symbol>
+    <symbol id="glyph-mountain" viewBox="0 0 64 64"><g fill="currentColor"><path d="M4 52 L24 16 L34 34 L42 22 L60 52 Z" opacity="0.8"/><circle cx="48" cy="14" r="5" opacity="0.5"/></g></symbol>
+    <symbol id="glyph-clan" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M14 52 V 24 L32 12 L50 24 V 52 Z"/><path d="M26 52 V 38 H 38 V 52"/></g><circle cx="32" cy="26" r="3" fill="currentColor"/></symbol>
+    <symbol id="glyph-ranks" viewBox="0 0 64 64"><g fill="currentColor"><rect x="8" y="44" width="10" height="10" rx="1"/><rect x="22" y="36" width="10" height="18" rx="1" opacity="0.85"/><rect x="36" y="28" width="10" height="26" rx="1" opacity="0.7"/><rect x="50" y="20" width="10" height="34" rx="1" opacity="0.55"/></g></symbol>
+    <symbol id="glyph-scroll" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M18 10 h28 a6 6 0 0 1 6 6 v32 a6 6 0 0 1 -6 6 h-28 a6 6 0 0 1 -6 -6 v-32 a6 6 0 0 1 6 -6 z"/><path d="M24 24 h16 M24 32 h16 M24 40 h10"/></g></symbol>
+    <symbol id="glyph-hourglass" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M18 8 h28 M18 56 h28 M20 8 c0 14 10 16 12 24 c2 -8 12 -10 12 -24 M20 56 c0 -14 10 -16 12 -24 c2 8 12 10 12 24"/></g><circle cx="32" cy="44" r="3" fill="currentColor"/></symbol>
+    <symbol id="glyph-glossary" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3"><circle cx="28" cy="28" r="16"/><path d="M40 40 L 54 54" stroke-linecap="round"/><path d="M22 28 h12 M28 22 v12" opacity="0.7"/></g></symbol>
+    <symbol id="glyph-community" viewBox="0 0 64 64"><g fill="currentColor"><circle cx="20" cy="24" r="7"/><circle cx="44" cy="24" r="7"/><path d="M4 50 c0 -10 8 -15 16 -15 s16 5 16 15 z" opacity="0.75"/><path d="M28 50 c0 -10 8 -15 16 -15 s16 5 16 15 z" opacity="0.9"/></g></symbol>
+    <symbol id="glyph-home" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1.8 1.6 7.4h1.8v6h3.4V9.6h2.4v3.8h3.4v-6h1.8z"/></symbol>
+    <symbol id="glyph-share" viewBox="0 0 16 16"><path fill="currentColor" d="M14 2 6.5 9l2 2.2L2 14l2.8-6.5L7 9.6 14 2z" transform="rotate(8 8 8)"/><path fill="currentColor" d="M14 2 7 9.5l-1.2-1.2z"/></symbol>
+    <symbol id="glyph-edit" viewBox="0 0 16 16"><path fill="currentColor" d="M11.3 1.7l3 3L5 14H2v-3z"/></symbol>
+    <symbol id="glyph-history" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M8 2.5a5.5 5.5 0 1 1-5.4 6.6M2.6 5.5V2.6M2.6 5.5h2.9M8 5v3.2l2.3 1.6"/></symbol>
+    <symbol id="glyph-talk" viewBox="0 0 16 16"><path fill="currentColor" d="M2 2h12v9H7l-3.4 3v-3H2z"/></symbol>
+    <symbol id="glyph-dots" viewBox="0 0 16 16"><g fill="currentColor"><circle cx="3" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/><circle cx="13" cy="8" r="1.5"/></g></symbol>
+    <symbol id="glyph-gear" viewBox="0 0 16 16"><path fill="currentColor" d="M8 5.4A2.6 2.6 0 1 0 8 10.6 2.6 2.6 0 0 0 8 5.4zm6.4 3.7-1.5.3c-.12.42-.3.82-.53 1.18l.98 1.2-1.17 1.17-1.2-.98c-.36.23-.76.41-1.18.53l-.3 1.5H7.5l-.3-1.5c-.42-.12-.82-.3-1.18-.53l-1.2.98-1.17-1.17.98-1.2c-.23-.36-.41-.76-.53-1.18l-1.5-.3V7.5l1.5-.3c.12-.42.3-.82.53-1.18l-.98-1.2 1.17-1.17 1.2.98c.36-.23.76-.41 1.18-.53l.3-1.5h1.9l.3 1.5c.42.12.82.3 1.18.53l1.2-.98 1.17 1.17-.98 1.2c.23.36.41.76.53 1.18l1.5.3v1.9z"/></symbol>
+    <symbol id="glyph-youtube"' viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></symbol>
+    <symbol id="glyph-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M12.5 0h3.4c.3 2 1.5 3.6 3.4 4.5 1 .5 2.1.8 3.2.8v3.5c-1.4 0-2.8-.3-4.1-.9-.5-.2-1-.5-1.5-.8v7.6c0 1.9-.7 3.7-2 5.1a7.8 7.8 0 0 1-5.6 2.5c-2 0-3.9-.8-5.3-2.1A7.8 7.8 0 0 1 1.7 14c0-2.1.9-4.1 2.3-5.6a7.7 7.7 0 0 1 5.4-2.3v3.6a4.2 4.2 0 0 0-3.1 1.3 4.3 4.3 0 0 0-1.2 3c0 1.2.5 2.3 1.3 3.1a4.3 4.3 0 0 0 6.2-.1c.7-.8 1-1.8 1-2.9z"/></symbol>
+    <symbol id="glyph-discord" viewBox="0 0 24 24"><path fill="currentColor" d="M20.3 4.4A19.8 19.8 0 0 0 15.9 3l-.2.4c1.6.4 2.4.9 3.2 1.5A16.2 16.2 0 0 0 12 3.6c-2.4 0-4.8.4-6.9 1.3.8-.6 1.7-1.1 3.2-1.5L8.1 3a19.8 19.8 0 0 0-4.4 1.4A20.3 20.3 0 0 0 .3 18.1a19.9 19.9 0 0 0 6 3l.5-.7c-.9-.3-1.9-.8-2.8-1.4l.7-.5a14.2 14.2 0 0 0 12.2 0l.7.5c-.9.6-1.9 1.1-2.8 1.4l.5.7a19.9 19.9 0 0 0 6-3 20.3 20.3 0 0 0-3.4-13.7zM8.7 15.3c-1.2 0-2.2-1.1-2.2-2.4 0-1.3 1-2.4 2.2-2.4s2.2 1.1 2.2 2.4c0 1.3-1 2.4-2.2 2.4zm6.6 0c-1.2 0-2.2-1.1-2.2-2.4 0-1.3 1-2.4 2.2-2.4s2.2 1.1 2.2 2.4c0 1.3-1 2.4-2.2 2.4z"/></symbol>
+  </defs>
+</svg>
+
+<div class="rail">
+  <button class="rail-logo" id="seal-btn" title="Reverend Insanity Encyclopedia" aria-label="Home"><span class="seal-face face-seal">蛊</span><span class="seal-face face-home"><svg><use href="#glyph-home"/></svg></span></button>
+  <button id="rail-search" title="Search"><svg><use href="#glyph-search"/></svg></button>
+  <button id="rail-menu" title="Main menu"><svg><use href="#glyph-menu"/></svg></button>
+  <div class="spacer"></div>
+  <button id="rail-gear" class="rail-gear" title="Appearance" aria-label="Appearance settings"><svg><use href="#glyph-gear"/></svg></button>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="Site menu">
+  <button class="drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+  <div class="drawer-head">
+    <span class="seal-mini">蛊</span>
+    <img class="wm logo-light" src="assets/logo-red.png" alt=""><img class="wm logo-dark" src="assets/logo-silver.png" alt="">
+    <div class="drawer-stats">
+      <span title="Articles"><svg><use href="#glyph-book"/></svg> <b id="stat-pages">–</b></span>
+      <span title="Images"><svg><use href="#glyph-mountain"/></svg> <b id="stat-imgs">–</b></span>
+      <span title="Chapters typeset"><svg><use href="#glyph-scroll"/></svg> <b id="stat-ch">–</b></span>
+      <span title="Parables"><svg><use href="#glyph-hourglass"/></svg> <b id="stat-par">–</b></span>
+    </div>
+  </div>
+  <div class="drawer-cols">
+    <div>
+      <h4>Navigation</h4>
+      <a href="#main">Main Page</a>
+      <a href="#" id="drawer-random">Random page</a>
+      <a href="#/wiki/community">Community Portal</a>
+      <a href="#/wiki/chapters">To-do · the bench</a>
+      <a href="#/wiki/glossary">Help · Glossary</a>
+    </div>
+    <div>
+      <h4>Portals</h4>
+      <a href="#/wiki/chapters">Chapters</a>
+      <a href="#/wiki/characters">Characters</a>
+      <a href="#/wiki/gu">Gu</a>
+      <a href="#/wiki/clans">Clans</a>
+      <a href="#/wiki/locations">Locations</a>
+      <a href="#/wiki/cultivation">Cultivation</a>
+      <a href="#/wiki/the-legends-of-ren-zu">Legends of Ren Zu</a>
+      <a href="#/wiki/timeline">Timeline</a>
+    </div>
+  </div>
+  <div class="drawer-social">
+    <a href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noreferrer noopener" aria-label="Discord"><svg><use href="#glyph-discord"/></svg></a>
+    <a href="https://www.youtube.com/@GodofPeakFiction" target="_blank" rel="noreferrer noopener" aria-label="YouTube"><svg><use href="#glyph-youtube"/></svg></a>
+    <a href="https://www.tiktok.com/@GodOfPeakFiction" target="_blank" rel="noreferrer noopener" aria-label="TikTok"><svg><use href="#glyph-tiktok"/></svg></a>
+  </div>
+</aside>
+<div class="settings-pop" id="settings-pop" role="dialog" aria-label="Appearance settings">
+  <h5>Text</h5><div class="seg" data-pref="text"><button data-v="small">Small</button><button data-v="standard" class="on">Standard</button><button data-v="large">Large</button></div>
+  <h5>Color</h5><div class="seg" data-pref="color"><button data-v="auto" class="on">Auto</button><button data-v="light">Light</button><button data-v="dark" class="darkchip">Dark</button></div>
+  <h5>Width</h5><div class="seg" data-pref="width"><button data-v="standard" class="on">Standard</button><button data-v="wide">Wide</button><button data-v="full">Full</button></div>
+</div>
+<div class="rail-band" aria-hidden="true">蛊真人 · REVEREND INSANITY · 人祖传 · THE LEGENDS OF REN ZU · REFINE · NURTURE · USE · 蛊真人 · REVEREND INSANITY · 人祖传 · THE LEGENDS OF REN ZU · REFINE · NURTURE · USE · 蛊真人 · REVEREND INSANITY · 人祖传 · THE LEGENDS OF REN ZU · REFINE · NURTURE · USE · 蛊真人 · REVEREND INSANITY · 人祖传 ·</div>
+
+<!-- ================================================= MAIN PAGE ================================================= -->
+<div class="page" id="main-view">
+
+  <div class="tg-mainpage-header">
+    <div class="ring" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs><path id="ringpath" d="M200,200 m-160,0 a160,160 0 1,1 320,0 a160,160 0 1,1 -320,0"/></defs>
+        <text fill="currentColor"><textPath href="#ringpath">蛊真人 · REVEREND INSANITY · THE OMNIARCH TRANSLATION · 人祖传 · THE LEGENDS OF REN ZU · REFINE · NURTURE · USE · 蛊真人 · REVEREND INSANITY ·</textPath></text>
+      </svg>
+    </div>
+    <div class="tg-mainpage-content">
+      <a href="#main" style="text-decoration:none"><h1 class="wordmark"><img class="wordmark-img logo-light" src="assets/logo-red.png" alt="Reverend Insanity Encyclopedia"><img class="wordmark-img logo-dark" src="assets/logo-silver.png" alt="Reverend Insanity Encyclopedia"></h1></a>
+      <div class="tg-mainpage-header-tagline">The <a href="#/wiki/reverend-insanity">Reverend Insanity</a> encyclopedia curated by <a href="#/wiki/the-omniarch">The Omniarch</a></div>
+      <button class="tg-mainpage-header-search" id="search-trigger" aria-label="Search the encyclopedia">
+        <svg aria-hidden="true"><use href="#glyph-search"/></svg>
+        Search
+        <span class="kbd">/</span>
+      </button>
+      <div class="header-searchbox" id="search-box">
+        <input type="search" id="search-input" placeholder="Search Gu, characters, chapters, places…" aria-label="Search input" autocomplete="off">
+        <div class="search-suggest" id="search-suggest"></div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="tg-mainpage-navigation" aria-label="Portals">
+    <div class="template-navpills">
+      <div class="template-navpill" style="--pill:#3a3230;--img:url('assets/fy_b.jpg')"><div class="pill-bg"><svg><use href="#glyph-book"/></svg></div><a href="#/wiki/chapters" title="All chapters typeset by The Omniarch">Chapters</a></div>
+      <div class="template-navpill" style="--pill:#4a3b2c;--img:url('assets/header-bg.jpg')"><div class="pill-bg"><svg><use href="#glyph-scroll"/></svg></div><a href="#/wiki/authors-preface" title="Author’s Preface: Either Towards Success or Towards Destruction">Preface</a></div>
+      <div class="template-navpill" style="--pill:#33402c;--img:url('assets/fy_a.jpg')"><div class="pill-bg"><svg><use href="#glyph-person"/></svg></div><a href="#/wiki/characters" title="Portal:Characters">Characters</a></div>
+      <div class="template-navpill" style="--pill:#2f3a3f;--img:url('assets/gu_a.png')"><div class="pill-bg"><svg><use href="#glyph-gu-jar"/></svg></div><a href="#/wiki/gu" title="Portal:Gu — the true essence of heaven and earth">Gu</a></div>
+      <div class="template-navpill" style="--pill:#463227;--img:url('assets/fz_a.jpg')"><div class="pill-bg"><svg><use href="#glyph-clan"/></svg></div><a href="#/wiki/clans" title="Portal:Clans and paths">Clans</a></div>
+      <div class="template-navpill" style="--pill:#2e3d33;--img:url('assets/map_a.jpg')"><div class="pill-bg"><svg><use href="#glyph-mountain"/></svg></div><a href="#/wiki/locations" title="Portal:Locations">Locations</a></div>
+      <div class="template-navpill" style="--pill:#403a45;--img:url('assets/gu_b.jpg')"><div class="pill-bg"><svg><use href="#glyph-ranks"/></svg></div><a href="#/wiki/cultivation" title="Portal:Cultivation — the nine ranks of Gu Masters">Cultivation</a></div>
+      <div class="template-navpill" style="--pill:#3c4348;--img:url('assets/bnb_b.jpeg')"><div class="pill-bg"><svg><use href="#glyph-glossary"/></svg></div><a href="#/wiki/glossary" title="Portal:Glossary">Glossary</a></div>
+      <div class="template-navpill" style="--pill:#4b3a33;--img:url('assets/rz_a.jpg')"><div class="pill-bg"><svg><use href="#glyph-scroll"/></svg></div><a href="#/wiki/the-legends-of-ren-zu" title="The Legends of Ren Zu — companion scripture">Legends of Ren Zu</a></div>
+      <div class="template-navpill" style="--pill:#37422e;--img:url('assets/fy_c.jpg')"><div class="pill-bg"><svg><use href="#glyph-book"/></svg></div><a href="#/wiki/volume-1" title="Portal:Volumes">Volumes</a></div>
+      <div class="template-navpill" style="--pill:#39363c;--img:url('assets/rz_b.jpg')"><div class="pill-bg"><svg><use href="#glyph-hourglass"/></svg></div><a href="#/wiki/timeline" title="Portal:Timeline">Timeline</a></div>
+      <div class="template-navpill" style="--pill:#43332b;--img:url('assets/bnb_a.jpg')"><div class="pill-bg"><svg><use href="#glyph-community"/></svg></div><a href="#/wiki/community" title="Community portal">Community</a></div>
+    </div>
+  </nav>
+
+  <div class="tg-section-divider"><span>Featured</span></div>
+
+  <div class="template-flexbox featured-row" style="--template-flexbox-columns:3;--template-flexbox-gap:0.5rem">
+    <div class="template-flexbox-item">
+      <div class="tg-card">
+        <div class="tg-card-label"><a href="#/wiki/spring-autumn-cicada" title="Featured articles">Article</a></div>
+        <div class="tg-card-image" style="--slot:#4d7c50">
+          <div class="slot-art"><img src="assets/fy_c.jpg" alt="A Gu Master with a cicada alighting on his open hand"></div>
+          <div class="tg-card-afterImage" style="--slot:#3c5a40">
+            <div class="grad"></div>
+            <div class="inner">
+              <div class="bigcap"><a href="#/wiki/spring-autumn-cicada">Spring Autumn Cicada</a></div>
+              <div class="smallcap">The time-rebirth Gu refined at terrible cost and staked on one last gamble by <a href="#/wiki/fang-yuan">Fang Yuan</a>, ender of his five-hundred-year demonic reign.</div>
+              <div class="credit">Art: noazari571 · community archive</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="template-flexbox-item">
+      <div class="tg-card">
+        <div class="tg-card-label"><a href="#/wiki/the-omniarch" title="Featured spotlight">Spotlight</a></div>
+        <div class="slide-card" id="slide-card">
+          <div class="slide on">
+            <div class="tg-card-image" style="--slot:#1c1a17">
+              <div class="slot-art"><img class="contain-pad" src="assets/logo-circle.png" alt="The Omniarch brand seal"></div>
+              <div class="tg-card-afterImage" style="--slot:#241f1a">
+                <div class="grad"></div>
+                <div class="inner">
+                  <div class="bigcap"><a href="#/wiki/the-omniarch">The Omniarch</a></div>
+                  <div class="smallcap">Curator of the translation, host of the Discord, peak-fiction voice on YouTube and TikTok — a fan who built the story a home.</div>
+                  <div class="credit">Brand seal · theomniarch.com.ng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tg-card-image" style="--slot:#20241c">
+              <div class="slot-art"><img class="contain-pad" src="assets/sagaofgu-banner.webp" alt="Saga of Gu banner"></div>
+              <div class="tg-card-afterImage" style="--slot:#2a2d24">
+                <div class="grad"></div>
+                <div class="inner">
+                  <div class="bigcap">Saga of Gu</div>
+                  <div class="smallcap">Friend of the encyclopedia — a wholesome, carefully structured companion wiki, cited to the chapter. Wander it at <b>sagaofgu.com</b>.</div>
+                  <div class="credit">Banner · Saga of Gu</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="tg-card-image" style="--slot:#20241c">
+              <div class="slot-art"><img src="assets/rz_b.jpg" alt="Readers gathered at the bench"></div>
+              <div class="tg-card-afterImage" style="--slot:#2a2d24">
+                <div class="grad"></div>
+                <div class="inner">
+                  <div class="bigcap">The bench is open</div>
+                  <div class="smallcap">Readers gather on Discord between typesettings — readings, glossary notes, theories. Pull up a chair.</div>
+                  <div class="credit"><a href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noreferrer noopener">Join the Discord</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide-dots" id="slide-dots"><button class="on" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="template-flexbox-item">
+      <div class="tg-card tg-mainpage-featured-quote" style="min-height:20rem">
+        <div class="tg-card-label"><a href="#/wiki/quotes" title="Featured quotes">Quote</a></div>
+        <div class="tg-card-content">
+          <div class="tg-card-body">
+            <blockquote>
+              <p>Say not that mighty mountains stand unyielding as iron;<br>
+              Today, I stride forward and cross them anew.<br>
+              Facing peril, I fashion my body from the essence of Heaven and Earth;<br>
+              My heart, as ever, gazes at the Heavens.</p>
+              <p class="tg-quote-footer"><cite>Opening verse of <i><a href="#/wiki/reverend-insanity">Reverend Insanity</a></i>, translated by <a href="#/wiki/the-omniarch">The Omniarch</a></cite></p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="template-flexbox" style="--template-flexbox-columns:3;--template-flexbox-gap:0.5rem">
+    <div class="template-flexbox-item span-2">
+      <div class="tg-card">
+        <div class="tg-card-content">
+          <div class="tg-card-title" id="today-heading">10 October</div>
+          <div class="tg-card-caption" id="today-caption">Today’s date at the translation bench: <b><a href="#/wiki/chapters">Chapter 9</a> typesetting</b> · 8 of 2,334 chapters typeset</div>
+          <div class="event-wrap">
+            <div class="tg-card-image event-img" style="--slot:#20241c">
+              <div class="slot-art"><img src="assets/fy_a.jpg" alt="Fang Yuan adrift among the waters"></div>
+              <div class="tg-card-afterImage" style="--slot:#20241c;padding-top:2.4rem">
+                <div class="grad"></div>
+                <div class="inner">
+                  <div class="smallcap">On Earth</div>
+                  <div class="bigcap" id="event-line">Chapter 8 typeset — Chapter 9 at the bench</div>
+                  <div class="credit">Art: nons3nse · community archive</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tg-card-body">
+            <div class="date-strip">
+              <div class="tg-button"><a href="#/wiki/timeline" id="d-2">8 Oct</a></div>
+              <div class="tg-button"><a href="#/wiki/timeline" id="d-1">9 Oct</a></div>
+              <div class="tg-button tg-button--primary"><a href="#/wiki/timeline" id="d0">10 Oct</a></div>
+              <div class="tg-button"><a href="#/wiki/timeline" id="d1">11 Oct</a></div>
+              <div class="tg-button"><a href="#/wiki/timeline" id="d2">12 Oct</a></div>
+            </div>
+            <div class="tg-section-divider"><span>On Earth</span></div>
+            <ul>
+              <li><b><a href="#/wiki/timeline">2012</a></b> - <a href="#/wiki/gu-zhen-ren">Gu Zhen Ren</a> begins serialising <i><a href="#/wiki/reverend-insanity">Reverend Insanity</a></i> (蛊真人), the tale of a transmigrator continuously reborn through time.</li>
+              <li><b><a href="#/wiki/timeline">2019</a></b> - The original novel enters hiatus at chapter 2,334; Volume 1 <i><a href="#/wiki/volume-1">Demonic Nature Never Changes</a></i> (魔性不改) remains the way in.</li>
+              <li id="now-bullet"><b><a href="#/wiki/timeline">Now</a></b> - <a href="#/wiki/the-omniarch">The Omniarch</a> re-translation typesets the opening volume; <a href="#/wiki/chapter-8">Chapter 8</a> is live and Chapter 9 sits at the bench.</li>
+            </ul>
+            <div class="tg-section-divider"><span>In the Gu World</span></div>
+            <ul>
+              <li><a href="#/wiki/timeline">The end of the first life</a>:
+                <ul>
+                  <li>Cornered on the mountaintop by the united <a href="#/wiki/righteous-path">Righteous Path</a>, <a href="#/wiki/fang-yuan">Fang Yuan</a> clutches his freshly refined <a href="#/wiki/spring-autumn-cicada">Spring Autumn Cicada</a> and detonates himself rather than yield it.</li>
+                  <li>Five hundred years — three hundred of wandering, two hundred of unbridled dominion — collapse into a single heartbeat.</li>
+                </ul>
+              </li>
+              <li><a href="#/wiki/timeline">Rebirth</a>:
+                <ul>
+                  <li>Time reverses; the demon awakens again in his fifteen-year-old body on the eve of the <a href="#/wiki/aperture-opening-ceremony">Aperture Opening Ceremony</a>.</li>
+                  <li>Spring rain falls on <a href="#/wiki/qing-mao-mountain">Qing Mao Mountain</a>, and the stilt-house lights of <a href="#/wiki/gu-yue-village">Gu Yue Village</a> glow as the clan prays for new genius blood.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="template-flexbox-item">
+      <div class="template-flexbox" style="--template-flexbox-columns:2;--template-flexbox-direction:column;--template-flexbox-gap:0.5rem">
+        <div class="template-flexbox-item">
+          <div class="tg-card tg-mainpage-editing">
+            <div class="tg-card-content">
+              <div class="tg-card-body">
+                <div class="tg-mainpage-editing-image">
+                  <div class="poster-slot" role="img" aria-label="Fang Yuan adrift among the waters" style="width:86px;height:120px;overflow:hidden;border-style:solid;border-color:var(--tg-border-color-base)">
+                    <img src="assets/fy_a.jpg" alt="">
+                  </div>
+                </div>
+                <div class="tg-card-title">The encyclopedia needs your lore!</div>
+                <div class="tg-card-caption">This encyclopedia carries only the story of The Omniarch Translation. Its containers stand complete — its imagery awaits the keeper’s hand. Begin with the story itself.</div>
+                <div class="tg-mainpage-editing-actions">
+                  <div class="tg-button tg-button--primary"><a href="#/wiki/chapter-1">Begin with Chapter 1</a></div>
+                  <div class="tg-button tg-button--framed"><a href="#/wiki/authors-preface">Author’s Preface</a></div>
+                  <div class="tg-button tg-button--framed"><a href="#/wiki/chapters">Chapters at the bench</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="template-flexbox-item">
+          <div class="tg-card tg-mainpage-social" id="community-card">
+            <div class="glyph-watermark" aria-hidden="true">蛊</div>
+            <div class="tg-card-content">
+              <div class="tg-card-body">
+                <div class="tg-card-title">Refine. Nurture. Use.</div>
+                <div class="tg-button plainlinks tg-mainpage-social-discord">
+                  <a href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noreferrer noopener">
+                    <span class="tg-button-icon"><svg><use href="#glyph-discord"/></svg></span>
+                    Join our Discord
+                  </a>
+                </div>
+                <div class="tg-section-divider"><span>Follow us</span></div>
+                <div class="tg-mainpage-social-followus">
+                  <div class="tg-button tg-button--icon"><a href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noreferrer noopener" aria-label="Discord" title="Discord"><svg><use href="#glyph-discord"/></svg></a></div>
+                  <div class="tg-button tg-button--icon"><a href="https://www.youtube.com/@GodofPeakFiction" target="_blank" rel="noreferrer noopener" aria-label="YouTube — @GodofPeakFiction" title="YouTube — @GodofPeakFiction"><svg><use href="#glyph-youtube"/></svg></a></div>
+                  <div class="tg-button tg-button--icon"><a href="https://www.tiktok.com/@GodOfPeakFiction" target="_blank" rel="noreferrer noopener" aria-label="TikTok — @GodOfPeakFiction" title="TikTok — @GodOfPeakFiction"><svg><use href="#glyph-tiktok"/></svg></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="tg-card tg-card--discover">
+    <div class="tg-card-content">
+      <div class="tg-mainpage-browse-header">
+        <div>
+          <h2>Discover the Reverend Insanity Encyclopedia</h2>
+          <div class="tg-caption" id="browse-stats">8 chapters typeset of 2,334 · 44 parables of Ren Zu in the companion scripture · curated by The Omniarch</div>
+        </div>
+        <div class="tg-button tg-button--secondary"><a href="#" id="random-article" title="Random article">Random article</a></div>
+      </div>
+
+      <div class="tg-mainpage-browse-atoz" aria-label="A to Z index">
+        <span class="tg-mainpage-browse-atoz-label">A to Z</span>
+        <div class="tg-button"><a href="#/wiki/atoz/A">A</a></div><div class="tg-button"><a href="#/wiki/atoz/B">B</a></div><div class="tg-button"><a href="#/wiki/atoz/C">C</a></div><div class="tg-button"><a href="#/wiki/atoz/D">D</a></div><div class="tg-button"><a href="#/wiki/atoz/E">E</a></div><div class="tg-button"><a href="#/wiki/atoz/F">F</a></div><div class="tg-button"><a href="#/wiki/atoz/G">G</a></div><div class="tg-button"><a href="#/wiki/atoz/H">H</a></div><div class="tg-button"><a href="#/wiki/atoz/I">I</a></div><div class="tg-button"><a href="#/wiki/atoz/J">J</a></div><div class="tg-button"><a href="#/wiki/atoz/K">K</a></div><div class="tg-button"><a href="#/wiki/atoz/L">L</a></div><div class="tg-button"><a href="#/wiki/atoz/M">M</a></div><div class="tg-button"><a href="#/wiki/atoz/N">N</a></div><div class="tg-button"><a href="#/wiki/atoz/O">O</a></div><div class="tg-button"><a href="#/wiki/atoz/P">P</a></div><div class="tg-button"><a href="#/wiki/atoz/Q">Q</a></div><div class="tg-button"><a href="#/wiki/atoz/R">R</a></div><div class="tg-button"><a href="#/wiki/atoz/S">S</a></div><div class="tg-button"><a href="#/wiki/atoz/T">T</a></div><div class="tg-button"><a href="#/wiki/atoz/U">U</a></div><div class="tg-button"><a href="#/wiki/atoz/V">V</a></div><div class="tg-button"><a href="#/wiki/atoz/W">W</a></div><div class="tg-button"><a href="#/wiki/atoz/X">X</a></div><div class="tg-button"><a href="#/wiki/atoz/Y">Y</a></div><div class="tg-button"><a href="#/wiki/atoz/Z">Z</a></div>
+      </div>
+
+      <div class="dir-grid">
+        <div class="dir-sec"><h3>Works</h3><p><i><a href="#/wiki/reverend-insanity">Reverend Insanity</a></i> (2012– ) · <i><a href="#/wiki/authors-preface">Author’s Preface: Either Towards Success or Towards Destruction</a></i> · Volume 1 <i><a href="#/wiki/volume-1">Demonic Nature Never Changes</a></i> (魔性不改) · <i><a href="#/wiki/the-legends-of-ren-zu">The Legends of Ren Zu</a></i> — 44 mythic parables</p></div>
+        <div class="dir-sec"><h3>Cultivation</h3><p><a href="#/wiki/gu-master">Gu Masters</a> (the <a href="#/wiki/nine-ranks">nine ranks</a>) · <a href="#/wiki/aperture-opening-ceremony">Aperture Opening Ceremony</a> · <a href="#/wiki/aperture">Aperture</a> · <a href="#/wiki/aptitude-grades">Aptitude grades</a> · <a href="#/wiki/three-arts">Refining · Nurturing · Using</a> · <a href="#/wiki/primeval-essence">Primeval essence</a></p></div>
+        <div class="dir-sec"><h3>Volume 1 Chapters</h3><p id="dir-chapters-list">…</p></div>
+        <div class="dir-sec"><h3>Clans &amp; Factions</h3><p><a href="#/wiki/gu-yue-clan">Gu Yue Clan</a> · <a href="#/wiki/bai-clan">Bai Clan</a> · <a href="#/wiki/xiong-clan">Xiong Clan</a> · <a href="#/wiki/righteous-path">Righteous Path</a> · <a href="#/wiki/demonic-path">Demonic Path</a> · <a href="#/wiki/hidden-inheritances">Hidden inheritances</a></p></div>
+        <div class="dir-sec"><h3>Characters</h3><p><a href="#/wiki/fang-yuan">Fang Yuan</a> · <a href="#/wiki/fang-zheng">Fang Zheng</a> · <a href="#/wiki/shen-cui">Shen Cui</a> · <a href="#/wiki/gu-yue-clan-leader">Gu Yue Clan Leader</a> · <a href="#/wiki/gu-yue-elder">Gu Yue elder</a> · <a href="#/wiki/gu-yue-qing-shu">Gu Yue Qing Shu</a> · <a href="#/wiki/bai-ning-bing">Bai Ning Bing</a> · <a href="#/wiki/flower-wine-monk">Flower Wine Monk</a> · <a href="#/wiki/ren-zu">Ren Zu</a> (<i><b><a href="#/wiki/characters">more</a></b></i>)</p></div>
+        <div class="dir-sec"><h3>Locations</h3><p><a href="#/wiki/qing-mao-mountain">Qing Mao Mountain</a> · <a href="#/wiki/gu-yue-village">Gu Yue Village</a> · <a href="#/wiki/bai-village">Bai Village</a> · <a href="#/wiki/xiong-village">Xiong Village</a> · <a href="#/wiki/five-regions">Five Regions</a> · <a href="#/wiki/nine-heavens">Immemorial Nine Heavens</a> (<i><b><a href="#/wiki/locations">list of all</a></b></i>)</p></div>
+        <div class="dir-sec"><h3>Gu</h3><p><a href="#/wiki/spring-autumn-cicada">Spring Autumn Cicada</a> · <a href="#/wiki/moonlight-gu">Moonlight Gu</a> · <a href="#/wiki/liquor-worm">Liquor Worm</a> · <a href="#/wiki/one-qi-golden-light-worm">One Qi Golden Light Worm</a> · <a href="#/wiki/black-hair-gu">Black Hair Gu</a> · <a href="#/wiki/hope-gu">Hope Gu</a> (<i><b><a href="#/wiki/gu">more</a></b></i>)</p></div>
+        <div class="dir-sec"><h3>The Legends of Ren Zu</h3><p><a href="#/wiki/ren-zu">Ren Zu</a> · <a href="#/wiki/hope-gu">Hope Gu</a> · <a href="#/wiki/ancestral-path">The Ancestral Path</a> · <a href="#/wiki/the-legends-of-ren-zu">44 mythic parables</a> · <a href="#/wiki/the-legends-of-ren-zu">Daoist philosophical codex</a></p></div>
+        <div class="dir-sec"><h3>Other</h3><p><a href="#/wiki/glossary">Philosophy &amp; glossary</a> · <a href="#/wiki/reverend-insanity">Genres</a> (xianxia · dark fantasy · psychological) · <a href="#/wiki/the-omniarch">Translation notes</a> · <a href="#/wiki/timeline">Timeline</a> · <a href="#/wiki/community">Community channels</a></p></div>
+        <div class="dir-sec"><h3>Events</h3><p><a href="#/wiki/timeline">The mountaintop siege</a> · <a href="#/wiki/spring-autumn-cicada">Refinement of the Spring Autumn Cicada</a> · <a href="#/wiki/timeline">The great reversal of time</a> · <a href="#/wiki/aperture-opening-ceremony">Aperture Opening Ceremony</a></p></div>
+      </div>
+
+      <p class="settings-link">[ <a href="#main" title="Main page settings">settings</a> ]</p>
+    </div>
+  </div>
+
+  <div class="meta-card">
+    <h4>Category</h4>
+    <span class="chip"><a href="#/wiki/contents">Contents</a></span>
+  </div>
+  <div class="meta-two">
+    <div><h4>Last modified</h4><p>This page was last edited on 10 October 2026, by The Omniarch.</p></div>
+    <div><h4>Copyright</h4><p><i>Reverend Insanity</i> (蛊真人) by Gu Zhen Ren · Translation © The Omniarch · imagery containers await their artwork.</p></div>
+  </div>
+  <div class="action-tabs">
+    <a href="#main"><svg><use href="#glyph-share"/></svg></a>
+    <a href="#main"><svg><use href="#glyph-edit"/></svg> View source</a>
+    <a href="#main"><svg><use href="#glyph-history"/></svg> View history</a>
+    <a href="#main"><svg><use href="#glyph-talk"/></svg> Discussion</a>
+    <a href="#main" class="dots" aria-label="More"><svg><use href="#glyph-dots"/></svg></a>
+  </div>
+</div>
+
+<!-- ================================================= ARTICLE VIEW ================================================= -->
+<div class="wiki-view" id="wiki-view" hidden>
+  <div class="wiki-crumb"><a href="#main">← Main Page</a><span>·</span><span id="crumb-here">Article</span></div>
+  <div class="wiki-head">
+    <div>
+      <h1 id="wiki-title">Article</h1>
+      <div class="wiki-sub" id="wiki-sub">From the Reverend Insanity Encyclopedia</div>
+    </div>
+    <div class="wiki-actions">
+      <a title="Share"><svg><use href="#glyph-share"/></svg></a>
+      <a title="View source"><svg><use href="#glyph-edit"/></svg> View source</a>
+      <a title="View history"><svg><use href="#glyph-history"/></svg> View history</a>
+      <a id="talk-tab" title="Discussion"><svg><use href="#glyph-talk"/></svg> <span id="talk-tab-label">Discussion</span></a>
+      <a class="dots" title="More"><svg><use href="#glyph-dots"/></svg></a>
+    </div>
+  </div>
+  <div class="wiki-cols">
+    <article class="wiki-article" id="wiki-article"></article>
+    <aside class="wiki-side" id="wiki-side"></aside>
+  </div>
+  <p class="wiki-retrieved" id="wiki-retrieved"></p>
+</div>
+
+<footer class="tg-footer">
+  <div class="inner">
+    <div class="tg-footer-top">
+      <div>
+        <div class="tg-footer-wordmark"><img class="logo-light" src="assets/logo-red.png" alt="Reverend Insanity Encyclopedia"><img class="logo-dark" src="assets/logo-silver.png" alt="Reverend Insanity Encyclopedia"></div>
+        <div class="tg-footer-tag">The encyclopedia dedicated to Reverend Insanity and The Omniarch Translation.</div>
+      </div>
+      <div class="tg-footer-links">
+        <a href="#/wiki/the-omniarch">Privacy policy</a>
+        <a href="#/wiki/the-omniarch">About the Encyclopedia</a>
+      </div>
+    </div>
+    <div class="tg-footer-bottom">
+      <span class="speak">Speak friend and read</span>
+      <div class="badge-row">
+        <span class="badge badge-discord" title="Discord widget"><svg><use href="#glyph-discord"/></svg> ONLINE</span>
+        <span class="badge badge-cc" title="License"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></g><path fill="currentColor" d="M6.6 10.6l2.8 2.8M9.4 10.6l-2.8 2.8M14.6 10.6l2.8 2.8"/></svg> OMNI · SHARE-ALIKE</span>
+        <span class="badge badge-powered" title="Typesetting"><svg><use href="#glyph-cicada"/></svg> Powered by the Bench</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================================================
+     THE GROWTH LEDGER — single source of truth.
+     The encyclopedia follows the translation site's growth: when a chapter is
+     published, append it to `chapters` (and bump `atBench`). Every counter,
+     the chapter directory and the chapter ARTICLES regenerate from here.
+     ====================================================================== -->
+<script id="omniarch-state">
+  window.OMNIARCH_STATE = {
+    total: 2334,
+    atBench: 9,
+    parables: 44,
+    chapters: [
+      { n: 1, title: "Though the Flesh Perish, the Demonic Heart Knows No Regret" },
+      { n: 2, title: "Reversing Time, Five Hundred Years of Enlightenment" },
+      { n: 3, title: "Kindly Piss Off" },
+      { n: 4, title: "Gu Yue Fang Yuan!" },
+      { n: 5, title: "Ren Zu’s Three Gu, Hope Opens the Aperture" },
+      { n: 6, title: "The Road to the Future Will Be Interesting" },
+      { n: 7, title: "Gu Masters Have Nine Ranks; Flower Wine Monk Leaves His Hidden Inheritance" },
+      { n: 8, title: "Things Remain, People Have Changed" }
+    ]
+  };
+</script>
+
+<!-- ================================================= ARTICLE DATA (built from the translation's information) -->
+<script id="omniarch-articles">
+window.OMNIARCH_ARTICLES = {
+"reverend-insanity":{t:"Reverend Insanity",k:"Work",ib:[["Author","Gu Zhen Ren (蛊真人)"],["Translator","The Omniarch"],["Serialised","2012 – 2019 (hiatus)"],["Chapters","2,334"],["Genres","Xianxia · Dark fantasy · Philosophy · Action · Adventure"]],
+ b:["Reverend Insanity (蛊真人) is a xianxia dark-fantasy web novel by Gu Zhen Ren, following Fang Yuan — a transmigrator from Earth whose five-hundred-year first life ends in a siege by the united Righteous Path, and who is hurled back five centuries into his own youth by the Spring Autumn Cicada.","Humans are the spirit of all living things; Gu are the true essence of heaven and earth. Around this creed the novel builds a world of nurturing, refining and using Gu, and a protagonist who walks the Demonic Path without compromise — a peerless demonic overlord who acts as he pleases and roams the world unfettered.","The Omniarch Translation re-typesets the novel in English, volume by volume, beginning with Volume 1: Demonic Nature Never Changes.","The translation site frames the tale in four lines: three views warped, the demon lord reborn; an old dream of yesteryear, a new work bearing the same name — a peerless demonic overlord who acts as he pleases and roams the world unfettered."],
+ see:["gu-zhen-ren","authors-preface","volume-1","fang-yuan","the-omniarch"],cat:["Works","Reverend Insanity"]},
+"gu-zhen-ren":{t:"Gu Zhen Ren",k:"Author",ib:[["Role","Author of Reverend Insanity"],["Pen name meaning","“The Genuine Person of Gu” / “Gu the True Person”"],["Serialisation","2012 – 2019"]],
+ b:["Gu Zhen Ren is the pen name of the author of Reverend Insanity. In the Author’s Preface he describes how years of reading web novels left him longing for a truly great villain — uncompromising, solitary, decisive in killing — and how that wish became the seed of this book.","He chose the name itself as the declaration of that wish: the book and its author share one title, either towards success or towards destruction."],
+ see:["authors-preface","reverend-insanity"],cat:["People","Authors"]},
+"authors-preface":{t:"Author’s Preface: Either Towards Success or Towards Destruction",k:"Front matter",ib:[["Author","Gu Zhen Ren"],["Position","Before Volume 1, Chapter 1"],["Subject","Why a true villain"]],
+ b:["The Author’s Preface opens the work. Gu Zhen Ren recounts the pain that tipped his inner balance scale, the novels he had read, and the knot of frustration with paper-tiger villains who wilt before the protagonist.","From that frustration he formed a single wish: to write a villain who never kneels — cold, proud, demonic, walking alone through darkness, killing god if a god blocks his path and Buddha if a Buddha blocks his path. If he was not walking towards success, then he was walking towards destruction.","The preface warns plainly: this is a book with warped values. Read with caution."],
+ see:["gu-zhen-ren","reverend-insanity","fang-yuan"],cat:["Works","Front matter"]},
+"volume-1":{t:"Volume 1: Demonic Nature Never Changes",k:"Volume",ib:[["Chinese","魔性不改"],["Chapters","Opening volume of 2,334"],["Setting","Qing Mao Mountain, Gu Yue Village"]],
+ b:["Demonic Nature Never Changes (魔性不改) is the first volume of Reverend Insanity. It opens with the siege and rebirth of Fang Yuan and settles into the slow game of a five-hundred-year-old demon wearing a fifteen-year-old body on Qing Mao Mountain.","The volume follows the Aperture Opening Ceremony, the clan’s aptitude politics, and the first steps of Fang Yuan’s second climb — while the neighbouring Bai and Xiong villages raise geniuses of their own."],
+ see:["chapters","qing-mao-mountain","aperture-opening-ceremony"],cat:["Works","Volumes"]},
+"chapters":{t:"Chapters",k:"Index",ib:[["Typeset","ledger"],["Total in original","2,334"],["At the bench","ledger"]],
+ b:["The Omniarch Translation typesets the novel chapter by chapter. This index lists every chapter published so far, in order; it grows automatically from the Growth Ledger as the bench clears new chapters.","Each chapter entry carries its number and the translator’s title. Articles for typeset chapters collect what the encyclopedia knows of them; articles beyond the bench await the keeper’s hand."],
+ see:["volume-1","reverend-insanity"],cat:["Indexes","Chapters"],index:"chapters"},
+"the-omniarch":{t:"The Omniarch",k:"Translator",ib:[["Role","Curator & typesetter of the encyclopedia"],["Work","The Omniarch Translation"],["Companion","The Legends of Ren Zu reader"],["Channels","Discord · YouTube · TikTok"]],
+ b:["The Omniarch is the fan behind the Omniarch Translation — a chapter-by-chapter English typesetting of Reverend Insanity, eight chapters deep of 2,334 with Chapter 9 at the bench.","Just a reader who loved the story enough to build it a home: curating this encyclopedia, keeping the Legends of Ren Zu reader, hosting the Discord, and talking peak fiction on YouTube and TikTok."],
+ see:["reverend-insanity","the-legends-of-ren-zu","community"],cat:["People","Translators"]},
+"community":{t:"Community",k:"Portal",ib:[["Discord","open server"],["YouTube","@GodofPeakFiction"],["TikTok","@GodOfPeakFiction"]],
+ b:["Readers of the translation gather to discuss chapters, lore nuances and phrasing feedback. The Discord server is the clan hall; philosophical video breakdowns and novel analysis flow through the YouTube and TikTok channels.","Speak friend and read."],
+ see:["the-omniarch"],cat:["Portals","Community"]},
+"fang-yuan":{t:"Fang Yuan",k:"Character",img:"assets/fy_a.jpg",art:"nons3nse",ib:[["Also known as","Demon Fang Yuan · Old Demon Fang"],["Age","15 (reborn body); 500+ (first life)"],["Path","Demonic Path"],["Affiliation","Gu Yue Clan (by rebirth)"],["Appearance","Tall and lean, wild long black hair, cold abyssal eyes, black tattered robe"],["First chapter","Chapter 1"]],
+ b:["Fang Yuan is the protagonist of Reverend Insanity — a transmigrator cast from Earth into the Gu world, who spent three hundred years wandering and two hundred more in unbridled dominion before the united Righteous Path cornered him on a mountaintop.","Clutching the freshly refined Spring Autumn Cicada, he detonated himself rather than surrender it, and woke five hundred years in the past: a fifteen-year-old of the Gu Yue clan on Qing Mao Mountain, on the eve of the Aperture Opening Ceremony, every memory of his first life intact.","Cold, patient and utterly uncompromising, he is the true villain the Author’s Preface wished for — a warrior walking alone through darkness, neither kneeling nor explaining."],
+ see:["spring-autumn-cicada","fang-zheng","gu-yue-clan","demonic-path"],cat:["Characters","Demonic Path"]},
+"fang-zheng":{t:"Fang Zheng",k:"Character",img:"assets/fz_a.jpg",art:"noazari571",ib:[["Age","15"],["Kin","Twin brother of Fang Yuan"],["Disposition","Gentle, earnest"],["Robe","Grey-blue scholar robe"],["First chapter","Chapter 1"]],
+ b:["Fang Zheng is Fang Yuan’s twin brother — the gentle counterpart to the demon: an earnest youth with a topknot and a grey-blue scholar’s robe, hailed by the clan as a hope of the Fang lineage.","Where Fang Yuan hides five centuries of memory behind a boy’s face, Fang Zheng is exactly what he seems: a prodigy walking the bright road the clan prizes."],
+ see:["fang-yuan","gu-yue-clan"],cat:["Characters","Gu Yue Clan"]},
+"shen-cui":{t:"Shen Cui",k:"Character",ib:[["Age","16"],["Role","Maidservant"],["Appearance","Meek; low bun with a gold pearl hairpin; muted green"]],
+ b:["Shen Cui is a sixteen-year-old maidservant of the early chapters — meek in bearing, marked by a low bun and a single gold pearl hairpin, dressed in muted green.","She belongs to the household world of Gu Yue Village: the small, human texture against which Fang Yuan’s cold calculations unfold."],
+ see:["gu-yue-village","fang-yuan"],cat:["Characters","Gu Yue Clan"]},
+"gu-yue-clan-leader":{t:"Gu Yue Clan Leader",k:"Character",ib:[["Role","Leader of the Gu Yue Clan"],["Appearance","Middle-aged, temples frosted; plain white ceremonial robes"],["First chapter","Chapter 1"]],
+ b:["The Clan Leader heads the Gu Yue clan of Qing Mao Mountain. At the annual Aperture Opening Ceremony he kneels before the three-tiered black-lacquer altar of the ancestors, praying for youths of excellent aptitude to bring fresh blood and hope to the clan.","Behind him kneel the elders who weigh the clan’s affairs — and the rising genius of the neighbouring Bai village."],
+ see:["gu-yue-clan","aperture-opening-ceremony","gu-yue-elder"],cat:["Characters","Gu Yue Clan"]},
+"gu-yue-elder":{t:"Gu Yue elder",k:"Character",ib:[["Age","About 60"],["Appearance","Long grey beard, deep wrinkles, black scholar cap; pale ivory robe with crimson trim"]],
+ b:["A senior figure of the Gu Yue clan: some sixty years old, long grey beard, black scholar cap, pale ivory robe trimmed in crimson — the face of the clan’s memory and its councils."],
+ see:["gu-yue-clan","gu-yue-clan-leader"],cat:["Characters","Gu Yue Clan"]},
+"gu-yue-qing-shu":{t:"Gu Yue Qing Shu",k:"Character",img:"assets/gyqs_a.jpg",art:"noazari571",ib:[["Role","Uncle and guardian of the twins"],["Clan","Gu Yue"]],
+ b:["Gu Yue Qing Shu is the uncle under whose roof the twins Fang Yuan and Fang Zheng grow up on Qing Mao Mountain — one of the clan elders whose hopes and worries centre on the year’s Aperture Opening Ceremony."],
+ see:["fang-yuan","fang-zheng","gu-yue-clan"],cat:["Characters","Gu Yue Clan"]},
+"bai-ning-bing":{t:"Bai Ning Bing",k:"Character",img:"assets/bnb_a.jpg",art:"artist unknown",ib:[["Clan","Bai Clan (Bai Village)"],["Rank","Rank III within two years"],["Reputation","Unrivaled among the younger generation"]],
+ b:["Bai Ning Bing is the terror in the Gu Yue elders’ murmurs: a genius of the Bai clan whose natural aptitude is called terrifying, cultivated to Rank III in only two years and standing unrivaled among the younger generation.","Even the older generation feels the pressure of this rising star — and the Gu Yue clan knows this year’s ceremony must answer with a genius of its own."],
+ see:["bai-clan","gu-yue-clan","nine-ranks"],cat:["Characters","Bai Clan"]},
+"flower-wine-monk":{t:"Flower Wine Monk",k:"Character",ib:[["Kind","Gu Master of legend"],["Legacy","A hidden inheritance"]],
+ b:["Flower Wine Monk is a Gu Master whose name survives as a rumour of treasure: a hidden inheritance left behind for whoever proves worthy to find it — the kind of thread that pulls the young of every clan, Fang Yuan included, onto the road of adventure."],
+ see:["hidden-inheritances","gu-master"],cat:["Characters","Gu Masters"]},
+"ren-zu":{t:"Ren Zu",k:"Mythic figure",img:"assets/rz_a.jpg",art:"noazari571",ib:[["Scripture","The Legends of Ren Zu"],["Standing","Ancestor of humanity"],["Companion","Hope Gu"]],
+ b:["Before the five regions took shape, there was Ren Zu — the ancestor whose trials fill the companion scripture, The Legends of Ren Zu. His parables of human nature, Hope Gu and the ancestral path are the mythic bedrock beneath the Gu world’s philosophy.","Within the novel itself, Ren Zu’s legends surface in ceremony and teaching — most famously in the saying that Hope opens the aperture."],
+ see:["hope-gu","the-legends-of-ren-zu","ancestral-path"],cat:["Characters","Myth"]},
+"spring-autumn-cicada":{t:"Spring Autumn Cicada",k:"Gu",img:"assets/fy_c.jpg",art:"noazari571",ib:[["Domain","Time · rebirth"],["Refined by","Fang Yuan (first life)"],["Cost","Ten million lives, per his accusers"],["First chapter","Chapter 1"]],
+ b:["The Spring Autumn Cicada is the Gu of time and rebirth — the cursed wonder at the centre of the whole tale. To refine it, Fang Yuan’s accusers cry, he slaughtered ten million innocents; to keep it, he detonated himself on the mountaintop.","Its effect is the novel’s premise: the user’s life unwinds and begins again. Green mountains beneath the setting sun; autumn moon and spring breeze — the cicada turns the head of time.","The novel opens at the end of his first story: five hundred years a demon, cornered at last by the united Righteous Path. With the mountain burning and every exit sealed, he stakes the cicada on one last throw — and wakes fifteen again on Qing Mao Mountain, wearing his young body like a borrowed robe.","Like all Gu, the cicada is not owned but kept: fed, nurtured and carried in the aperture between uses, its upkeep a quiet tax on the miracle it holds. A Gu master’s power is always also a garden he must tend.","As an emblem it is the story’s promise and its warning at once — the Gu that looks most like hope carries the most monstrous price, and the man who bears it walks the Demonic Path without apology."],
+ see:["fang-yuan","timeline","demonic-path"],cat:["Gu","Legendary"]},
+"moonlight-gu":{t:"Moonlight Gu",k:"Gu",ib:[["Named among","The tale’s emblematic Gu"]],
+ b:["Moonlight Gu is numbered among the Gu that emblemise the story — one of the named essences in the opening litany of nurturing, refining and using."],
+ see:["gu","spring-autumn-cicada"],cat:["Gu"]},
+"liquor-worm":{t:"Liquor Worm",k:"Gu",ib:[["Named among","The tale’s emblematic Gu"]],
+ b:["Liquor Worm is one of the named Gu of the tale’s opening litany — a small essence with a drinker’s soul, counted among the wonders a Gu Master may nurture and use."],
+ see:["gu"],cat:["Gu"]},
+"one-qi-golden-light-worm":{t:"One Qi Golden Light Worm",k:"Gu",ib:[["Named among","The tale’s emblematic Gu"]],
+ b:["One Qi Golden Light Worm is numbered among the emblematic Gu of the story — a worm of golden light and a single breath of qi, named in the same litany as the Spring Autumn Cicada itself."],
+ see:["gu","primeval-essence"],cat:["Gu"]},
+"black-hair-gu":{t:"Black Hair Gu",k:"Gu",ib:[["Named among","The tale’s emblematic Gu"]],
+ b:["Black Hair Gu is one of the named Gu of the opening litany — an essence of dark hair counted among the story’s strange wonders."],
+ see:["gu"],cat:["Gu"]},
+"hope-gu":{t:"Hope Gu",k:"Gu",ib:[["Scripture","The Legends of Ren Zu"],["Saying","Hope opens the aperture"]],
+ b:["Hope Gu is the last and least of Ren Zu’s Gu in the companion scripture — and the one that matters most. In the myth, when all other gu fail, Hope remains; in the Gu world, the saying holds that Hope opens the aperture."],
+ see:["ren-zu","the-legends-of-ren-zu","aperture"],cat:["Gu","Myth"]},
+"gu":{t:"Gu",k:"Portal",ib:[["Creed","Gu are the true essence of heaven and earth"],["Arts","Refining · Nurturing · Using"]],
+ b:["Gu are the true essence of heaven and earth — living instruments a Gu Master refines, nurtures and uses through primeval essence. Every art of the world bends around them, from the humblest worm to the legendary Spring Autumn Cicada.","This portal indexes the Gu catalogued by the encyclopedia so far."],
+ see:["gu-master","three-arts","spring-autumn-cicada","hope-gu"],cat:["Portals","Gu"],index:"gu"},
+"gu-master":{t:"Gu Master",k:"Concept",ib:[["Definition","A human who has opened the aperture and uses Gu"],["Ranks","Nine"],["Energy","Primeval essence"]],
+ b:["Gu Masters have nine ranks. A Gu Master is a human whose aperture has been opened and who channels primeval essence to refine, nurture and use Gu — standing above ordinary humans in power and bound to the climb of the ranks."],
+ see:["nine-ranks","aperture","primeval-essence","three-arts"],cat:["Concepts","Cultivation"]},
+"nine-ranks":{t:"Nine ranks",k:"Concept",ib:[["Scale","Rank I – IX"],["Example","Bai Ning Bing, Rank III in two years"]],
+ b:["Cultivation is measured in nine ranks. Each rank is a gulf of power; a youth reaching Rank III within two years, as Bai Ning Bing did, is called a genius whose talent is terrifying."],
+ see:["gu-master","aptitude-grades","bai-ning-bing"],cat:["Concepts","Cultivation"]},
+"aperture":{t:"Aperture",k:"Concept",ib:[["Opened at","The Aperture Opening Ceremony"],["Contains","The primeval sea · primeval essence"],["Quality","Set by aptitude grade"]],
+ b:["The aperture is the inner world a Gu Master opens within themselves — the vessel of the primeval sea and the wellspring of primeval essence. Its quality is fixed at opening by the youth’s aptitude grade, and its depth decides the road ahead."],
+ see:["aperture-opening-ceremony","aptitude-grades","primeval-essence"],cat:["Concepts","Cultivation"]},
+"aptitude-grades":{t:"Aptitude grades",k:"Concept",ib:[["Scale","Grade A down to the poorest"],["Clan hope","A Grade A youth, unseen for three years"]],
+ b:["Aptitude grades measure the talent a youth brings to the Aperture Opening Ceremony. The Gu Yue clan had not seen a Grade A genius in three years when the story opens — and both Bai Village and Xiong Village had lately produced remarkable talents."],
+ see:["aperture","aperture-opening-ceremony"],cat:["Concepts","Cultivation"]},
+"aperture-opening-ceremony":{t:"Aperture Opening Ceremony",k:"Event / rite",ib:[["Held","Annually, at the clan’s ancestral hall"],["Rite","Prayer before the ancestors’ altar, then the opening"],["First chapter","Chapter 1"]],
+ b:["The Aperture Opening Ceremony is the annual rite in which a clan’s youths open their apertures and their aptitudes are revealed. On Qing Mao Mountain it fills Gu Yue Village with light: the Clan Leader and elders kneel in white sacrificial robes before the black-lacquer altar, and the whole clan holds its breath for a genius."],
+ see:["aperture","gu-yue-village","gu-yue-clan-leader"],cat:["Events","Rites"]},
+"primeval-essence":{t:"Primeval essence",k:"Concept",ib:[["Source","The primeval sea within the aperture"],["Use","Fuel for refining, nurturing and using Gu"]],
+ b:["Primeval essence is the energy a Gu Master draws from the primeval sea within the aperture — the fuel spent whenever Gu are refined, nurtured or used."],
+ see:["aperture","three-arts"],cat:["Concepts","Cultivation"]},
+"three-arts":{t:"Refining, nurturing and using Gu",k:"Concept",ib:[["Motto","Refine · Nurture · Use"]],
+ b:["The whole of a Gu Master’s craft is three arts: refining Gu into being, nurturing them to strength, and using them in the world. The encyclopedia’s social motto — Refine. Nurture. Use. — is borrowed from this creed."],
+ see:["gu","primeval-essence","gu-master"],cat:["Concepts","Cultivation"]},
+"righteous-path":{t:"Righteous Path",k:"Faction / creed",ib:[["Opposite","The Demonic Path"],["Deed at the opening","The united siege of Fang Yuan"]],
+ b:["The Righteous Path is the company of revered sects and young heroes who stand against the demonic. At the story’s opening they unite for one purpose: to trample Fang Yuan’s demonic lair into dust and behead the demon — a dragnet from which no path to life remains."],
+ see:["demonic-path","fang-yuan","timeline"],cat:["Factions","Paths"]},
+"demonic-path":{t:"Demonic Path",k:"Faction / creed",ib:[["Opposite","The Righteous Path"],["Creed","No good karma; the whim of one’s own heart to the end"]],
+ b:["The Demonic Path accumulates no good karma — murder and arson, spurned by heaven and reviled by earth, making enemies of the whole world and still running wild. Fang Yuan walks it without regret: if a god blocks his path, he kills the god; if a Buddha blocks his path, he kills the Buddha."],
+ see:["righteous-path","fang-yuan"],cat:["Factions","Paths"]},
+"gu-yue-clan":{t:"Gu Yue Clan",k:"Clan",ib:[["Seat","Gu Yue Village, Qing Mao Mountain"],["Neighbours","Bai Clan · Xiong Clan"],["Youths","Fang Yuan · Fang Zheng"]],
+ b:["The Gu Yue Clan is the mountain clan into whose fifteen-year-old body Fang Yuan is reborn. Its village of stilt houses glows on Qing Mao Mountain; its ancestral hall hosts the Aperture Opening Ceremony; its elders weigh the genius of the Bai and Xiong villages with worry."],
+ see:["gu-yue-village","gu-yue-clan-leader","bai-clan","xiong-clan"],cat:["Clans"]},
+"bai-clan":{t:"Bai Clan",k:"Clan",ib:[["Seat","Bai Village"],["Prodigy","Bai Ning Bing"]],
+ b:["The Bai Clan of Bai Village is the Gu Yue clan’s nearest rival — the clan that produced Bai Ning Bing, a Rank III Gu Master in only two years."],
+ see:["bai-ning-bing","bai-village","gu-yue-clan"],cat:["Clans"]},
+"xiong-clan":{t:"Xiong Clan",k:"Clan",ib:[["Seat","Xiong Village"]],
+ b:["The Xiong Clan of Xiong Village rounds out the triad of mountain clans — like the Bai clan, it has lately produced remarkable talents, sharpening the Gu Yue elders’ worries."],
+ see:["gu-yue-clan","bai-clan"],cat:["Clans"]},
+"hidden-inheritances":{t:"Hidden inheritance",k:"Concept",ib:[["Example","Flower Wine Monk’s legacy"]],
+ b:["A hidden inheritance is a treasure-thread left by a departed Gu Master for a worthy successor — power, Gu and knowledge sealed behind trials. Flower Wine Monk’s inheritance is the first such rumour to cross the young protagonists’ road."],
+ see:["flower-wine-monk"],cat:["Concepts"]},
+"qing-mao-mountain":{t:"Qing Mao Mountain",k:"Location",ib:[["Feature","A vast, tranquil range"],["Villages","Gu Yue · Bai · Xiong"],["First chapter","Chapter 1"]],
+ b:["Qing Mao Mountain is the range where the story’s second act begins. Spring rain nourishes it in silence; from mountainside to foothill the stilt houses of Gu Yue Village glow like a ribbon of radiance, lending the vast and tranquil range a distinct sense of human habitation."],
+ see:["gu-yue-village","five-regions"],cat:["Locations"]},
+"gu-yue-village":{t:"Gu Yue Village",k:"Location",ib:[["Seat","On Qing Mao Mountain"],["Heart","The ancestral hall and its altar"],["Clan","Gu Yue"]],
+ b:["Gu Yue Village is the clan village nestled upon Qing Mao Mountain — several thousand households of stilt houses, and at the village’s heart a grand pavilion where the sacrificial ceremonies are held."],
+ see:["gu-yue-clan","aperture-opening-ceremony","qing-mao-mountain"],cat:["Locations"]},
+"bai-village":{t:"Bai Village",k:"Location",ib:[["Clan","Bai"],["Prodigy","Bai Ning Bing"]],
+ b:["Bai Village is the seat of the Bai clan, lately proud of Bai Ning Bing’s terrifying talent."],
+ see:["bai-clan","bai-ning-bing"],cat:["Locations"]},
+"xiong-village":{t:"Xiong Village",k:"Location",ib:[["Clan","Xiong"]],
+ b:["Xiong Village is the seat of the Xiong clan, third of the mountain villages and a neighbour whose rising talents keep the Gu Yue elders awake."],
+ see:["xiong-clan"],cat:["Locations"]},
+"five-regions":{t:"Five Regions",k:"Location / cosmology",img:"assets/map_a.jpg",art:"noazari571",ib:[["The regions","Central Continent · Southern Border · Northern Plains · Eastern Sea · Western Desert"]],
+ b:["The Gu world is divided into five regions. The mountain clans of the opening belong to the novel’s southern reaches; the wider map — Central Continent, Northern Plains, Eastern Sea, Western Desert — waits beyond the bench, in chapters not yet typeset."],
+ see:["nine-heavens","qing-mao-mountain"],cat:["Locations","Cosmology"]},
+"nine-heavens":{t:"Immemorial Nine Heavens",k:"Cosmology",ib:[["Scripture","The Legends of Ren Zu"]],
+ b:["The Immemorial Nine Heavens are the mythic sky of the companion scripture — the frame in which Ren Zu walked the ancestral path before the five regions took shape."],
+ see:["five-regions","ren-zu"],cat:["Locations","Cosmology","Myth"]},
+"ancestral-path":{t:"The Ancestral Path",k:"Myth",ib:[["Walker","Ren Zu"],["Companion","Hope Gu"]],
+ b:["The ancestral path is the road Ren Zu walks across the 44 parables — the mythic itinerary of human nature that the companion scripture invites its readers to walk with him."],
+ see:["ren-zu","the-legends-of-ren-zu","hope-gu"],cat:["Myth"]},
+"the-legends-of-ren-zu":{t:"The Legends of Ren Zu",k:"Companion scripture",img:"assets/rz_a.jpg",art:"noazari571",ib:[["Parables","44"],["Form","Standalone reader"],["Companion to","Reverend Insanity"]],
+ b:["The Legends of Ren Zu (人祖传) is the companion scripture of the Gu world: 44 mythic parables of human nature, Hope Gu and the Immemorial Nine Heavens, kept in a standalone reader with interactive navigation and audio narration — a Daoist philosophical codex inside a fantasy novel."],
+ see:["ren-zu","hope-gu","ancestral-path","the-omniarch"],cat:["Works","Myth"]},
+"timeline":{t:"Timeline",k:"Portal",ib:[["First life","≈500 years"],["Rebirth","15 years old"],["Original hiatus","2019"]],
+ b:["Two clocks run through the encyclopedia: the story’s — five hundred years of a demon’s first life, then the great reversal — and the bench’s — serialisation in 2012, hiatus in 2019 at chapter 2,334, and the re-translation typesetting onward.","Story landmarks so far: the mountaintop siege; the refinement and detonation of the Spring Autumn Cicada; the reversal of time; the eve of the Aperture Opening Ceremony on Qing Mao Mountain."],
+ see:["reverend-insanity","chapters","spring-autumn-cicada"],cat:["Portals","Timeline"]},
+"glossary":{t:"Glossary & philosophy",k:"Portal",ib:[["Creed","Humans are the spirit of all living things; Gu are the true essence of heaven and earth"]],
+ b:["A gathering of the encyclopedia’s terms and ideas: Gu, Gu Masters, apertures, primeval essence, aptitude grades, the nine ranks, the two paths, hidden inheritances — and the philosophy beneath them, from the Author’s Preface to the parables of Ren Zu."],
+ see:["gu","gu-master","aperture","nine-ranks","demonic-path","righteous-path","three-arts"],cat:["Portals","Glossary"]},
+"quotes":{t:"Featured quotes",k:"Portal",ib:[],
+ b:["Quotation holds the encyclopedia’s heart: verses and sayings from the translation, chosen by the keeper. The current featured quote is the opening verse of Reverend Insanity."],
+ see:["reverend-insanity"],cat:["Portals"]},
+"contents":{t:"Contents",k:"Index",ib:[],
+ b:["Everything the encyclopedia holds, in one place: works, characters, Gu, clans, locations, cultivation, myth, timeline and community."],
+ see:["chapters","characters","gu","locations","cultivation"],cat:["Indexes"],index:"contents"},
+"characters":{t:"Characters",k:"Index",ib:[],
+ b:["The dramatis personae of the translation so far — the demon reborn, his twin, the clan that houses him, the rivals rising beyond the mountain, and the ancestor of myth."],
+ see:["fang-yuan","fang-zheng","shen-cui","bai-ning-bing","ren-zu"],cat:["Indexes","Characters"],index:"characters"},
+"locations":{t:"Locations",k:"Index",ib:[],
+ b:["The map as the translation has drawn it: the mountain, the three villages, the five regions beyond, and the nine heavens of myth."],
+ see:["qing-mao-mountain","gu-yue-village","five-regions","nine-heavens"],cat:["Indexes","Locations"],index:"locations"},
+"cultivation":{t:"Cultivation",k:"Index",ib:[],
+ b:["The ladder and its rungs: apertures and aptitude, primeval essence, the three arts, the nine ranks of Gu Masters."],
+ see:["gu-master","aperture","nine-ranks","three-arts","primeval-essence","aptitude-grades"],cat:["Indexes","Cultivation"],index:"cultivation"},
+"clans":{t:"Clans & paths",k:"Index",ib:[],
+ b:["The houses and the creeds: Gu Yue, Bai and Xiong; the Righteous Path and the Demonic Path; the hidden inheritances that pull them together."],
+ see:["gu-yue-clan","bai-clan","xiong-clan","righteous-path","demonic-path"],cat:["Indexes","Clans"],index:"clans"}
+};
+</script>
+
+<script>
+(function(){
+  var S = window.OMNIARCH_STATE, A = window.OMNIARCH_ARTICLES;
+  var fmt = function(n){ return n.toLocaleString('en-US'); };
+  var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+
+  /* ---- generate chapter articles + chapter index from the ledger ---- */
+  S.chapters.forEach(function(c,i){
+    var prev = S.chapters[i-1], next = S.chapters[i+1];
+    var rows = [["Volume","Volume 1: Demonic Nature Never Changes"],["Number","Chapter "+c.n],["Position",(prev?"After Chapter "+prev.n:"Opens the volume")+(next?" · before Chapter "+next.n:"")]];
+    var body;
+    if(c.n===1){ body=["The volume opens on a mountaintop at the end of a life: the united Righteous Path demands the Spring Autumn Cicada, and Fang Yuan — blood-soaked, expressionless, his gaze like an ancient well — answers them with a laugh and a detonation. Then spring rain falls on Qing Mao Mountain, and the Gu Yue clan gathers for the Aperture Opening Ceremony."]; }
+    else if(c.n===2){ body=["Time reverses. Five hundred years of enlightenment unwind into a fifteen-year-old body, and the demon begins again — a second chance carried by the Spring Autumn Cicada, and a road the first life never walked."]; }
+    else { body=["This chapter’s article awaits the keeper’s hand. The ledger records its place in Volume 1 and the translator’s title."]; }
+    A["chapter-"+c.n] = { t:"Chapter "+c.n+": "+c.title, k:"Chapter", ib:rows, b:body,
+      see:[ prev?"chapter-"+prev.n:"volume-1", next?"chapter-"+next.n:"chapters", "chapters" ],
+      cat:["Chapters","Volume 1"] };
+  });
+  A.chapters.indexList = S.chapters.map(function(c){ return "chapter-"+c.n; });
+
+  /* ---- growth counters on the main page ---- */
+  var typeset = S.chapters.length;
+  var cap = document.getElementById('today-caption');
+  if(cap) cap.innerHTML = 'Today’s date at the translation bench: <b><a href="#/wiki/chapters">Chapter '+S.atBench+'</a> typesetting</b> · '+typeset+' of '+fmt(S.total)+' chapters typeset';
+  var now = document.getElementById('now-bullet');
+  if(now) now.innerHTML = '<b><a href="#/wiki/timeline">Now</a></b> - <a href="#/wiki/the-omniarch">The Omniarch</a> re-translation typesets the opening volume; <a href="#/wiki/chapter-'+S.chapters[typeset-1].n+'">Chapter '+S.chapters[typeset-1].n+'</a> is live and Chapter '+S.atBench+' sits at the bench.';
+  var stats = document.getElementById('browse-stats');
+  if(stats) stats.textContent = typeset+' chapters typeset of '+fmt(S.total)+' · '+S.parables+' parables of Ren Zu in the companion scripture · curated by The Omniarch';
+  var list = document.getElementById('dir-chapters-list');
+  if(list){
+    list.innerHTML = S.chapters.map(function(c){ return '<a href="#/wiki/chapter-'+c.n+'">'+c.n+' · '+esc(c.title)+'</a>'; }).join(' · ')
+      + ' (<i><b><a href="#/wiki/chapters">'+fmt(S.total-typeset)+' chapters to go — Chapter '+S.atBench+' at the bench</a></b></i>)';
+  }
+
+  /* ---- wiki router ---- */
+  var mainView = document.getElementById('main-view'),
+      wikiView = document.getElementById('wiki-view'),
+      articleEl = document.getElementById('wiki-article'),
+      crumbEl = document.getElementById('crumb-here'),
+      retrievedEl = document.getElementById('wiki-retrieved');
+
+  function link(slug,label){ return '<a href="#/wiki/'+slug+'">'+esc(label||A[slug].t)+'</a>'; }
+
+  function indexBlock(kind){
+    var keys = Object.keys(A).filter(function(k){ return (A[k].cat||[]).some(function(c){return c.toLowerCase()===kind;}) || k.indexOf('chapter-')===0&&kind==='chapters'; });
+    if(kind==='chapters') keys = (A.chapters.indexList||[]).slice();
+    if(!keys.length) return '';
+    return '<h2>Index</h2><ul class="index-list">'+keys.map(function(k){return '<li>'+link(k)+'</li>';}).join('')+'</ul>';
+  }
+
+  var sideEl = document.getElementById('wiki-side'),
+      titleEl = document.getElementById('wiki-title'),
+      subEl = document.getElementById('wiki-sub'),
+      talkTab = document.getElementById('talk-tab'),
+      talkLabel = document.getElementById('talk-tab-label'),
+      routeMode = 'article', curSlug = null;
+
+  function indexKeys(kind){
+    var keys = Object.keys(A).filter(function(k){ return (A[k].cat||[]).some(function(c){return c.toLowerCase()===kind;}) || (k.indexOf('chapter-')===0 && kind==='chapters'); });
+    if(kind==='chapters') keys = (A.chapters.indexList||[]).slice();
+    return keys;
+  }
+
+  var PORTALS = [['chapters','Chapters'],['characters','Characters'],['gu','Gu'],['clans','Clans'],['locations','Locations'],['cultivation','Cultivation'],['glossary','Glossary'],['the-legends-of-ren-zu','Legends of Ren Zu'],['timeline','Timeline']];
+
+  function portalHTML(slug,a){
+    var kind=a.index, keys=indexKeys(kind);
+    var tabs='<div class="portal-tabs">'+PORTALS.map(function(t){return '<a href="#/wiki/'+t[0]+'" class="'+(t[0]===slug?'on':'')+'">'+t[1]+'</a>';}).join('')+'</div>';
+    var gridKeys = keys.filter(function(k){return A[k].img;});
+    var grid = gridKeys.length ? '<div class="tg-section-divider"><span>Featured</span></div><div class="portal-grid">'+gridKeys.map(function(k){return '<a href="#/wiki/'+k+'"><div class="sq" style="background-image:url(\''+A[k].img+'\')"></div><div class="lb">'+esc(A[k].t)+'</div></a>';}).join('')+'</div>' : '';
+    var groups={};
+    keys.forEach(function(k){ var g=A[k].k||'Other'; (groups[g]=groups[g]||[]).push(k); });
+    var gk=Object.keys(groups);
+    var boxes='<div class="tg-section-divider"><span>Categories</span></div><div class="portal-boxes">'+gk.slice(0,4).map(function(g){
+      return '<div class="portal-box"><h4>By '+esc(g)+'</h4><ul>'+groups[g].map(function(k){return '<li>'+link(k)+'</li>';}).join('')+'</ul></div>';
+    }).join('')+'</div>';
+    return tabs+grid+boxes;
+  }
+
+  function sideHTML(a){
+    var toc=[['sec-overview','Overview']];
+    if(a.ib&&a.ib.length) toc.push(['sec-details','Details']);
+    if(a.index) toc.push(['sec-portal','Explore']);
+    if(a.see&&a.see.length) toc.push(['sec-see','See also']);
+    return '<div class="side-box"><h4>Last modified</h4><div class="toc"><div class="row"><span><svg style="width:14px;height:14px;vertical-align:-2px;opacity:.7"><use href="#glyph-history"/></svg> Today · The Omniarch</span></div></div></div>'
+      +'<div class="side-box"><h4>Contents</h4><div class="toc">'+toc.map(function(t){return '<a href="#" data-sec="'+t[0]+'">'+t[1]+'<span class="caret">⌄</span></a>';}).join('')+'</div></div>';
+  }
+
+  function talkHTML(a,slug){
+    return '<div class="talk-banner"><h3>Want to talk about '+esc(a.t)+' in real-time?</h3><p>Join the Discord server for discussions, readings and theories between typesettings.</p><a class="tg-button tg-button--progressive" href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noreferrer noopener">Join our Discord</a></div>'
+      + '<h2 class="sec" id="sec-overview"><span class="caret">⌃</span>Start a discussion about '+esc(a.t)+'</h2><div class="sec-body"><p>Discussion pages are where readers weigh how to make the encyclopedia the best it can be — corrections, glossary notes, theories. The bench gathers on Discord; pull up a chair and start the thread for '+link(slug)+'.</p><a class="tg-button" href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noreferrer noopener">Start a discussion</a></div>';
+  }
+
+  function render(slug){
+    var a = A[slug];
+    if(!a){ // A-to-Z or unknown
+      if(slug && slug.indexOf('atoz/')===0){
+        var L = slug.slice(5).toUpperCase();
+        var keys = Object.keys(A).filter(function(k){ return A[k].t.toUpperCase().indexOf(L)===0; }).sort(function(x,y){return A[x].t.localeCompare(A[y].t);});
+        titleEl.textContent='Index · '+L; subEl.textContent='From the Reverend Insanity Encyclopedia'; talkLabel.textContent='Discussion';
+        articleEl.innerHTML = (keys.length ? '<ul class="index-list">'+keys.map(function(k){return '<li>'+link(k)+'</li>';}).join('')+'</ul>' : '<div class="stub-note">No articles under this letter yet — the encyclopedia grows with the bench.</div>');
+        sideEl.innerHTML='';
+        crumbEl.textContent = 'Index · '+L;
+        retrievedEl.textContent = 'Retrieved from “Reverend Insanity Encyclopedia — Index: '+L+'”. Growth ledger: '+S.chapters.length+' of '+fmt(S.total)+' chapters typeset.';
+        return true;
+      }
+      return false;
+    }
+    curSlug = slug;
+    var talk = routeMode==='talk';
+    titleEl.textContent = (talk?'Talk: ':'')+a.t;
+    subEl.textContent = talk ? 'Discussion page of '+a.t  : (a.k ? a.k+' · From the Reverend Insanity Encyclopedia' : 'From the Reverend Insanity Encyclopedia');
+    talkLabel.textContent = talk ? 'Page' : 'Discussion';
+    crumbEl.textContent = (talk?'Talk · ':'')+(a.k ? a.k+' · '+a.t : a.t);
+    var html='';
+    if(talk){ html = talkHTML(a,slug); }
+    else{
+      html += '<div class="wiki-fig">'+(a.img?'<img src="'+a.img+'" alt="'+esc(a.t)+'">':'<div class="ph"><svg><use href="#glyph-cicada"/></svg></div>')
+        +'<div class="cap">'+(a.img?'Art: '+esc(a.art||'community artist')+' · community archive — '+esc(a.t)+'.':'Image reserved — the container awaits its artwork.')+'</div></div>';
+      html += '<h2 class="sec" id="sec-overview"><span class="caret">⌃</span>Overview</h2><div class="sec-body">'+a.b.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'</div>';
+      if(a.ib&&a.ib.length) html += '<h2 class="sec" id="sec-details"><span class="caret">⌃</span>Details</h2><div class="sec-body"><table class="wiki-table">'+a.ib.map(function(r){return '<tr><th>'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>';}).join('')+'</table></div>';
+      if(a.index) html += '<h2 class="sec" id="sec-portal"><span class="caret">⌃</span>Explore</h2><div class="sec-body">'+portalHTML(slug,a)+'</div>';
+      if(a.see&&a.see.length) html += '<h2 class="sec" id="sec-see"><span class="caret">⌃</span>See also</h2><div class="sec-body"><ul class="index-list">'+a.see.filter(function(x){return A[x];}).map(function(x){return '<li>'+link(x)+'</li>';}).join('')+'</ul></div>';
+      if(a.cat&&a.cat.length) html += '<div class="wiki-cats">Categories: '+a.cat.map(function(c){return '<span class="chip">'+esc(c)+'</span>';}).join(' ')+'</div>';
+    }
+    articleEl.innerHTML = html;
+    sideEl.innerHTML = talk ? '' : sideHTML(a);
+    retrievedEl.textContent = 'Retrieved from “Reverend Insanity Encyclopedia — '+a.t+'”. Growth ledger: '+S.chapters.length+' of '+fmt(S.total)+' chapters typeset · Chapter '+S.atBench+' at the bench.';
+    return true;
+  }
+
+  if(talkTab) talkTab.addEventListener('click', function(e){
+    e.preventDefault();
+    if(!curSlug) return;
+    routeMode = routeMode==='talk' ? 'article' : 'talk';
+    render(curSlug);
+  });
+
+  wikiView.addEventListener('click', function(e){
+    var caret=e.target.closest('h2.sec .caret');
+    if(caret){ caret.parentElement.classList.toggle('collapsed'); e.preventDefault(); return; }
+    var t=e.target.closest('a[data-sec]');
+    if(t){ e.preventDefault(); var el=document.getElementById(t.getAttribute('data-sec')); if(el) el.scrollIntoView({behavior:'smooth'}); }
+  });
+
+  function route(){
+    var h = location.hash || '#main';
+    if(h.indexOf('#/wiki/')===0){
+      var slug = h.slice(7);
+      if(slug!==curSlug) routeMode='article';
+      if(render(slug)){
+        mainView.hidden = true; wikiView.hidden = false;
+        window.scrollTo(0,0);
+        return;
+      }
+    }
+    mainView.hidden = false; wikiView.hidden = true;
+    if(h==='#main') window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  /* ---- random article ---- */
+  var rnd = document.getElementById('random-article');
+  if(rnd) rnd.addEventListener('click', function(e){
+    e.preventDefault();
+    var keys = Object.keys(A).filter(function(k){return k.indexOf('atoz')!==0;});
+    location.hash = '#/wiki/'+keys[Math.floor(Math.random()*keys.length)];
+  });
+
+  /* ---- search ---- */
+  var box=document.getElementById('search-box'), input=document.getElementById('search-input'), sug=document.getElementById('search-suggest');
+  function toggleSearch(){ box.style.display = box.style.display==='block'?'none':'block'; if(box.style.display==='block') input.focus(); }
+  ['search-trigger','rail-search'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click',toggleSearch); });
+  document.addEventListener('keydown',function(e){ if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();toggleSearch();} if(e.key==='Escape'){sug.style.display='none';} });
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){ sug.style.display='none'; return; }
+    var hits = Object.keys(A).filter(function(k){ return A[k].t.toLowerCase().indexOf(q)>-1 || (A[k].k||'').toLowerCase().indexOf(q)>-1; }).slice(0,8);
+    if(!hits.length){ sug.style.display='none'; return; }
+    sug.innerHTML = hits.map(function(k){ return '<button data-slug="'+k+'"><span>'+esc(A[k].t)+'</span><span class="kind">'+esc(A[k].k||'')+'</span></button>'; }).join('');
+    sug.style.display='block';
+  });
+  sug.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-slug]'); if(!b) return;
+    location.hash = '#/wiki/'+b.getAttribute('data-slug');
+    sug.style.display='none'; box.style.display='none'; input.value='';
+  });
+
+  /* ---- seal: hover swaps to home (CSS); click scrolls top ---- */
+  var seal=document.getElementById('seal-btn');
+  if(seal) seal.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  /* ---- drawer (right side) ---- */
+  var drawer=document.getElementById('drawer');
+  function setDrawer(open){ drawer.classList.toggle('open', open); }
+  var menuBtn=document.getElementById('rail-menu');
+  if(menuBtn) menuBtn.addEventListener('click', function(){ setDrawer(!drawer.classList.contains('open')); });
+  var dclose=document.getElementById('drawer-close');
+  if(dclose) dclose.addEventListener('click', function(){ setDrawer(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') setDrawer(false); });
+  drawer.addEventListener('click', function(e){ if(e.target.closest('a')) setDrawer(false); });
+  var drand=document.getElementById('drawer-random');
+  if(drand) drand.addEventListener('click', function(e){
+    e.preventDefault();
+    var keys=Object.keys(A);
+    location.hash='#/wiki/'+keys[Math.floor(Math.random()*keys.length)];
+  });
+  var sp=document.getElementById('stat-pages'); if(sp) sp.textContent=Object.keys(A).length;
+  var si=document.getElementById('stat-imgs'); if(si) si.textContent=10;
+  var sc=document.getElementById('stat-ch'); if(sc) sc.textContent=S.chapters.length;
+  var spar=document.getElementById('stat-par'); if(spar) spar.textContent=S.parables;
+
+  /* ---- live date ---- */
+  (function(){
+    var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var short=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var nowD=new Date();
+    var h=document.getElementById('today-heading');
+    if(h)h.textContent=nowD.getDate()+' '+months[nowD.getMonth()];
+    for(var o=-2;o<=2;o++){
+      var el=document.getElementById(o===0?'d0':'d'+o);
+      if(!el)continue;
+      var t=new Date(nowD);t.setDate(nowD.getDate()+o);
+      el.textContent=t.getDate()+' '+short[t.getMonth()];
+    }
+  })();
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.tg-card').forEach(function(c){
+    var a=c.querySelector('a[href^="#/"]'); if(!a) return;
+    c.setAttribute('data-href',a.getAttribute('href'));
+    c.addEventListener('click',function(e){ if(e.target.closest('a,button,input')) return; location.hash=a.getAttribute('href'); });
+  });
+  var sc=document.getElementById('slide-card');
+  if(sc){ var slides=sc.querySelectorAll('.slide'), dots=sc.querySelectorAll('#slide-dots button'), i=0, t=null;
+    function go(n){ i=(n+slides.length)%slides.length; slides.forEach(function(s,k){s.classList.toggle('on',k===i)}); dots.forEach(function(d,k){d.classList.toggle('on',k===i)}); }
+    function auto(){ clearInterval(t); t=setInterval(function(){go(i+1)},7000); }
+    dots.forEach(function(d,k){ d.addEventListener('click',function(e){e.stopPropagation();go(k);auto();}); });
+    sc.addEventListener('mouseenter',function(){clearInterval(t)});
+    sc.addEventListener('mouseleave',auto);
+    auto();
+  }
+  var pop=document.getElementById('settings-pop'), gear=document.getElementById('rail-gear');
+  var prefs={text:'standard',color:'auto',width:'standard'};
+  try{ Object.assign(prefs, JSON.parse(localStorage.getItem('omniarch-prefs')||'{}')); }catch(e){}
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  function apply(){ var el=document.documentElement;
+    el.setAttribute('data-text',prefs.text); el.setAttribute('data-width',prefs.width);
+    var dark = prefs.color==='dark' || (prefs.color==='auto' && mq.matches);
+    el.setAttribute('data-theme', dark?'dark':'light');
+    document.querySelectorAll('.settings-pop .seg').forEach(function(seg){ var p=seg.getAttribute('data-pref');
+      seg.querySelectorAll('button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-v')===prefs[p]); }); });
+  }
+  if(mq.addEventListener) mq.addEventListener('change',apply);
+  if(gear&&pop){ gear.addEventListener('click',function(e){ e.stopPropagation(); pop.classList.toggle('open'); });
+    document.addEventListener('click',function(e){ if(!pop.contains(e.target)&&!gear.contains(e.target)) pop.classList.remove('open'); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pop.classList.remove('open'); });
+    pop.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click',function(){ prefs[b.parentElement.getAttribute('data-pref')]=b.getAttribute('data-v'); localStorage.setItem('omniarch-prefs',JSON.stringify(prefs)); apply(); }); });
+  }
+  var proxTargets=[].slice.call(document.querySelectorAll('.tg-card,.template-navpill'));
+  var pTick=false;
+  document.addEventListener('mousemove',function(e){
+    if(pTick) return; pTick=true;
+    requestAnimationFrame(function(){ pTick=false;
+      for(var i=0;i<proxTargets.length;i++){ var el=proxTargets[i], r=el.getBoundingClientRect();
+        var dx=Math.max(r.left-e.clientX,0,e.clientX-r.right), dy=Math.max(r.top-e.clientY,0,e.clientY-r.bottom);
+        var d=Math.sqrt(dx*dx+dy*dy); var f=Math.max(0,1-d/90);
+        el.style.setProperty('--prox',f.toFixed(3));
+      }
+    });
+  });
+  apply();
+})();
+</script>
+</body>
+</html>
