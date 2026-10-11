@@ -101,7 +101,8 @@
 
   /* ================= nav pills ================= */
   .tg-mainpage-navigation{margin:0.6rem 0}
-  .template-navpills{display:grid;gap:0.5rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));grid-auto-rows:3.25rem;font-size:0.875rem}
+  .template-navpills{display:grid;gap:0.5rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));grid-auto-rows:3.25rem;font-size:0.875rem;direction:rtl}
+  .template-navpill{direction:ltr}
   .template-navpill{transition:transform .16s ease-out;transform:scale(calc(1 + var(--prox,0)*0.02));position:relative;border:var(--tg-border-base);border-radius:var(--tg-border-radius-medium);font-weight:var(--tg-font-weight-medium);line-height:var(--tg-line-height-xx-small);overflow:hidden;background:var(--pill,#3b3a36)}
   .template-navpill .pill-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;background:var(--img) center/cover no-repeat}
   .template-navpill .pill-bg::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 130% at 88% 20%, rgba(255,255,255,0.14), rgba(255,255,255,0) 60%),linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 28%, rgba(0,0,0,0.14) 60%, rgba(0,0,0,0) 78%)}
