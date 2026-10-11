@@ -69,8 +69,8 @@
 
   /* ================= hero ================= */
   .tg-mainpage-header{position:relative;width:100vw;margin-left:calc(50% - 50vw);height:clamp(430px,34vw,560px);background:url('../assets/header-bg.jpg') center 30%/cover no-repeat;clear:both;overflow:hidden}
-  .tg-mainpage-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(0deg,var(--tg-color-surface-0) 10%,rgba(0,0,0,0));pointer-events:none}
-  html[data-theme="dark"] .tg-mainpage-header-tagline{text-shadow:0 1px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.85)display:inline-block;padding:0.32rem 0.95rem;border-radius:999px;background:rgba(249,244,238,0.8);backdrop-filter:blur(3px);box-shadow:0 1px 8px rgba(60,40,30,0.18)background:rgba(10,10,14,0.72)}
+  .tg-mainpage-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:72px;background:linear-gradient(0deg,var(--tg-color-surface-0) 2%,color-mix(in srgb,var(--tg-color-surface-0) 60%,transparent) 52%,rgba(0,0,0,0));pointer-events:none}
+  html[data-theme="dark"] .tg-mainpage-header-tagline{background:rgba(10,10,14,0.72);text-shadow:0 1px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.85);box-shadow:0 1px 8px rgba(0,0,0,.45)}
   html[data-theme="dark"] .tg-mainpage-header::before{content:"";position:absolute;inset:0;background:rgba(8,8,10,0.45);pointer-events:none}
   @media(max-width:720px){.tg-mainpage-header{min-height:400px;background-size:cover;background-position:top center}}
   .tg-mainpage-header{padding-top:clamp(2.6rem,7vw,5.5rem);padding-bottom:2.4rem}
@@ -80,9 +80,10 @@
   @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
   .tg-mainpage-content{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
   .wordmark{display:block}
-  .wordmark-img{height:clamp(150px,22vw,210px);width:auto;filter:drop-shadow(0 2px 6px rgba(120,20,20,0.18))}
+  .wordmark-img{height:clamp(150px,22vw,210px);width:auto;filter:drop-shadow(0 2px 14px rgba(249,244,238,0.85)) drop-shadow(0 1px 3px rgba(40,10,5,0.35))}
+  html[data-theme="dark"] .wordmark-img{filter:drop-shadow(0 2px 14px rgba(0,0,0,0.8)) drop-shadow(0 1px 3px rgba(0,0,0,0.6))}
   .wordmark .period{color:var(--tg-color-progressive)}
-  .tg-mainpage-header-tagline{margin-top:0.15rem;color:var(--tg-color-subtle);font-size:var(--tg-font-size-x-small);line-height:var(--tg-line-height-xx-small)text-shadow:0 1px 10px rgba(249,244,238,.9),0 0 3px rgba(249,244,238,.95)}
+  .tg-mainpage-header-tagline{margin-top:0.15rem;color:var(--tg-color-emphasized);font-size:var(--tg-font-size-x-small);line-height:var(--tg-line-height-xx-small);display:inline-block;padding:0.34rem 0.95rem;border-radius:999px;background:rgba(249,244,238,0.82);backdrop-filter:blur(3px);box-shadow:0 1px 8px rgba(60,40,30,0.22)}
   .tg-mainpage-header-search{align-items:center;background-color:var(--tg-color-progressive);border:0;border-radius:var(--tg-border-radius-pill);color:var(--tg-color-inverted-progressive);cursor:pointer;display:flex;font-family:var(--tg-font-family-body);font-size:0.875rem;font-weight:var(--tg-font-weight-medium);gap:0.5rem;line-height:1;margin-top:1.1rem;padding:0.9rem 1.9rem;user-select:none;box-shadow:0 1px 3px rgba(0,0,0,0.18)}
   .tg-mainpage-header-search svg{width:1rem;height:1rem}
   .tg-mainpage-header-search .kbd{width:18px;height:18px;display:flex;background-color:var(--tg-color-inverted-progressive);color:var(--tg-color-progressive);border-radius:var(--tg-border-radius-small);align-items:center;justify-content:center;font-size:10px;font-weight:900;opacity:0.6}
@@ -358,7 +359,7 @@
   .slot-art img.contain-pad{object-fit:contain;padding:1.6rem}
   .slide-dots button{background:rgba(255,255,255,.45)}
   .slide-dots button.on{background:#fff}
-  .slide{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none;display:flex;padding:0.4rem 0.6rem 1.6rem}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none;display:flex;padding:0}
   .slide.on{opacity:1;pointer-events:auto}
   .omni-card{margin:auto;text-align:center;max-width:340px}
   .omni-portrait{width:96px;height:96px;border-radius:50%;overflow:hidden;margin:0 auto 0.6rem;border:3px solid var(--tg-color-surface-4);box-shadow:0 4px 14px rgba(0,0,0,.25)}
