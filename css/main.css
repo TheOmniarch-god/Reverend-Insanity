@@ -458,3 +458,12 @@ html[data-theme="dark"] .tg-mainpage-header-tagline{background:none;text-shadow:
 .search-zone{width:100%;margin-top:0.9rem}
 .tg-mainpage-header-search{margin-top:0;padding:0.7rem 1.4rem}
 .header-searchbox{width:min(560px,92%)}
+
+/* ===== Gateway hero: faded landscape behind masthead ===== */
+.tg-mainpage-header{background:linear-gradient(180deg,rgba(249,244,238,0.55) 0%,rgba(249,244,238,0.85) 70%,var(--tg-color-surface-0) 100%),url('../assets/bg-light-4k.webp') center 30%/cover no-repeat;min-height:clamp(420px,36vw,560px);padding-top:clamp(2.2rem,5vw,3.6rem);padding-bottom:2rem;border-bottom:0}
+html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rgba(10,10,14,0.55) 0%,rgba(10,10,14,0.85) 70%,var(--tg-color-surface-0) 100%),url('../assets/bg-dark-4k.webp') center 30%/cover no-repeat}
+.tg-mainpage-header .ring{display:flex;inset:-10px 0 auto 0}
+.tg-mainpage-header .ring svg{width:520px;opacity:0.10;animation:none}
+.wordmark-img{height:clamp(110px,16vw,170px)}
+.tg-mainpage-header-tagline{color:var(--tg-color-base);font-size:1rem}
+.tg-mainpage-header{background:linear-gradient(180deg,rgba(249,244,238,0.80) 0%,rgba(249,244,238,0.92) 60%,var(--tg-color-surface-0) 100%),url('../assets/bg-light-4k.webp') center 30%/cover no-repeat}
