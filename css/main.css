@@ -397,7 +397,7 @@
   html[data-width="wide"] .page{max-width:1280px}
   html[data-width="full"] .page{max-width:none}
   html[data-theme="dark"]{--tg-color-emphasized:#f4f1e9;--tg-color-base:#dcd8cf;--tg-color-subtle:#a6a29a;--tg-color-surface-0:#050507;--tg-color-surface-1:#0a0a0d;--tg-color-surface-2:#0e0e12;--tg-color-surface-3:#131318;--tg-color-surface-4:#191920;--tg-color-surface-5:#20202a;--tg-color-link:#e2ac4e;--tg-color-progressive:#c89a3e;--tg-color-progressive--hover:#d7aa50;--tg-color-progressive--active:#b78b35;--tg-color-quote:#cfa143;--tg-border-base:1px solid rgba(255,255,255,0.10);--tg-border-subtle:1px solid rgba(255,255,255,0.07)}
-  html[data-theme="dark"] body::before{opacity:0.04}
+  html[data-theme="dark"] body::before{opacity:0.04;background-image:url('../assets/bg-dark-4k.webp')}
   .logo-dark{display:none}
   html[data-theme="dark"] .logo-light{display:none}
   html[data-theme="dark"] .logo-dark{display:inline-block}

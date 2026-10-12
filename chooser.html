@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backdrop Chooser — Reverend Insanity Encyclopedia</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,'Times New Roman',serif;background:#101014;color:#e8e4dc;padding:2.5rem 3rem 5rem}
+  h1{font-size:1.6rem;margin:0 0 .4rem}
+  p.lede{color:#a9a49b;max-width:70ch;line-height:1.55;margin:.2rem 0 2rem}
+  h2{font-size:1.15rem;margin:2.6rem 0 1rem;letter-spacing:.04em}
+  .opt{margin:0 0 2.2rem}
+  .band{height:44vh;min-height:300px;border-radius:10px;background-size:cover;background-position:center 30%;background-repeat:no-repeat;box-shadow:0 2px 24px rgba(0,0,0,.5);position:relative;overflow:hidden}
+  .band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px}
+  .light .band::after{background:linear-gradient(0deg,#f9f4ee 2%,rgba(249,244,238,.55) 52%,rgba(0,0,0,0))}
+  .dark .band::after{background:linear-gradient(0deg,#0b0b0f 2%,rgba(11,11,15,.55) 52%,rgba(0,0,0,0))}
+  .tag{position:absolute;left:14px;top:12px;background:rgba(0,0,0,.62);color:#fff;font-size:.8rem;padding:.3rem .8rem;border-radius:999px;letter-spacing:.06em}
+  .cap{margin-top:.7rem;line-height:1.5;color:#c9c4bb;max-width:90ch}
+  .cap b{color:#fff}
+  .light .sim{background:#f9f4ee;padding:1rem;border-radius:14px 14px 0 0}
+  .dark .sim{background:#0b0b0f;padding:1rem;border-radius:14px 14px 0 0}
+  .a{background-image:url('chooser/light-a.webp')} .b{background-image:url('chooser/light-b.webp')} .c{background-image:url('chooser/light-c.webp')}
+  .da{background-image:url('chooser/dark-a.webp')} .db{background-image:url('chooser/dark-b.webp')} .dc{background-image:url('chooser/dark-c.webp')}
+  .foot{margin-top:3rem;color:#8b867d;font-size:.85rem}
+</style>
+</head>
+<body>
+<h1>Choose your backdrops</h1>
+<p class="lede">Every option keeps your original artwork pixel-for-pixel sharp in the center — the previous live version slightly downscaled it while widening, which is why it read as “blurred”. These do not. The boxes below simulate the live header at your screen’s proportions, hem gradient included. Pick one letter per theme.</p>
+
+<h2>LIGHT THEME — the red-caped Fate War</h2>
+<div class="opt light"><div class="band a"><span class="tag">A · SOFT MATTE</span></div>
+  <p class="cap"><b>A — Soft matte.</b> Canvas widened 22% per side so ultrawide screens never crop; the added sides melt into a painterly blur. Center is your untouched original. <i>(Closest to the live look, but now with a razor-sharp center.)</i></p></div>
+<div class="opt light"><div class="band b"><span class="tag">B · PURE ORIGINAL</span></div>
+  <p class="cap"><b>B — Pure original.</b> Your file exactly as you sent it, nothing added, nothing touched. On very wide screens the top/bottom crop a little more (normal cover behaviour), but every visible pixel is yours at full quality.</p></div>
+<div class="opt light"><div class="band c"><span class="tag">C · SHARP BLEED</span></div>
+  <p class="cap"><b>C — Sharp bleed.</b> Widened like A, but the side continuation keeps more detail (light blur) — more texture on the edges, slightly more visible mirroring.</p></div>
+
+<h2>DARK THEME — the 500-years battlefield</h2>
+<div class="opt dark"><div class="band da"><span class="tag">A · SOFT MATTE</span></div>
+  <p class="cap"><b>A — Soft matte.</b> Widened with atmospheric blurred sides; center untouched and sharp.</p></div>
+<div class="opt dark"><div class="band db"><span class="tag">B · PURE ORIGINAL</span></div>
+  <p class="cap"><b>B — Pure original.</b> Your battlefield file, untouched.</p></div>
+<div class="opt dark"><div class="band dc"><span class="tag">C · SHARP BLEED</span></div>
+  <p class="cap"><b>C — Sharp bleed.</b> Widened with a more detailed edge continuation.</p></div>
+
+<p class="foot">The unfinished hand in the light art can additionally be AI-completed if you say yes — it will be offered as a separate yes/no, applied on top of whichever light option you pick. If you resend fresh originals later, the same chosen treatment is re-applied to them.</p>
+</body>
+</html>
