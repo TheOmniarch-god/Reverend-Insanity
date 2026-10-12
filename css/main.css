@@ -404,3 +404,25 @@
     html[data-theme="dark"] .badge-powered{background:#f4f1e9;color:#222}
   html[data-theme="dark"] .omni-logo{filter:brightness(1.25)}
   @media(max-width:720px){.drawer{left:52px;width:calc(100vw - 66px)}.settings-pop{left:52px}}
+
+  /* === Omni-nav floating pill === */
+  .omni-nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:80;display:flex;align-items:center;gap:.4rem;padding:.45rem .55rem .45rem .55rem;border-radius:999px;border:0;background:color-mix(in srgb, var(--tg-color-surface) 70%, transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 8px 28px rgba(0,0,0,.28)}
+  .omni-nav-brand{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--tg-color-progressive);color:#fff;font-family:var(--tg-font-family-heading);font-size:1.05rem;text-decoration:none}
+  .omni-nav-links{display:flex;align-items:center;gap:.15rem}
+  .omni-nav-links a{font-family:var(--tg-font-family-body);text-decoration:none;color:var(--tg-color-emphasized);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .85rem;border-radius:999px}
+  .omni-nav-links a:hover{background:color-mix(in srgb, var(--tg-color-progressive) 14%, transparent)}
+  .omni-nav-links a.on{background:var(--tg-color-progressive);color:var(--tg-color-inverted-progressive)}
+  .omni-nav-cta{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--tg-color-emphasized);border:0;background:color-mix(in srgb, var(--tg-color-emphasized) 12%, transparent);padding:.5rem .95rem;border-radius:999px}
+  .omni-nav-cta:hover{background:color-mix(in srgb, var(--tg-color-emphasized) 20%, transparent)}
+  @media(max-width:860px){.omni-nav-links{display:none}}
+  /* === quote marquee === */
+  .quote-marquee{overflow:hidden;padding:.75rem 0 .65rem;background:var(--tg-color-surface-0)}
+  .quote-track{display:flex;align-items:center;gap:2.6rem;width:max-content;animation:omq 46s linear infinite;padding-left:1rem}
+  .quote-track span{font-family:var(--tg-font-family-heading);font-style:italic;color:var(--tg-color-emphasized);font-size:.86rem;white-space:nowrap;opacity:.85}
+  .quote-track i{font-style:normal;color:var(--tg-color-progressive);font-size:.7rem}
+  @keyframes omq{to{transform:translateX(-50%)}}
+  /* === outline-free containers === */
+  .tg-card,.template-navpill,.header-searchbox,.search-suggest,.portal-box{border:0}
+  .tg-card{border-radius:18px;box-shadow:0 12px 32px rgba(20,10,5,.10)}
+  html[data-theme="dark"] .tg-card{box-shadow:0 14px 36px rgba(0,0,0,.45)}
+  .template-navpill{border-radius:14px}
