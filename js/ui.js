@@ -44,3 +44,33 @@
   });
   apply();
 })();
+
+/* omni-nav: collapse on pages, proximity expand, live page label */
+(function(){
+  var nav=document.getElementById('omni-nav'); if(!nav) return;
+  var page=document.getElementById('omni-page');
+  function label(){
+    var h=location.hash||'#/';
+    if(h==='#'||h==='#/'||h==='') return 'Main';
+    var m=h.replace(/^#\/(wiki\/)?/,'').split('?')[0].replace(/\/+$/,'');
+    if(!m) return 'Main';
+    m=m.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase()});
+    return m;
+  }
+  function mainTop(){
+    var h=location.hash||'';
+    return h.indexOf('#/wiki')===-1 && h.indexOf('#discover')===-1 && window.scrollY<260;
+  }
+  function state(){
+    if(page) page.textContent=label();
+    nav.classList.toggle('is-collapsed', !mainTop() && !nav.classList.contains('near'));
+  }
+  document.addEventListener('mousemove',function(e){
+    var r=nav.getBoundingClientRect();
+    var near=e.clientX>r.left-80&&e.clientX<r.right+80&&e.clientY>r.top-80&&e.clientY<r.bottom+80;
+    if(near!==nav.classList.contains('near')){nav.classList.toggle('near',near);state();}
+  },{passive:true});
+  addEventListener('hashchange',state);
+  addEventListener('scroll',state,{passive:true});
+  state();
+})();
