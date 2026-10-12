@@ -169,7 +169,7 @@
 
   /* ---- search ---- */
   var box=document.getElementById('search-box'), input=document.getElementById('search-input'), sug=document.getElementById('search-suggest');
-  function toggleSearch(){ box.style.display = box.style.display==='block'?'none':'block'; if(box.style.display==='block') input.focus(); }
+  function toggleSearch(){ box.classList.toggle('open'); if(box.classList.contains('open')) input.focus(); }
   ['search-trigger','rail-search'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click',toggleSearch); });
   document.addEventListener('keydown',function(e){ if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();toggleSearch();} if(e.key==='Escape'){sug.style.display='none';} });
   input.addEventListener('input', function(){
@@ -183,7 +183,7 @@
   sug.addEventListener('click', function(e){
     var b = e.target.closest('button[data-slug]'); if(!b) return;
     location.hash = '#/wiki/'+b.getAttribute('data-slug');
-    sug.style.display='none'; box.style.display='none'; input.value='';
+    sug.style.display='none'; box.classList.remove('open'); input.value='';
   });
 
   /* ---- seal: hover swaps to home (CSS); click scrolls top ---- */
