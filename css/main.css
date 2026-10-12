@@ -68,9 +68,9 @@
   @media(max-width:720px){.page{padding-right:1.25rem;padding-left:calc(1.25rem + 44px)}}
 
   /* ================= hero ================= */
-  .tg-mainpage-header{position:relative;width:100vw;margin-left:calc(50% - 50vw);min-height:clamp(480px,42vw,720px);display:flex;align-items:center;justify-content:center;background:url('../assets/bg-light-hand.webp') center 30%/cover no-repeat;clear:both;overflow:hidden}
+  .tg-mainpage-header{position:relative;width:100vw;margin-left:calc(50% - 50vw);min-height:clamp(480px,42vw,720px);display:flex;align-items:center;justify-content:center;background:url('../assets/bg-light-hand4k.webp') center 30%/cover no-repeat;clear:both;overflow:hidden}
   
-  html[data-theme="dark"] .tg-mainpage-header{background-image:url('../assets/bg-dark-pure.webp')}
+  html[data-theme="dark"] .tg-mainpage-header{background-image:url('../assets/bg-dark-4k.webp')}
   .tg-mainpage-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:72px;background:linear-gradient(0deg,var(--tg-color-surface-0) 2%,color-mix(in srgb,var(--tg-color-surface-0) 60%,transparent) 52%,rgba(0,0,0,0));pointer-events:none}
   html[data-theme="dark"] .tg-mainpage-header-tagline{background:rgba(10,10,14,0.72);text-shadow:0 1px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.85);box-shadow:0 1px 8px rgba(0,0,0,.45)}
   
