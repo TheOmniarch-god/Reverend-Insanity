@@ -44,32 +44,3 @@
   });
   apply();
 })();
-
-/* ---- header backdrop slideshow: rotates every 10 minutes ---- */
-(function(){
-  var slides = ["/assets/read/Bai_Ning_Bing_vs_Gu_Yue_Qing_Shu.webp","/assets/read/Bo_qing_from_reverend_insanity_by_osot.webp","/assets/read/Duke_Long.webp","/assets/read/Fang_Yuan_Fate_War.webp","/assets/read/Fang_Yuan_Refine_Travel_Gu.webp","/assets/read/Fang_Yuan_vs_Li_Huang.webp","/assets/read/Feng_Jiu_Ge_Past.webp","/assets/read/Feng_Tian_Yu_Watches_Fang_Yuan_Refine_Fixed_Travel_Gu.webp","/assets/read/Feng_Tian_Yu.webp","/assets/read/Giant_Sun.webp","/assets/read/Jing_Lan_vs_Fang_Yuan_Sword_Dragon.webp","/assets/read/Red_Lotus.webp","/assets/read/Spectral_Soul.webp","/assets/read/Spring_Autumn_Cicada.webp","/assets/read/Thieving_Heaven.webp","/assets/read/Wu_Yong.webp"];
-  var layers = document.querySelectorAll('.header-slides .hs');
-  if(!slides.length || layers.length<2) return;
-  var cur = 0;
-  function idx(){ return Math.floor(Date.now()/600000) % slides.length; }
-  function show(i, instant){
-    var inL = layers[cur===0?1:0], outL = layers[cur];
-    inL.style.backgroundImage = 'url('+slides[i]+')';
-    var swap = function(){ inL.classList.add('on'); outL.classList.remove('on'); cur = cur===0?1:0; };
-    if(instant){ inL.style.transition='none'; swap(); void inL.offsetWidth; inL.style.transition=''; } else { swap(); }
-  }
-  var first = idx();
-  show(first, true);
-  var pre = new Image(); pre.src = slides[(first+1)%slides.length];
-  function nextBoundary(){ return 600000 - (Date.now()%600000); }
-  (function tick(){
-    setTimeout(function(){
-      var i = idx();
-      var img = new Image();
-      img.onload = function(){ show(i,false); var p=new Image(); p.src=slides[(i+1)%slides.length]; };
-      img.onerror = function(){ show(i,false); };
-      img.src = slides[i];
-      tick();
-    }, nextBoundary()+1000);
-  })();
-})();
