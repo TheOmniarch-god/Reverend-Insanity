@@ -45,34 +45,45 @@
   apply();
 })();
 
-/* omni-nav v2 + search proximity */
+/* omni-nav v2: full on main, compact on pages, proximity expand */
 (function(){
-  var nav=document.getElementById('omni-nav');
-  if(nav){
-    var page=document.getElementById('omni-page');
-    function isMain(){var h=location.hash||'';return h.indexOf('#/wiki')===-1;}
-    function label(){
-      if(isMain()) return 'Main';
-      var m=(location.hash||'').replace(/^#\/(wiki\/)?/,'').split('?')[0].replace(/\/+$/,'').replace(/-/g,' ');
-      return (m.replace(/\b\w/g,function(c){return c.toUpperCase()}))||'Main';
-    }
-    function state(){ if(page) page.textContent=label(); nav.classList.toggle('is-collapsed', !isMain() && !nav.classList.contains('near')); }
-    document.addEventListener('mousemove',function(e){
-      var r=nav.getBoundingClientRect();
-      var near=e.clientX>r.left-80&&e.clientX<r.right+80&&e.clientY>r.top-80&&e.clientY<r.bottom+80;
-      if(near!==nav.classList.contains('near')){nav.classList.toggle('near',near);state();}
-    },{passive:true});
-    addEventListener('hashchange',state); state();
-    var exp=document.getElementById('nv-explore');
-    if(exp) exp.addEventListener('click',function(){var t=document.getElementById('explore-target'); if(t) t.scrollIntoView({behavior:'smooth',block:'start'});});
+  var nav=document.getElementById('omni-nav'); if(!nav) return;
+  var page=document.getElementById('omni-page');
+  function label(){
+    var h=location.hash||'#/';
+    if(h==='#'||h==='#/'||h===''||h.indexOf('#explore')===0) return 'Main';
+    var m=h.replace(/^#\/(wiki\/)?/,'').split('?')[0].replace(/\/+$/,'');
+    if(!m) return 'Main';
+    return m.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase()});
   }
-  var sb=document.getElementById('search-box'), st=document.getElementById('search-trigger');
-  if(sb&&st){
-    document.addEventListener('mousemove',function(e){
-      var a=st.getBoundingClientRect(), b=sb.getBoundingClientRect();
-      var near=(e.clientX>a.left-90&&e.clientX<a.right+90&&e.clientY>a.top-90&&e.clientY<a.bottom+90)||
-               (b.width>0&&e.clientX>b.left-90&&e.clientX<b.right+90&&e.clientY>b.top-90&&e.clientY<b.bottom+90);
-      sb.classList.toggle('near',near);
-    },{passive:true});
+  function isMain(){ return (location.hash||'').indexOf('#/wiki')===-1; }
+  function state(){
+    if(page) page.textContent=label();
+    nav.classList.toggle('is-collapsed', !isMain() && !nav.classList.contains('near'));
+    var mp=nav.querySelector('.nv-main'); if(mp) mp.classList.toggle('on', isMain());
   }
+  document.addEventListener('mousemove',function(e){
+    var r=nav.getBoundingClientRect();
+    var near=e.clientX>r.left-80&&e.clientX<r.right+80&&e.clientY>r.top-80&&e.clientY<r.bottom+80;
+    if(near!==nav.classList.contains('near')){nav.classList.toggle('near',near);state();}
+  },{passive:true});
+  addEventListener('hashchange',state); state();
+})();
+/* search proximity: opens wide when cursor approaches */
+(function(){
+  var zone=document.getElementById('search-zone'); if(!zone) return;
+  var box=document.getElementById('search-box'), input=document.getElementById('search-input'), btn=document.getElementById('search-trigger');
+  var open=false,timer=null;
+  function setOpen(v){
+    if(v===open) return; open=v;
+    if(v){ box.style.display='block'; requestAnimationFrame(function(){box.classList.add('wide')}); }
+    else { box.classList.remove('wide'); setTimeout(function(){ if(!open) box.style.display='none'; },380); }
+  }
+  document.addEventListener('mousemove',function(e){
+    var r=zone.getBoundingClientRect();
+    var near=e.clientX>r.left-90&&e.clientX<r.right+90&&e.clientY>r.top-90&&e.clientY<r.bottom+90;
+    if(near) { clearTimeout(timer); setOpen(true); }
+    else if(open && document.activeElement!==input && !input.value){ timer=setTimeout(function(){setOpen(false)},450); }
+  },{passive:true});
+  input.addEventListener('blur',function(){ if(!input.value) setTimeout(function(){setOpen(false)},300); });
 })();
