@@ -443,3 +443,4 @@
   .tg-card{border-radius:18px;box-shadow:0 12px 32px rgba(20,10,5,.10)}
   html[data-theme="dark"] .tg-card{box-shadow:0 14px 36px rgba(0,0,0,.45)}
   .template-navpill{border-radius:14px}
+@media(max-width:520px){.nv-explore{display:none}.omni-nav{gap:.22rem;padding:.32rem .4rem}.nv,.omni-nav-cta{padding:.42rem .6rem;font-size:.55rem;letter-spacing:.09em}.omni-nav-brand{width:26px;height:26px;font-size:.8rem}}
