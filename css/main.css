@@ -444,3 +444,17 @@
   html[data-theme="dark"] .tg-card{box-shadow:0 14px 36px rgba(0,0,0,.45)}
   .template-navpill{border-radius:14px}
 @media(max-width:520px){.nv-explore{display:none}.omni-nav{gap:.22rem;padding:.32rem .4rem}.nv,.omni-nav-cta{padding:.42rem .6rem;font-size:.55rem;letter-spacing:.09em}.omni-nav-brand{width:26px;height:26px;font-size:.8rem}}
+
+/* ===== Tolkien Gateway-style masthead (overrides hero) ===== */
+.tg-mainpage-header{background:var(--tg-color-surface-0);min-height:0;padding-top:2.2rem;padding-bottom:1.4rem;border-bottom:1px solid var(--tg-color-surface-3);overflow:visible}
+html[data-theme="dark"] .tg-mainpage-header{background:var(--tg-color-surface-0)}
+.tg-mainpage-header::after{display:none}
+.tg-mainpage-header .ring{display:none}
+.tg-mainpage-content{max-width:760px;margin:0 auto;padding:0 1rem}
+.wordmark-img{height:clamp(96px,14vw,150px)}
+.tg-mainpage-header-tagline{background:none;box-shadow:none;backdrop-filter:none;padding:0;margin-top:0.5rem;font-size:0.95rem;color:var(--tg-color-subtle)}
+html[data-theme="dark"] .tg-mainpage-header-tagline{background:none;text-shadow:none;box-shadow:none}
+.tg-mainpage-header-tagline a{color:var(--tg-color-progressive)}
+.search-zone{width:100%;margin-top:0.9rem}
+.tg-mainpage-header-search{margin-top:0;padding:0.7rem 1.4rem}
+.header-searchbox{width:min(560px,92%)}
