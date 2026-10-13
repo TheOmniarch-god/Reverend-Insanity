@@ -506,3 +506,6 @@ h2,.tg-section-divider span{font-weight:600}
 html[data-theme="dark"] .tg-mainpage-header .ring svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,0.6))}
 html[data-theme="dark"] .tg-mainpage-header .ring text{fill:url(#ring-gold)}
 .wordmark-img{position:relative;z-index:1}
+/* ring: dimmed, quote text */
+.tg-mainpage-header .ring svg{opacity:0.6}
+.tg-mainpage-header .ring text{font-size:11px;font-weight:600;letter-spacing:0.08em}
