@@ -482,3 +482,15 @@ html[data-theme="dark"] .wiki-topbar-search{background:linear-gradient(175deg,#f
 .wiki-topbar-search input::placeholder{color:inherit;opacity:0.85}
 .wiki-topbar-search:hover,.wiki-topbar-search:focus-within{width:min(22rem,60vw)}
 @media(max-width:720px){.wiki-topbar{padding-left:3.2rem}.wiki-topbar-search:hover,.wiki-topbar-search:focus-within{width:60vw}}
+
+/* ===== Gateway-architecture pass: background, hero scale, typography ===== */
+.tg-mainpage-header{min-height:clamp(520px,44vw,640px);padding-top:clamp(2.6rem,6vw,4rem);background:linear-gradient(180deg,rgba(249,244,238,0.42) 0%,rgba(249,244,238,0.62) 62%,var(--tg-color-surface-0) 100%),url('../assets/bg-light-4k.webp') center 38%/cover no-repeat}
+html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rgba(10,10,14,0.35) 0%,rgba(10,10,14,0.6) 62%,var(--tg-color-surface-0) 100%),url('../assets/bg-dark-4k.webp') center 38%/cover no-repeat}
+.wordmark-img{height:clamp(120px,17vw,180px)}
+.tg-mainpage-header-tagline{font-size:1.05rem;letter-spacing:0.01em}
+body{line-height:1.65;font-size:1.02rem}
+h1,.wordmark{letter-spacing:0.005em}
+h2,.tg-section-divider span{font-weight:600}
+.tg-section-divider span{font-size:1rem;letter-spacing:0.04em}
+.tg-card-title{font-weight:600;letter-spacing:0.005em}
+.tg-card-caption,.tg-card-body p{font-size:0.95rem;line-height:1.6}
