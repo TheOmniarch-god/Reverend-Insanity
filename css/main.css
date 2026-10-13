@@ -467,3 +467,5 @@ html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rg
 .wordmark-img{height:clamp(110px,16vw,170px)}
 .tg-mainpage-header-tagline{color:var(--tg-color-base);font-size:1rem}
 .tg-mainpage-header{background:linear-gradient(180deg,rgba(249,244,238,0.80) 0%,rgba(249,244,238,0.92) 60%,var(--tg-color-surface-0) 100%),url('../assets/bg-light-4k.webp') center 30%/cover no-repeat}
+/* ===== nav: keep Discord link inside its pill ===== */
+.omni-nav-cta{white-space:nowrap;display:inline-flex;align-items:center;gap:0.25rem;padding:0.45rem 0.9rem;border-radius:999px;font-size:0.82rem;line-height:1;text-decoration:none;background:transparent;color:inherit;max-width:none}
