@@ -469,3 +469,16 @@ html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rg
 .tg-mainpage-header{background:linear-gradient(180deg,rgba(249,244,238,0.80) 0%,rgba(249,244,238,0.92) 60%,var(--tg-color-surface-0) 100%),url('../assets/bg-light-4k.webp') center 30%/cover no-repeat}
 /* ===== nav: keep Discord link inside its pill ===== */
 .omni-nav-cta{white-space:nowrap;display:inline-flex;align-items:center;gap:0.25rem;padding:0.45rem 0.9rem;border-radius:999px;font-size:0.82rem;line-height:1;text-decoration:none;background:transparent;color:inherit;max-width:none}
+
+/* ===== inner pages: compact sticky topbar, metallic search that widens on hover ===== */
+.wiki-topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.45rem 1.25rem;background:color-mix(in srgb,var(--tg-color-surface-0) 94%,transparent);border-bottom:1px solid var(--tg-color-surface-3);backdrop-filter:blur(4px)}
+.wiki-topbar-home{display:inline-flex;align-items:center;text-decoration:none}
+.wiki-topbar-logo{display:inline-block;height:40px;line-height:0}
+.wiki-topbar-logo img{height:40px;width:auto}
+.wiki-topbar-search{position:relative;display:flex;align-items:center;gap:0.4rem;width:9.5rem;padding:0.35rem 0.9rem;border-radius:999px;background:linear-gradient(175deg,#e08a8c 0%,#a12c2f 40%,#6d1416 55%,#b8434a 82%,#d9888a 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 2px 6px rgba(60,20,20,.25);color:#fff;transition:width .35s ease}
+html[data-theme="dark"] .wiki-topbar-search{background:linear-gradient(175deg,#f9df9a 0%,#e9c765 22%,#a9761b 48%,#8a5a12 55%,#c99a3a 82%,#f3d98c 100%);color:#2a1d05}
+.wiki-topbar-search svg{width:0.9rem;height:0.9rem;flex:none;fill:currentColor}
+.wiki-topbar-search input{flex:1;min-width:0;border:0;background:transparent;color:inherit;font:inherit;font-size:0.85rem;outline:none}
+.wiki-topbar-search input::placeholder{color:inherit;opacity:0.85}
+.wiki-topbar-search:hover,.wiki-topbar-search:focus-within{width:min(22rem,60vw)}
+@media(max-width:720px){.wiki-topbar{padding-left:3.2rem}.wiki-topbar-search:hover,.wiki-topbar-search:focus-within{width:60vw}}

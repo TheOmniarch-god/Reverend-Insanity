@@ -393,6 +393,13 @@
 
 <!-- ================================================= ARTICLE VIEW ================================================= -->
 <div class="wiki-view" id="wiki-view" hidden>
+  <header class="wiki-topbar" id="wiki-topbar">
+    <a class="wiki-topbar-home" href="#main" aria-label="Back to the main page"><span class="wiki-topbar-logo" id="wiki-topbar-logo"></span></a>
+    <form class="wiki-topbar-search" id="wiki-topbar-search" role="search">
+      <svg aria-hidden="true" viewBox="0 0 16 16"><use href="#glyph-search"/></svg>
+      <input type="search" id="wiki-topbar-input" placeholder="Search" aria-label="Search the encyclopedia" autocomplete="off">
+    </form>
+  </header>
   <div class="wiki-crumb"><a href="#main">← Main Page</a><span>·</span><span id="crumb-here">Article</span></div>
   <div class="wiki-head">
     <div>
