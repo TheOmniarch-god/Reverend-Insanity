@@ -15,6 +15,17 @@
 <link rel="stylesheet" href="css/main.css?v=14">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="ring-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="400">
+    <stop offset="0" stop-color="#f7e3a6"/><stop offset="0.18" stop-color="#b8862a"/><stop offset="0.36" stop-color="#fff2c2"/>
+    <stop offset="0.52" stop-color="#a9761b"/><stop offset="0.7" stop-color="#f3d98c"/><stop offset="0.86" stop-color="#8a5a12"/><stop offset="1" stop-color="#e9c765"/>
+  </linearGradient>
+  <linearGradient id="ring-red" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="400">
+    <stop offset="0" stop-color="#eba6a8"/><stop offset="0.18" stop-color="#a12c2f"/><stop offset="0.36" stop-color="#f7c9c9"/>
+    <stop offset="0.52" stop-color="#6d1416"/><stop offset="0.7" stop-color="#d9888a"/><stop offset="0.86" stop-color="#7a1f22"/><stop offset="1" stop-color="#b8434a"/>
+  </linearGradient>
+</defs></svg>
+
 <nav class="omni-nav" id="omni-nav" aria-label="Primary">
   <a class="omni-nav-brand" href="#/" aria-label="Home"><span>蛊</span></a>
   <a class="nv nv-main on" href="#/">Main</a>
@@ -109,14 +120,8 @@
 <div class="page" id="main-view">
 
   <div class="tg-mainpage-header">
-    <div class="ring" aria-hidden="true">
-      <svg viewBox="0 0 400 400">
-        <defs><path id="ringpath" d="M200,200 m-160,0 a160,160 0 1,1 320,0 a160,160 0 1,1 -320,0"/></defs>
-        <text fill="currentColor"><textPath href="#ringpath">蛊真人 · REVEREND INSANITY · THE OMNIARCH TRANSLATION · 人祖传 · THE LEGENDS OF REN ZU · REFINE · NURTURE · USE · 蛊真人 · REVEREND INSANITY ·</textPath></text>
-      </svg>
-    </div>
     <div class="tg-mainpage-content">
-      <a href="#main" style="text-decoration:none"><h1 class="wordmark"><img class="wordmark-img logo-light" src="assets/wordmark-light-4k.webp" alt="Reverend Insanity Encyclopedia"><img class="wordmark-img logo-dark" src="assets/wordmark-dark-4k.webp" alt="Reverend Insanity Encyclopedia"></h1></a>
+      <a href="#main" style="text-decoration:none"><h1 class="wordmark"><div class="ring" aria-hidden="true"> <svg viewBox="0 0 400 400"> <defs><path id="ringpath" d="M200,200 m-160,0 a160,160 0 1,1 320,0 a160,160 0 1,1 -320,0"/></defs> <text fill="currentColor"><textPath href="#ringpath">蛊真人 · REVEREND INSANITY · THE OMNIARCH TRANSLATION · 人祖传 · THE LEGENDS OF REN ZU · REFINE · NURTURE · USE · 蛊真人 · REVEREND INSANITY ·</textPath></text> </svg> </div><img class="wordmark-img logo-light" src="assets/wordmark-light-4k.webp" alt="Reverend Insanity Encyclopedia"><img class="wordmark-img logo-dark" src="assets/wordmark-dark-4k.webp" alt="Reverend Insanity Encyclopedia"></h1></a>
       <div class="search-zone" id="search-zone"><button class="tg-mainpage-header-search" id="search-trigger" aria-label="Search the encyclopedia">
         <svg aria-hidden="true"><use href="#glyph-search"/></svg>
         Search

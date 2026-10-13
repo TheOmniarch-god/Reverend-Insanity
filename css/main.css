@@ -497,3 +497,12 @@ h2,.tg-section-divider span{font-weight:600}
 .wordmark-img{height:clamp(240px,34vw,360px)}
 .wordmark-img{height:clamp(360px,53vw,720px)}
 .wordmark-img{height:clamp(300px,36vw,480px)}
+
+/* ===== ring text: centred on the logo, metallic (red light / gold dark) ===== */
+.wordmark{position:relative;display:inline-block}
+.tg-mainpage-header .ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;width:auto;pointer-events:none;z-index:0}
+.tg-mainpage-header .ring svg{width:min(560px,80vw);height:auto;opacity:0.95;color:transparent;animation:spin 90s linear infinite;overflow:visible;filter:drop-shadow(0 1px 1px rgba(40,10,10,0.35))}
+.tg-mainpage-header .ring text{fill:url(#ring-red);font-size:13px;font-weight:600;letter-spacing:0.3em}
+html[data-theme="dark"] .tg-mainpage-header .ring svg{filter:drop-shadow(0 1px 1px rgba(0,0,0,0.6))}
+html[data-theme="dark"] .tg-mainpage-header .ring text{fill:url(#ring-gold)}
+.wordmark-img{position:relative;z-index:1}
