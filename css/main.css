@@ -521,3 +521,19 @@ html[data-theme="dark"] .wordmark-img.logo-light{display:none}
 html[data-theme="dark"] .wordmark-img.logo-dark{display:block}
 .tg-mainpage-header .ring{width:clamp(350px,42vw,560px);height:auto}
 .tg-mainpage-header .ring svg{width:100%;height:auto}
+
+/* ===== Gateway layout (fix): hide only the hero search button and its box; keep the tagline; restore the masthead fade ===== */
+.tg-mainpage-header .search-zone{margin-top:0}
+#search-trigger,#search-box{display:none !important}
+.tg-mainpage-header::after{display:block;content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(0deg,var(--tg-color-surface-0) 4%,color-mix(in srgb,var(--tg-color-surface-0) 60%,transparent) 55%,rgba(0,0,0,0));pointer-events:none}
+.tg-mainpage-header-tagline{display:inline-block !important;color:var(--tg-color-base) !important;background:none !important}
+.tg-mainpage-header{padding-bottom:1.2rem}
+
+/* ===== Gateway layout: compact masthead, no hero search, portals moved up ===== */
+.tg-mainpage-header{min-height:0;padding-top:1.1rem;padding-bottom:0.4rem;background:linear-gradient(180deg,rgba(249,244,238,0.55) 0%,rgba(249,244,238,0.8) 70%,var(--tg-color-surface-0) 100%),url('../assets/bg-light-4k.webp') center 30%/cover no-repeat}
+html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rgba(10,10,14,0.45) 0%,rgba(10,10,14,0.75) 70%,var(--tg-color-surface-0) 100%),url('../assets/bg-dark-4k.webp') center 30%/cover no-repeat}
+.wordmark-img{height:clamp(150px,19vw,200px)}
+.tg-mainpage-header .ring{width:clamp(200px,24vw,250px)}
+.tg-mainpage-header .ring text{font-size:14px}
+.tg-mainpage-header-tagline{margin-top:0.4rem}
+.quote-marquee{display:none}
