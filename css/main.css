@@ -488,7 +488,7 @@ html[data-theme="dark"] .wiki-topbar-search{background:linear-gradient(175deg,#f
 html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rgba(10,10,14,0.35) 0%,rgba(10,10,14,0.6) 62%,var(--tg-color-surface-0) 100%),url('../assets/bg-dark-4k.webp') center 38%/cover no-repeat}
 .wordmark-img{height:clamp(120px,17vw,180px)}
 .tg-mainpage-header-tagline{font-size:1.05rem;letter-spacing:0.01em}
-body{line-height:1.65;font-size:1.02rem}
+body{line-height:1.6;font-size:1rem}
 h1,.wordmark{letter-spacing:0.005em}
 h2,.tg-section-divider span{font-weight:600}
 .tg-section-divider span{font-size:1rem;letter-spacing:0.04em}
