@@ -543,3 +543,7 @@ html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rg
 #search-box{position:fixed;top:12px;left:64px;width:min(440px,80vw);z-index:80;margin:0;display:none}
 #search-box.open{display:block}
 #search-box input{box-shadow:0 6px 24px rgba(0,0,0,.18)}
+/* drawer logo: same 4K wordmark as the page, one variant per theme */
+.drawer-head .wm{height:44px;width:auto}
+html:not([data-theme="dark"]) .drawer-head .wm.logo-dark{display:none}
+html[data-theme="dark"] .drawer-head .wm.logo-light{display:none}
