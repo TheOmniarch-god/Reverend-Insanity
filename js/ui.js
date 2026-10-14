@@ -71,7 +71,7 @@
 })();
 /* search proximity: opens wide when cursor approaches */
 (function(){
-  var zone=document.getElementById('search-zone'); if(!zone) return;
+  var zone=document.getElementById('search-zone'); if(!zone || zone.dataset.proximity!=='on') return;
   var box=document.getElementById('search-box'), input=document.getElementById('search-input'), btn=document.getElementById('search-trigger');
   var open=false,timer=null;
   function setOpen(v){

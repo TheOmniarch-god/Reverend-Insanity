@@ -524,7 +524,7 @@ html[data-theme="dark"] .wordmark-img.logo-dark{display:block}
 
 /* ===== Gateway layout (fix): hide only the hero search button and its box; keep the tagline; restore the masthead fade ===== */
 .tg-mainpage-header .search-zone{margin-top:0}
-#search-trigger,#search-box{display:none !important}
+#search-trigger{display:none !important}
 .tg-mainpage-header::after{display:block;content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(0deg,var(--tg-color-surface-0) 4%,color-mix(in srgb,var(--tg-color-surface-0) 60%,transparent) 55%,rgba(0,0,0,0));pointer-events:none}
 .tg-mainpage-header-tagline{display:inline-block !important;color:var(--tg-color-base) !important;background:none !important}
 .tg-mainpage-header{padding-bottom:1.2rem}
@@ -537,3 +537,9 @@ html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rg
 .tg-mainpage-header .ring text{font-size:14px}
 .tg-mainpage-header-tagline{margin-top:0.4rem}
 .quote-marquee{display:none}
+
+/* ===== no floating top bar; search opens from the left-rail icon ===== */
+#omni-nav{display:none !important}
+#search-box{position:fixed;top:12px;left:64px;width:min(440px,80vw);z-index:80;margin:0;display:none}
+#search-box.open{display:block}
+#search-box input{box-shadow:0 6px 24px rgba(0,0,0,.18)}
