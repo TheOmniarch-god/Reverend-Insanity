@@ -557,3 +557,11 @@ html[data-theme="dark"] .drawer-head .wm.logo-light{display:none}
 .tg-section-divider{margin:1.4rem 0 1.1rem}
 @media(max-width:900px){.tg-mainpage-navigation .template-navpills{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .tg-section-divider,.featured-row{width:min(1080px,calc(100vw - 150px));position:relative;left:50%;transform:translateX(-50%);box-sizing:border-box}
+
+/* ===== layout fix: no horizontal overflow; content column = Gateway's 1080px ===== */
+.page{max-width:1176px}
+.tg-mainpage-navigation .template-navpills{width:100%;max-width:1080px;margin:0 auto;position:static;left:auto;transform:none;box-sizing:border-box}
+.tg-section-divider,.featured-row{width:100%;max-width:1080px;margin-left:auto;margin-right:auto;position:static;left:auto;transform:none;box-sizing:border-box}
+.tg-mainpage-header{width:auto;margin-left:0;margin-right:0;max-width:100%}
+body{overflow-x:clip}
+.action-tabs{max-width:100%;overflow:hidden;box-sizing:border-box}
