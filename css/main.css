@@ -547,3 +547,13 @@ html[data-theme="dark"] .tg-mainpage-header{background:linear-gradient(180deg,rg
 .drawer-head .wm{height:44px;width:auto}
 html:not([data-theme="dark"]) .drawer-head .wm.logo-dark{display:none}
 html[data-theme="dark"] .drawer-head .wm.logo-light{display:none}
+
+/* ===== Gateway proportions (measured at 1284px wide) ===== */
+.wordmark-img{height:clamp(120px,14vw,150px)}
+.tg-mainpage-header{padding-top:0.6rem;padding-bottom:0.2rem}
+.tg-mainpage-header-tagline{font-size:0.95rem;margin-top:0.2rem}
+.tg-mainpage-navigation .template-navpills{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;width:min(1080px,calc(100vw - 150px));position:relative;left:50%;transform:translateX(-50%);box-sizing:border-box}
+.tg-mainpage-navigation .template-navpills a,.tg-mainpage-navigation .template-navpills button{min-height:46px;height:46px}
+.tg-section-divider{margin:1.4rem 0 1.1rem}
+@media(max-width:900px){.tg-mainpage-navigation .template-navpills{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tg-section-divider,.featured-row{width:min(1080px,calc(100vw - 150px));position:relative;left:50%;transform:translateX(-50%);box-sizing:border-box}
