@@ -509,3 +509,15 @@ html[data-theme="dark"] .tg-mainpage-header .ring text{fill:url(#ring-gold)}
 /* ring: dimmed, quote text */
 .tg-mainpage-header .ring svg{opacity:0.6}
 .tg-mainpage-header .ring text{font-size:11px;font-weight:600;letter-spacing:0.08em}
+
+/* ring: centred on the English wordmark (ink measured at 38%-80% of logo height), clears the Chinese above */
+.wordmark{display:block;line-height:0;position:relative}
+.wordmark-img{display:block;margin:0 auto;height:clamp(300px,36vw,480px)}
+.tg-mainpage-header .ring{top:59.2%;left:50%;transform:translate(-50%,-50%)}
+.tg-mainpage-header .ring svg{width:clamp(350px,42vw,560px)}
+/* keep only the active theme's logo in the flow (fixes the hidden variant taking up height) */
+html:not([data-theme="dark"]) .wordmark-img.logo-dark{display:none}
+html[data-theme="dark"] .wordmark-img.logo-light{display:none}
+html[data-theme="dark"] .wordmark-img.logo-dark{display:block}
+.tg-mainpage-header .ring{width:clamp(350px,42vw,560px);height:auto}
+.tg-mainpage-header .ring svg{width:100%;height:auto}
