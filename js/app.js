@@ -237,3 +237,17 @@
     setTimeout(function(){ if(mi){ mi.value=v; mi.dispatchEvent(new Event('input')); mi.focus(); } if(trig&&!document.getElementById('search-box').classList.contains('open')) trig.click(); },60);
   });
 })();
+
+/* masthead: span from the left rail to the right edge of the window, at any width */
+(function(){
+  function fit(){
+    var h=document.querySelector('.tg-mainpage-header');
+    if(!h) return;
+    var rail=document.querySelector('.rail'), railW=rail?rail.getBoundingClientRect().right:0;
+    h.style.position='relative'; h.style.marginLeft='0'; h.style.marginRight='0'; h.style.maxWidth='none';
+    h.style.width=(document.documentElement.clientWidth-railW)+'px'; h.style.left='0px';
+    var cur=h.getBoundingClientRect().left;
+    h.style.left=(railW-cur)+'px';
+  }
+  addEventListener('resize',fit); addEventListener('load',fit); fit();
+})();

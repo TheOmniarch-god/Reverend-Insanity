@@ -565,3 +565,6 @@ html[data-theme="dark"] .drawer-head .wm.logo-light{display:none}
 .tg-mainpage-header{width:auto;margin-left:0;margin-right:0;max-width:100%}
 body{overflow-x:clip}
 .action-tabs{max-width:100%;overflow:hidden;box-sizing:border-box}
+
+/* ===== masthead full-bleed again (the content column fix had boxed the hero background) ===== */
+html{overflow-x:hidden}
