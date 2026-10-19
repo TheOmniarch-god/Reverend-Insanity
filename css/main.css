@@ -605,3 +605,18 @@ html[data-theme="dark"] #search-trigger{background:linear-gradient(180deg,#f1d27
 /* Light mode search pill: restore the red standard. Gold is dark-mode only. */
 #search-trigger{background:linear-gradient(180deg,#9b2a2a,#7a1c1c) !important;color:#fff9ef !important;border:1px solid rgba(120,20,20,0.25) !important;box-shadow:none !important}
 html[data-theme="dark"] #search-trigger{background:linear-gradient(180deg,#f1d27f,#d4a750) !important;color:#1a1208 !important;border-color:rgba(255,230,160,0.4) !important;box-shadow:0 2px 10px rgba(0,0,0,0.35) !important}
+
+/* Gateway ring-to-logo proportions: ring diameter ~0.93x visible logo width, centred on logo */
+.tg-mainpage-header .wordmark-img{width:clamp(300px,28vw,400px) !important;height:auto !important}
+.tg-mainpage-header .ring{width:auto !important;height:auto !important}
+.tg-mainpage-header .ring svg{width:clamp(300px,28vw,400px) !important;height:auto !important;opacity:0.6}
+.tg-mainpage-header-tagline{font-size:0.9rem;margin-top:0.6rem}
+.tg-mainpage-header .ring svg{max-width:none !important;min-width:0 !important}
+.tg-mainpage-header .ring{max-width:none !important;min-width:0 !important}
+.tg-mainpage-header .ring{display:block !important;width:max-content !important}
+.tg-mainpage-header .ring svg{flex:none !important;display:block !important}
+.tg-mainpage-header .ring{transform:translate(-50%,calc(-50% + 20px)) !important}
+.tg-mainpage-header .ring{transform:translate(-50%,calc(-50% - 20px)) !important}
+.tg-mainpage-header .wordmark-img{width:clamp(250px,22vw,320px) !important}
+.tg-mainpage-header .ring svg{width:clamp(250px,22vw,320px) !important}
+.tg-mainpage-header .ring{transform:translate(-50%,calc(-50% - 16px)) !important}
