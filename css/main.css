@@ -585,3 +585,13 @@ html{overflow-x:hidden}
 .tg-mainpage-navigation{margin-top:0}
 .tg-mainpage-header .ring{width:clamp(170px,14vw,200px)}
 .tg-mainpage-header-tagline{margin-top:0.7rem}
+
+/* Gateway-match pass: flatter pill, calmer wordmark, more air */
+.tg-mainpage-header{padding-top:2.2rem}
+.tg-mainpage-header .wordmark-img,.wordmark-img{height:clamp(104px,10vw,128px);filter:none}
+html[data-theme="dark"] .wordmark-img{filter:drop-shadow(0 1px 8px rgba(0,0,0,0.6))}
+.tg-mainpage-header .ring svg{width:min(400px,62vw);opacity:0.9}
+.tg-mainpage-header-tagline{margin-top:1.1rem}
+#search-trigger{display:inline-flex !important;margin-top:1.1rem;min-width:200px;height:46px;padding:0 2rem;border-radius:999px;font-weight:400;font-size:1rem;letter-spacing:0.02em;box-shadow:none;border:1px solid rgba(120,20,20,0.25);background:linear-gradient(180deg,#9b2a2a,#7a1c1c);color:#fff9ef}
+html[data-theme="dark"] #search-trigger{background:linear-gradient(180deg,#e2b65a,#c99a3f);color:#1a1208;border-color:rgba(255,230,160,0.4)}
+.tg-mainpage-navigation{margin-top:0.2rem}
