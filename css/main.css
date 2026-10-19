@@ -568,3 +568,20 @@ body{overflow-x:clip}
 
 /* ===== masthead full-bleed again (the content column fix had boxed the hero background) ===== */
 html{overflow-x:hidden}
+
+/* ===== Gateway-style hero: breathing room, visible ring, search button back under the tagline ===== */
+.tg-mainpage-header{padding-top:1.6rem;padding-bottom:0.6rem}
+.wordmark-img{height:clamp(170px,17vw,220px)}
+.tg-mainpage-header .ring svg{opacity:1}
+.tg-mainpage-header .ring text{fill-opacity:1}
+#search-trigger{display:inline-flex !important;margin-top:0.9rem}
+.tg-mainpage-header-search{padding:0.7rem 1.4rem;font-size:0.95rem;width:auto}
+.tg-mainpage-header-tagline{margin-bottom:0.2rem}
+.search-zone{display:flex;flex-direction:column;align-items:center}
+.tg-mainpage-header-tagline{order:-1}
+.wordmark-img{height:clamp(130px,12vw,160px)}
+.tg-mainpage-navigation{margin-top:0.4rem}
+.tg-mainpage-header{padding-top:1.2rem}
+.tg-mainpage-navigation{margin-top:0}
+.tg-mainpage-header .ring{width:clamp(170px,14vw,200px)}
+.tg-mainpage-header-tagline{margin-top:0.7rem}
