@@ -651,3 +651,6 @@ html:not([data-theme="dark"]) .tg-omniarch{color:#9b2a2a}
 .tg-mainpage-header .wordmark-img{width:clamp(300px,33.5vw,458px) !important}
 .tg-mainpage-header .ring svg{width:clamp(300px,33.5vw,458px) !important}
 .tg-mainpage-header{padding-top:6rem !important}
+
+/* Pass 6: ring reduced ~8% so its top clears the page edge; logo unchanged */
+.tg-mainpage-header .ring svg{width:clamp(275px,30.8vw,421px) !important}
