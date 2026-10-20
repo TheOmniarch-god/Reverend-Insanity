@@ -646,3 +646,8 @@ html:not([data-theme="dark"]) .tg-omniarch{color:#9b2a2a}
 .tg-mainpage-header-tagline{margin-top:0.5rem}
 #search-trigger{margin-top:1.1rem}
 .tg-mainpage-header .wordmark-img{margin-top:-12.5% !important;margin-bottom:-10.5% !important}
+
+/* Pass 5: ring fits inside hero (Gateway: 6rem top padding); ring stays centred on logo */
+.tg-mainpage-header .wordmark-img{width:clamp(300px,33.5vw,458px) !important}
+.tg-mainpage-header .ring svg{width:clamp(300px,33.5vw,458px) !important}
+.tg-mainpage-header{padding-top:6rem !important}
