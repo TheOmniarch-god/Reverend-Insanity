@@ -620,3 +620,9 @@ html[data-theme="dark"] #search-trigger{background:linear-gradient(180deg,#f1d27
 .tg-mainpage-header .wordmark-img{width:clamp(250px,22vw,320px) !important}
 .tg-mainpage-header .ring svg{width:clamp(250px,22vw,320px) !important}
 .tg-mainpage-header .ring{transform:translate(-50%,calc(-50% - 16px)) !important}
+
+/* Pass 3: tagline above ring; tighter hero; seamless foot */
+.tg-mainpage-header{padding-top:1.1rem !important}
+.tg-mainpage-header-tagline{position:relative;z-index:2}
+.tg-mainpage-header .ring{z-index:0}
+.tg-mainpage-header::after{background:linear-gradient(0deg,var(--tg-color-surface-0) 0%,var(--tg-color-surface-0) 8%,color-mix(in srgb,var(--tg-color-surface-0) 80%,transparent) 45%,transparent 100%) !important;height:120px !important}
