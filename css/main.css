@@ -654,3 +654,9 @@ html:not([data-theme="dark"]) .tg-omniarch{color:#9b2a2a}
 
 /* Pass 6: ring reduced ~8% so its top clears the page edge; logo unchanged */
 .tg-mainpage-header .ring svg{width:clamp(275px,30.8vw,421px) !important}
+
+/* Pass 7: light mode tagline all deep red; ring deep red, lower opacity */
+html:not([data-theme="dark"]) .tg-mainpage-header-tagline{color:#7a1c1c}
+html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c;font-weight:600}
+html:not([data-theme="dark"]) .tg-mainpage-header .ring svg{opacity:0.32 !important}
+html:not([data-theme="dark"]) .tg-mainpage-header .ring text{fill:#4a0c0c !important}
