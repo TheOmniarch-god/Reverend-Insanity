@@ -661,3 +661,7 @@ html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a
 html:not([data-theme="dark"]) .tg-mainpage-header .ring svg{opacity:0.32 !important}
 html:not([data-theme="dark"]) .tg-mainpage-header .ring text{fill:#4a0c0c !important}
 html:not([data-theme="dark"]) .tg-mainpage-header-tagline,html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c !important}
+
+/* Pass 8: tagline and search sit inside the ring circle (Gateway layout) */
+.tg-mainpage-header-tagline{margin-top:-1.4rem !important}
+#search-trigger{margin-top:0.6rem !important}
