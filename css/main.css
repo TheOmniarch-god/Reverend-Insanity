@@ -658,10 +658,12 @@ html:not([data-theme="dark"]) .tg-omniarch{color:#9b2a2a}
 /* Pass 7: light mode tagline all deep red; ring deep red, lower opacity */
 html:not([data-theme="dark"]) .tg-mainpage-header-tagline{color:#7a1c1c}
 html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c;font-weight:600}
-html:not([data-theme="dark"]) .tg-mainpage-header .ring svg{opacity:0.32 !important}
-html:not([data-theme="dark"]) .tg-mainpage-header .ring text{fill:#4a0c0c !important}
 html:not([data-theme="dark"]) .tg-mainpage-header-tagline,html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c !important}
 
 /* Pass 8: tagline and search sit inside the ring circle (Gateway layout) */
 .tg-mainpage-header-tagline{margin-top:-1.4rem !important}
 #search-trigger{margin-top:0.6rem !important}
+
+/* Pass 9: ring inscription set in Tengwar Annatar (Johan Winge, freeware, non-commercial) */
+@font-face{font-family:"Tengwar Annatar";src:url("../assets/fonts/tngan.ttf") format("truetype");font-display:swap}
+.tg-mainpage-header .ring text{font-family:"Tengwar Annatar",serif;font-size:19px;font-weight:400;letter-spacing:0.02em}
