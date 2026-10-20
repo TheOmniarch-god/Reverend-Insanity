@@ -664,6 +664,6 @@ html:not([data-theme="dark"]) .tg-mainpage-header-tagline,html:not([data-theme="
 .tg-mainpage-header-tagline{margin-top:-1.4rem !important}
 #search-trigger{margin-top:0.6rem !important}
 
-/* Pass 9: ring inscription set in Tengwar Annatar (Johan Winge, freeware, non-commercial) */
-@font-face{font-family:"Tengwar Annatar";src:url("../assets/fonts/tngan.ttf") format("truetype");font-display:swap}
-.tg-mainpage-header .ring text{font-family:"Tengwar Annatar",serif;font-size:19px;font-weight:400;letter-spacing:0.02em}
+/* Pass 10: ring inscription in Grenze Gotisch (SIL OFL), a blackletter to match the logo */
+@font-face{font-family:"Grenze Gotisch";src:url("../assets/fonts/GrenzeGotisch.ttf") format("truetype");font-weight:100 900;font-display:swap}
+.tg-mainpage-header .ring text{font-family:"Grenze Gotisch",serif;font-size:15px;font-weight:600;letter-spacing:0.04em}
