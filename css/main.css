@@ -674,3 +674,4 @@ html[data-theme="dark"] .tg-mainpage-header-tagline .tg-hl{color:#e2b65a !import
 /* Pass 12: light-mode page texture fades in below the hero, so there is no hard seam */
 html:not([data-theme="dark"]) body::before{-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 360px,#000 560px);mask-image:linear-gradient(to bottom,transparent 0,transparent 360px,#000 560px)}
 .tg-mainpage-header{padding-top:5.2rem !important}
+.tg-mainpage-header .ring svg{width:clamp(266px,29.9vw,408px) !important}
