@@ -670,3 +670,7 @@ html:not([data-theme="dark"]) .tg-omniarch{color:#9b2a2a}
 html[data-theme="dark"] .tg-mainpage-header-tagline{color:#f2ead8 !important;text-shadow:0 1px 8px rgba(0,0,0,.85) !important}
 .tg-mainpage-header-tagline .tg-hl{color:#7a1c1c !important;font-weight:600}
 html[data-theme="dark"] .tg-mainpage-header-tagline .tg-hl{color:#e2b65a !important}
+
+/* Pass 12: light-mode page texture fades in below the hero, so there is no hard seam */
+html:not([data-theme="dark"]) body::before{-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 360px,#000 560px);mask-image:linear-gradient(to bottom,transparent 0,transparent 360px,#000 560px)}
+.tg-mainpage-header{padding-top:5.2rem !important}
