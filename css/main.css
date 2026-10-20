@@ -660,3 +660,4 @@ html:not([data-theme="dark"]) .tg-mainpage-header-tagline{color:#7a1c1c}
 html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c;font-weight:600}
 html:not([data-theme="dark"]) .tg-mainpage-header .ring svg{opacity:0.32 !important}
 html:not([data-theme="dark"]) .tg-mainpage-header .ring text{fill:#4a0c0c !important}
+html:not([data-theme="dark"]) .tg-mainpage-header-tagline,html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c !important}
