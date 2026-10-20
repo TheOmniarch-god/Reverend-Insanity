@@ -667,3 +667,9 @@ html:not([data-theme="dark"]) .tg-mainpage-header-tagline,html:not([data-theme="
 /* Pass 10: ring inscription in Grenze Gotisch (SIL OFL), a blackletter to match the logo */
 @font-face{font-family:"Grenze Gotisch";src:url("../assets/fonts/GrenzeGotisch.ttf") format("truetype");font-weight:100 900;font-display:swap}
 .tg-mainpage-header .ring text{font-family:"Grenze Gotisch",serif;font-size:15px;font-weight:600;letter-spacing:0.04em}
+
+/* Pass 11: tagline plain text near-black (light) / off-white (dark); highlighted names red (light) / gold (dark) */
+.tg-mainpage-header-tagline{color:#1a1410 !important;text-shadow:none !important;background:none !important;box-shadow:none !important}
+html[data-theme="dark"] .tg-mainpage-header-tagline{color:#f2ead8 !important;text-shadow:0 1px 8px rgba(0,0,0,.85) !important}
+.tg-mainpage-header-tagline .tg-hl{color:#7a1c1c !important;font-weight:600}
+html[data-theme="dark"] .tg-mainpage-header-tagline .tg-hl{color:#e2b65a !important}
