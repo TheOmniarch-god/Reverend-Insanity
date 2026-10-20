@@ -656,9 +656,6 @@ html:not([data-theme="dark"]) .tg-omniarch{color:#9b2a2a}
 .tg-mainpage-header .ring svg{width:clamp(275px,30.8vw,421px) !important}
 
 /* Pass 7: light mode tagline all deep red; ring deep red, lower opacity */
-html:not([data-theme="dark"]) .tg-mainpage-header-tagline{color:#7a1c1c}
-html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c;font-weight:600}
-html:not([data-theme="dark"]) .tg-mainpage-header-tagline,html:not([data-theme="dark"]) .tg-mainpage-header-tagline .tg-omniarch{color:#7a1c1c !important}
 
 /* Pass 8: tagline and search sit inside the ring circle (Gateway layout) */
 .tg-mainpage-header-tagline{margin-top:-1.4rem !important}
