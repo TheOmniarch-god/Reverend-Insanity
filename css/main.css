@@ -675,3 +675,14 @@ html[data-theme="dark"] .tg-mainpage-header-tagline .tg-hl{color:#e2b65a !import
 html:not([data-theme="dark"]) body::before{-webkit-mask-image:linear-gradient(to bottom,transparent 0,transparent 360px,#000 560px);mask-image:linear-gradient(to bottom,transparent 0,transparent 360px,#000 560px)}
 .tg-mainpage-header{padding-top:5.2rem !important}
 .tg-mainpage-header .ring svg{width:clamp(266px,29.9vw,408px) !important}
+
+/* Pass 13: light-mode search panel is light; rail carries the author's face faintly */
+html:not([data-theme="dark"]) #search-box{background:#fbf6ee;border-color:rgba(60,30,10,.12);box-shadow:0 18px 50px rgba(60,30,10,.22)}
+html:not([data-theme="dark"]) #search-box input{color:#2a1d12;border-bottom-color:rgba(60,30,10,.1)}
+html:not([data-theme="dark"]) #search-box input::placeholder{color:#8a6d3b}
+html:not([data-theme="dark"]) #search-suggest:not(:has(*))::before{color:#2a1d12}
+html:not([data-theme="dark"]) #search-suggest:not(:has(*))::after{color:#8a6d3b}
+html:not([data-theme="dark"]) #search-box::after{color:#8a6d3b;border-top-color:rgba(60,30,10,.1)}
+html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
+.rail{background:linear-gradient(rgba(249,244,238,.9),rgba(249,244,238,.93)),url('../assets/rail-face.webp') center 22%/cover no-repeat !important}
+html[data-theme="dark"] .rail{background:linear-gradient(rgba(10,10,14,.9),rgba(10,10,14,.93)),url('../assets/rail-face.webp') center 22%/cover no-repeat !important}
