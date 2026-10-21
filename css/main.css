@@ -698,3 +698,9 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 
 /* Pass 19: author photo fills the top of the rail at reduced opacity, fading down (Gateway-style); face circle stays above the hanzi */
 .rail::after{content:"";position:absolute;top:0;left:0;right:0;height:190px;z-index:0;background:url('/assets/rail-face.webp') center 20%/cover no-repeat;filter:saturate(.6);opacity:0.42;-webkit-mask-image:linear-gradient(#000 35%,transparent 100%);mask-image:linear-gradient(#000 35%,transparent 100%);pointer-events:none}
+
+/* Pass 20: author photo sits higher, above the top logo */
+.rail::after{height:92px;background-position:center 18%;-webkit-mask-image:linear-gradient(#000 60%,transparent 100%);mask-image:linear-gradient(#000 60%,transparent 100%)}
+
+/* Pass 21: whole face shown above the top logo, not overlapping it */
+.rail::after{top:4px;height:52px;background-size:auto 100%;background-position:center;-webkit-mask-image:linear-gradient(#000 75%,transparent 100%);mask-image:linear-gradient(#000 75%,transparent 100%)}
