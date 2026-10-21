@@ -695,3 +695,7 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 /* Pass 17: author's face sits small in the empty space above the top logo */
 .rail::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;background:url('/assets/rail-face.webp') center/cover no-repeat;box-shadow:0 0 0 2px var(--tg-color-surface-1),0 0 0 3px rgba(139,0,0,0.55);pointer-events:none}
 @media(max-width:720px){.rail::before{width:32px;height:32px;top:8px}}
+
+/* Pass 18: faint author photo behind the rail; barely visible by design */
+.rail > *{position:relative;z-index:1}
+.rail::after{content:"";position:absolute;inset:0;z-index:0;background:url('/assets/rail-face.webp') center top/cover no-repeat;filter:grayscale(1);opacity:0.14;pointer-events:none}
