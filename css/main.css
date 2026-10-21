@@ -707,3 +707,6 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 
 /* Pass 22: photo reaches the very top of the rail, fainter */
 .rail::after{top:0;height:56px;opacity:0.26}
+
+/* Pass 24: dark mode ring less opaque (0.6 -> 0.4) */
+html[data-theme="dark"] .tg-mainpage-header .ring svg{opacity:0.4}
