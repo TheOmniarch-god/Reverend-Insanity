@@ -684,3 +684,7 @@ html:not([data-theme="dark"]) #search-suggest:not(:has(*))::before{color:#2a1d12
 html:not([data-theme="dark"]) #search-suggest:not(:has(*))::after{color:#8a6d3b}
 html:not([data-theme="dark"]) #search-box::after{color:#8a6d3b;border-top-color:rgba(60,30,10,.1)}
 html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
+
+/* Pass 15: rail spacing like Gateway: seal well above search; search and menu closer */
+.rail{padding-top:1.3rem !important;gap:0.55rem !important}
+.rail-logo{margin-bottom:1.2rem !important}
