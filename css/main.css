@@ -688,3 +688,6 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 /* Pass 15: rail spacing like Gateway: seal well above search; search and menu closer */
 .rail{padding-top:1.3rem !important;gap:0.55rem !important}
 .rail-logo{margin-bottom:1.2rem !important}
+
+/* Pass 16: reserve space above the top logo for the author's image */
+.rail{padding-top:3.6rem !important}
