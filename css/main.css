@@ -699,3 +699,6 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 /* Pass 18: faint author photo behind the rail; barely visible by design */
 .rail > *{position:relative;z-index:1}
 .rail::after{content:"";position:absolute;inset:0;z-index:0;background:url('/assets/rail-face.webp') center top/cover no-repeat;filter:grayscale(1);opacity:0.14;pointer-events:none}
+
+/* Pass 19: author photo fills the top of the rail at reduced opacity, fading down (Gateway-style); face circle stays above the hanzi */
+.rail::after{content:"";position:absolute;top:0;left:0;right:0;height:190px;z-index:0;background:url('/assets/rail-face.webp') center 20%/cover no-repeat;filter:saturate(.6);opacity:0.42;-webkit-mask-image:linear-gradient(#000 35%,transparent 100%);mask-image:linear-gradient(#000 35%,transparent 100%);pointer-events:none}
