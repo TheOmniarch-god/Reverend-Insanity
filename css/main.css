@@ -704,3 +704,6 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 
 /* Pass 21: whole face shown above the top logo, not overlapping it */
 .rail::after{top:4px;height:52px;background-size:auto 100%;background-position:center;-webkit-mask-image:linear-gradient(#000 75%,transparent 100%);mask-image:linear-gradient(#000 75%,transparent 100%)}
+
+/* Pass 22: photo reaches the very top of the rail, fainter */
+.rail::after{top:0;height:56px;opacity:0.26}
