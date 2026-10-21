@@ -229,7 +229,7 @@
 /* inner-page topbar: reuse the masthead wordmark; Enter jumps to the main search */
 (function(){
   var logo=document.getElementById('wiki-topbar-logo'), src=document.querySelector('.tg-mainpage-header .wordmark-img');
-  if(logo&&src){ var im=src.cloneNode(true); im.removeAttribute('class'); im.className='wiki-topbar-img'; logo.appendChild(im); }
+  if(logo){ document.querySelectorAll('.tg-mainpage-header .wordmark-img').forEach(function(s){ var im=s.cloneNode(true); im.className='wiki-topbar-img '+(s.classList.contains('logo-dark')?'logo-dark':'logo-light'); logo.appendChild(im); }); }
   var f=document.getElementById('wiki-topbar-search'), wi=document.getElementById('wiki-topbar-input');
   if(f&&wi) f.addEventListener('submit',function(e){
     e.preventDefault(); var v=wi.value.trim(); location.hash='#main';
