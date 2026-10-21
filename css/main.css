@@ -707,9 +707,3 @@ html:not([data-theme="dark"]) #search-box::before{background:#8a6d3b}
 
 /* Pass 22: photo reaches the very top of the rail, fainter */
 .rail::after{top:0;height:56px;opacity:0.26}
-
-/* Pass 23: flat backgrounds matched to the reader settings swatches: light #f8f6f2, dark #1f1b14 */
-html:not([data-theme="dark"]){--tg-color-surface-0:#f8f6f2}
-html:not([data-theme="dark"]) body::before{opacity:0}
-html[data-theme="dark"]{--tg-color-surface-0:#1f1b14;--tg-color-surface-1:#27221a;--tg-color-surface-2:#2d271e;--tg-color-surface-3:#342d23;--tg-color-surface-4:#3c3429;--tg-color-surface-5:#453c30}
-html[data-theme="dark"] body::before{opacity:0}
