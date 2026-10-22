@@ -716,3 +716,6 @@ html[data-theme="dark"] .tg-mainpage-header .ring svg{opacity:0.4}
 .wiki-topbar-logo img{height:64px;width:auto;filter:none}
 html:not([data-theme="dark"]) .wiki-topbar-img.logo-dark{display:none}
 html[data-theme="dark"] .wiki-topbar-img.logo-light{display:none}
+
+/* Pass 26: footer wordmark larger, so it reads as the site logo */
+.tg-footer-wordmark img{height:auto;width:clamp(180px,16vw,240px)}
