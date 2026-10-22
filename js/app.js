@@ -26,14 +26,24 @@ if('scrollRestoration' in history) history.scrollRestoration = 'manual';
   var fmt = function(n){ return n.toLocaleString('en-US'); };
   var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
 
+  /* spoiler-free narrator briefs, one per typeset chapter; the bench adds new entries as chapters are typeset */
+  var BRIEFS = {
+    1: "Before the first page turns, the narrator sets you on a mountaintop where a standoff has reached its height. The voice is cold and sure of itself, and it does not explain itself yet. Then the scene moves to the Gu Yue clan on Qing Mao Mountain, where the Aperture Opening Ceremony is approaching and every family is watching who will be chosen.",
+    2: "The narrator now slows and turns the story back on itself. Expect the ground to shift: this chapter asks you to watch a familiar figure begin again, and it offers very little explanation at first. Read it for the questions it raises rather than the answers it withholds.",
+    3: "A chapter of blunt, sharp exchanges. The narrator leans into the everyday friction of the clan and the people who live inside it. Read it for the voices and the tempers, and let the consequences arrive on their own.",
+    4: "The clan and its protagonist are named aloud, placing you firmly inside the Gu Yue household and its daily rhythm. The narrator treats the ordinary as important here, because the chapter is building the ground that later events will stand on.",
+    5: "This chapter reaches back to the myth of Ren Zu. Its title names an ancestral tradition of Gu, and the narrator invites you to read it as the deep foundation beneath the story rather than a detour from it.",
+    6: "A chapter that looks ahead. Its title is a promise about what is to come, and the narrator asks you to hold on to the uncertainty it creates. Pay attention to who is planning and who is only reacting.",
+    7: "The chapter introduces the idea of ranks and the inheritances passed down among masters. Watch how a legacy is set up and how the ranking system frames every ambition in the volume. The narrator treats the rules here as the rules the characters live by.",
+    8: "A chapter about change, and about the people who remain. The narrator asks you to read the quiet moments as closely as the dramatic ones, because the shifts here are gradual and easy to miss.",
+    9: "The title gives the tone away: relationships are pulling apart. The narrator keeps the focus on the spaces between characters, so read the silences and the distances as closely as the lines they speak."
+  };
   /* ---- generate chapter articles + chapter index from the ledger ---- */
   S.chapters.forEach(function(c,i){
     var prev = S.chapters[i-1], next = S.chapters[i+1];
     var rows = [["Volume","Volume 1: Demonic Nature Never Changes"],["Number","Chapter "+c.n],["Position",(prev?"After Chapter "+prev.n:"Opens the volume")+(next?" · before Chapter "+next.n:"")]];
     var body;
-    if(c.n===1){ body=["The volume opens on a mountaintop at the end of a life: the united Righteous Path demands the Spring Autumn Cicada, and Fang Yuan — blood-soaked, expressionless, his gaze like an ancient well — answers them with a laugh and a detonation. Then spring rain falls on Qing Mao Mountain, and the Gu Yue clan gathers for the Aperture Opening Ceremony."]; }
-    else if(c.n===2){ body=["Time reverses. Five hundred years of enlightenment unwind into a fifteen-year-old body, and the demon begins again — a second chance carried by the Spring Autumn Cicada, and a road the first life never walked."]; }
-    else { body=["This chapter’s article awaits the keeper’s hand. The ledger records its place in Volume 1 and the translator’s title."]; }
+    body = BRIEFS[c.n] ? [BRIEFS[c.n]] : ["This chapter’s brief is being written from the translation bench."];
     A["chapter-"+c.n] = { t:"Chapter "+c.n+": "+c.title, k:"Chapter", ib:rows, b:body,
       see:[ prev?"chapter-"+prev.n:"volume-1", next?"chapter-"+next.n:"chapters", "chapters" ],
       cat:["Chapters","Volume 1"] };
@@ -138,7 +148,7 @@ if('scrollRestoration' in history) history.scrollRestoration = 'manual';
     if(talk){ html = talkHTML(a,slug); }
     else{
       html += '<div class="wiki-fig">'+(a.img?'<img src="'+a.img+'" alt="'+esc(a.t)+'">':'<div class="ph"><svg><use href="#glyph-cicada"/></svg></div>')
-        +'<div class="cap">'+(a.img?'Art: '+esc(a.art||'community artist')+' · community archive — '+esc(a.t)+'.':'Image reserved — the container awaits its artwork.')+'</div></div>';
+        +'<div class="cap">'+(a.img?'Art: '+esc(a.art||'community artist')+' · community archive — '+esc(a.t)+'.':'')+'</div></div>';
       html += '<h2 class="sec" id="sec-overview"><span class="caret">⌃</span>Overview</h2><div class="sec-body">'+a.b.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+'</div>';
       if(a.ib&&a.ib.length) html += '<h2 class="sec" id="sec-details"><span class="caret">⌃</span>Details</h2><div class="sec-body"><table class="wiki-table">'+a.ib.map(function(r){return '<tr><th>'+esc(r[0])+'</th><td>'+esc(r[1])+'</td></tr>';}).join('')+'</table></div>';
       if(a.index) html += '<h2 class="sec" id="sec-portal"><span class="caret">⌃</span>Explore</h2><div class="sec-body">'+portalHTML(slug,a)+'</div>';
