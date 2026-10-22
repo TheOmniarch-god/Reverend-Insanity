@@ -2,7 +2,7 @@
   document.querySelectorAll('.tg-card').forEach(function(c){
     var a=c.querySelector('a[href^="#/"]'); if(!a) return;
     c.setAttribute('data-href',a.getAttribute('href'));
-    c.addEventListener('click',function(e){ if(e.target.closest('a,button,input')) return; location.hash=a.getAttribute('href'); });
+    c.addEventListener('click',function(e){ if(e.target.closest('a,button,input')) return; goTo(a.getAttribute('href')); });
   });
   var sc=document.getElementById('slide-card');
   if(sc){ var slides=sc.querySelectorAll('.slide'), dots=sc.querySelectorAll('#slide-dots button'), i=0, t=null;
@@ -50,13 +50,13 @@
   var nav=document.getElementById('omni-nav'); if(!nav) return;
   var page=document.getElementById('omni-page');
   function label(){
-    var h=location.hash||'#/';
+    var h=hashOf()||'#/';
     if(h==='#'||h==='#/'||h===''||h.indexOf('#explore')===0) return 'Main';
     var m=h.replace(/^#\/(wiki\/)?/,'').split('?')[0].replace(/\/+$/,'');
     if(!m) return 'Main';
     return m.replace(/-/g,' ').replace(/\b\w/g,function(c){return c.toUpperCase()});
   }
-  function isMain(){ return (location.hash||'').indexOf('#/wiki')===-1; }
+  function isMain(){ return (hashOf()||'').indexOf('#/wiki')===-1; }
   function state(){
     if(page) page.textContent=label();
     nav.classList.toggle('is-collapsed', !isMain() && !nav.classList.contains('near'));
@@ -67,7 +67,7 @@
     var near=e.clientX>r.left-80&&e.clientX<r.right+80&&e.clientY>r.top-80&&e.clientY<r.bottom+80;
     if(near!==nav.classList.contains('near')){nav.classList.toggle('near',near);state();}
   },{passive:true});
-  addEventListener('hashchange',state); state();
+  addEventListener('route',state); state();
 })();
 /* search proximity: opens wide when cursor approaches */
 (function(){

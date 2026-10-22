@@ -1,3 +1,25 @@
+/* ---- clean URLs: real paths like /wiki/chapter-9 (no #). Legacy #/wiki/... links are rewritten on load. ---- */
+function hashOf(){
+  var p = location.pathname;
+  if(p && p !== '/' && p !== '/index.html') return '#' + p.replace(/\/+$/,'');
+  return location.hash || '';
+}
+function goTo(h){
+  var path = (!h || h === '#main') ? '/' : h.slice(1);
+  if(path !== location.pathname) history.pushState(null, '', path);
+  window.dispatchEvent(new Event('route'));
+}
+(function(){
+  if(location.hash.indexOf('#/') === 0){ history.replaceState(null, '', location.hash.slice(1)); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if(!a) return;
+    var h = a.getAttribute('href');
+    if(h === '#main' || h.indexOf('#/') === 0){ e.preventDefault(); goTo(h); window.scrollTo(0,0); }
+  });
+  window.addEventListener('popstate', function(){ window.dispatchEvent(new Event('route')); });
+  window.addEventListener('hashchange', function(){ if(location.hash.indexOf('#/')===0){ history.replaceState(null, '', location.hash.slice(1)); window.dispatchEvent(new Event('route')); } });
+})();
 (function(){
   var S = window.OMNIARCH_STATE, A = window.OMNIARCH_ARTICLES;
   var fmt = function(n){ return n.toLocaleString('en-US'); };
@@ -143,7 +165,7 @@
   });
 
   function route(){
-    var h = location.hash || '#main';
+    var h = hashOf() || '#main';
     if(h.indexOf('#/wiki/')===0){
       var slug = h.slice(7);
       if(slug!==curSlug) routeMode='article';
@@ -156,7 +178,7 @@
     mainView.hidden = false; wikiView.hidden = true;
     if(h==='#main') window.scrollTo(0,0);
   }
-  window.addEventListener('hashchange', route);
+  window.addEventListener('route', route);
   route();
 
   /* ---- random article ---- */
@@ -164,7 +186,7 @@
   if(rnd) rnd.addEventListener('click', function(e){
     e.preventDefault();
     var keys = Object.keys(A).filter(function(k){return k.indexOf('atoz')!==0;});
-    location.hash = '#/wiki/'+keys[Math.floor(Math.random()*keys.length)];
+    goTo('#/wiki/'+keys[Math.floor(Math.random()*keys.length)]);
   });
 
   /* ---- search ---- */
@@ -182,7 +204,7 @@
   });
   sug.addEventListener('click', function(e){
     var b = e.target.closest('button[data-slug]'); if(!b) return;
-    location.hash = '#/wiki/'+b.getAttribute('data-slug');
+    goTo('#/wiki/'+b.getAttribute('data-slug'));
     sug.style.display='none'; box.classList.remove('open'); input.value='';
   });
 
@@ -203,7 +225,7 @@
   if(drand) drand.addEventListener('click', function(e){
     e.preventDefault();
     var keys=Object.keys(A);
-    location.hash='#/wiki/'+keys[Math.floor(Math.random()*keys.length)];
+    goTo('#/wiki/'+keys[Math.floor(Math.random()*keys.length)]);
   });
   var sp=document.getElementById('stat-pages'); if(sp) sp.textContent=Object.keys(A).length;
   var si=document.getElementById('stat-imgs'); if(si) si.textContent=10;
@@ -232,7 +254,7 @@
   if(logo){ document.querySelectorAll('.tg-mainpage-header .wordmark-img').forEach(function(s){ var im=s.cloneNode(true); im.className='wiki-topbar-img '+(s.classList.contains('logo-dark')?'logo-dark':'logo-light'); logo.appendChild(im); }); }
   var f=document.getElementById('wiki-topbar-search'), wi=document.getElementById('wiki-topbar-input');
   if(f&&wi) f.addEventListener('submit',function(e){
-    e.preventDefault(); var v=wi.value.trim(); location.hash='#main';
+    e.preventDefault(); var v=wi.value.trim(); goTo('#main');
     var mi=document.getElementById('search-input'), trig=document.getElementById('search-trigger');
     setTimeout(function(){ if(mi){ mi.value=v; mi.dispatchEvent(new Event('input')); mi.focus(); } if(trig&&!document.getElementById('search-box').classList.contains('open')) trig.click(); },60);
   });
