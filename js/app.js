@@ -9,6 +9,7 @@ function goTo(h){
   if(path !== location.pathname) history.pushState(null, '', path);
   window.dispatchEvent(new Event('route'));
 }
+if('scrollRestoration' in history) history.scrollRestoration = 'manual';
 (function(){
   if(location.hash.indexOf('#/') === 0){ history.replaceState(null, '', location.hash.slice(1)); }
   document.addEventListener('click', function(e){
@@ -176,6 +177,7 @@ function goTo(h){
       }
     }
     mainView.hidden = false; wikiView.hidden = true;
+    window.dispatchEvent(new Event('resize'));
     if(h==='#main') window.scrollTo(0,0);
   }
   window.addEventListener('route', route);
@@ -210,7 +212,7 @@ function goTo(h){
 
   /* ---- seal: hover swaps to home (CSS); click scrolls top ---- */
   var seal=document.getElementById('seal-btn');
-  if(seal) seal.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+  if(seal) seal.addEventListener('click', function(){ goTo('#main'); });
 
   /* ---- drawer (right side) ---- */
   var drawer=document.getElementById('drawer');
