@@ -253,6 +253,21 @@ if('scrollRestoration' in history) history.scrollRestoration = 'manual';
     sug.style.display='none'; box.classList.remove('open'); input.value='';
   });
 
+  /* sticky bar: once the article heading scrolls away, the top bar shows the page title (Gateway-style) */
+  (function(){
+    var bar=document.getElementById('wiki-topbar'), tt=document.getElementById('wiki-topbar-title');
+    if(!bar||!tt) return;
+    function update(){
+      var h=wikiView.querySelector('h1, h2'), show=false, txt='';
+      if(!wikiView.hidden && h){ txt=h.textContent.trim(); var r=h.getBoundingClientRect(); show = r.bottom < 56 && window.scrollY > 0; }
+      bar.classList.toggle('has-title', show);
+      if(tt.textContent!==txt) tt.textContent=txt;
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('route', function(){ setTimeout(update,0); });
+    update();
+  })();
+
   /* ---- seal: hover swaps to home (CSS); click scrolls top ---- */
   var seal=document.getElementById('seal-btn');
   if(seal) seal.addEventListener('click', function(){ goTo('#main'); });
