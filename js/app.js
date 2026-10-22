@@ -206,13 +206,42 @@ if('scrollRestoration' in history) history.scrollRestoration = 'manual';
   function toggleSearch(){ box.classList.toggle('open'); if(box.classList.contains('open')) input.focus(); }
   ['search-trigger','rail-search'].forEach(function(id){ var el=document.getElementById(id); if(el) el.addEventListener('click',toggleSearch); });
   document.addEventListener('keydown',function(e){ if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();toggleSearch();} if(e.key==='Escape'){sug.style.display='none';} });
+  /* search: titles and categories rank first; article text and info rows (incl. Chinese) match too */
+  function bodyText(k){
+    var a=A[k]||{}, parts=[];
+    (a.b||[]).forEach(function(x){ parts.push(String(x)); });
+    (a.ib||[]).forEach(function(r){ parts.push(r.join(' ')); });
+    return parts.join(' ').toLowerCase();
+  }
+  function findHits(q){
+    var titles=[], bodies=[];
+    Object.keys(A).forEach(function(k){
+      if(!A[k] || k.indexOf('atoz')===0) return;
+      var t=(A[k].t||'').toLowerCase(), kind=(A[k].k||'').toLowerCase();
+      if(t.indexOf(q)>-1 || kind.indexOf(q)>-1) titles.push(k);
+      else if(bodyText(k).indexOf(q)>-1) bodies.push(k);
+    });
+    return titles.concat(bodies).slice(0,8);
+  }
+  function renderHits(q){
+    var hits=findHits(q);
+    if(!hits.length){ sug.innerHTML='<div class="kind" style="padding:0.6rem 0.9rem">No entries match “'+esc(q)+'”.</div>'; sug.style.display='block'; return; }
+    sug.innerHTML = hits.map(function(k){ return '<button data-slug=\"'+k+'\"><span>'+esc(A[k].t)+'</span><span class=\"kind\">'+esc(A[k].k||'')+'</span></button>'; }).join('');
+    sug.style.display='block';
+  }
   input.addEventListener('input', function(){
     var q = input.value.trim().toLowerCase();
     if(!q){ sug.style.display='none'; return; }
-    var hits = Object.keys(A).filter(function(k){ return A[k].t.toLowerCase().indexOf(q)>-1 || (A[k].k||'').toLowerCase().indexOf(q)>-1; }).slice(0,8);
-    if(!hits.length){ sug.style.display='none'; return; }
-    sug.innerHTML = hits.map(function(k){ return '<button data-slug="'+k+'"><span>'+esc(A[k].t)+'</span><span class="kind">'+esc(A[k].k||'')+'</span></button>'; }).join('');
-    sug.style.display='block';
+    renderHits(q);
+  });
+  input.addEventListener('keydown', function(e){
+    if(e.key!=='Enter') return;
+    e.preventDefault();
+    var q = input.value.trim().toLowerCase();
+    if(!q) return;
+    var first = findHits(q)[0];
+    if(first){ goTo('#/wiki/'+first); sug.style.display='none'; box.classList.remove('open'); input.value=''; }
+    else { renderHits(q); }
   });
   sug.addEventListener('click', function(e){
     var b = e.target.closest('button[data-slug]'); if(!b) return;
