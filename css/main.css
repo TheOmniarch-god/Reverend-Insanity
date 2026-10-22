@@ -723,3 +723,19 @@ html[data-theme="dark"] .wiki-topbar-img.logo-light{display:none}
 /* Pass 27: footer text italic; links sit level with the logo */
 .tg-footer-top{align-items:center}
 .tg-footer-tag{font-style:italic}
+
+/* Pass 28: search panel like Gateway: thumbnails, title and category, no inner-page top-bar search */
+.wiki-topbar-search{display:none !important}
+#search-suggest{max-height:min(62vh,520px);overflow-y:auto;text-align:left}
+#search-suggest button{display:flex;align-items:center;gap:0.85rem;width:100%;padding:0.5rem 1.1rem;border:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+#search-suggest button:hover,#search-suggest button:focus-visible{background:rgba(255,255,255,0.05);outline:none}
+#search-suggest .s-thumb{width:52px;height:52px;flex:none;border-radius:6px;background:rgba(255,255,255,0.05) center/cover no-repeat;border:1px solid rgba(255,255,255,0.06)}
+#search-suggest .s-thumb.empty{background:rgba(255,255,255,0.04)}
+#search-suggest .s-txt{display:flex;flex-direction:column;min-width:0}
+#search-suggest .s-title{font-weight:600;font-size:0.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#search-suggest .s-kind{font-size:0.78rem;color:#b8a470;margin-top:0.15rem}
+#search-suggest .s-empty{padding:0.9rem 1.1rem;color:#b8a470;font-size:0.9rem}
+html:not([data-theme="dark"]) #search-suggest .s-kind,html:not([data-theme="dark"]) #search-suggest .s-empty{color:#8a6d3b}
+html:not([data-theme="dark"]) #search-suggest button:hover{background:rgba(60,30,10,0.05)}
+html:not([data-theme="dark"]) #search-suggest .s-thumb{border-color:rgba(60,30,10,0.1)}
+#search-box #search-suggest{position:static;left:auto;right:auto;top:auto;box-shadow:none;border:0;border-radius:0;background:transparent}

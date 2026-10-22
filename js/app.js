@@ -221,12 +221,16 @@ if('scrollRestoration' in history) history.scrollRestoration = 'manual';
       if(t.indexOf(q)>-1 || kind.indexOf(q)>-1) titles.push(k);
       else if(bodyText(k).indexOf(q)>-1) bodies.push(k);
     });
+    titles.sort(function(x,y){ var px=(A[x].t||'').toLowerCase().indexOf(q)===0?0:1, py=(A[y].t||'').toLowerCase().indexOf(q)===0?0:1; return px-py; });
     return titles.concat(bodies).slice(0,8);
   }
   function renderHits(q){
     var hits=findHits(q);
-    if(!hits.length){ sug.innerHTML='<div class="kind" style="padding:0.6rem 0.9rem">No entries match “'+esc(q)+'”.</div>'; sug.style.display='block'; return; }
-    sug.innerHTML = hits.map(function(k){ return '<button data-slug=\"'+k+'\"><span>'+esc(A[k].t)+'</span><span class=\"kind\">'+esc(A[k].k||'')+'</span></button>'; }).join('');
+    if(!hits.length){ sug.innerHTML='<div class="s-empty">No entries match “'+esc(q)+'”.</div>'; sug.style.display='block'; return; }
+    sug.innerHTML = hits.map(function(k){
+      var img = A[k].img ? ' style="background-image:url(\'' + A[k].img + '\')"' : '';
+      return '<button data-slug="'+k+'"><span class="s-thumb'+(A[k].img?'':' empty')+'"'+img+'></span><span class="s-txt"><span class="s-title">'+esc(A[k].t)+'</span><span class="s-kind">'+esc(A[k].k||'')+'</span></span></button>';
+    }).join('');
     sug.style.display='block';
   }
   input.addEventListener('input', function(){
