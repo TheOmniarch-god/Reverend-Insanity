@@ -36,7 +36,8 @@ if('scrollRestoration' in history) history.scrollRestoration = 'manual';
     6: "A chapter that looks ahead. Its title is a promise about what is to come, and the narrator asks you to hold on to the uncertainty it creates. Pay attention to who is planning and who is only reacting.",
     7: "The chapter introduces the idea of ranks and the inheritances passed down among masters. Watch how a legacy is set up and how the ranking system frames every ambition in the volume. The narrator treats the rules here as the rules the characters live by.",
     8: "A chapter about change, and about the people who remain. The narrator asks you to read the quiet moments as closely as the dramatic ones, because the shifts here are gradual and easy to miss.",
-    9: "The title gives the tone away: relationships are pulling apart. The narrator keeps the focus on the spaces between characters, so read the silences and the distances as closely as the lines they speak."
+    9: "The title gives the tone away: relationships are pulling apart. The narrator keeps the focus on the spaces between characters, so read the silences and the distances as closely as the lines they speak.",
+    10: "The title is a warning in itself: heaven does not behave predictably, and refining Gu is hard work that costs something at every step. The narrator asks you to watch what each choice demands, and to read the effort as closely as the outcome that the chapter lets you guess at."
   };
   /* ---- generate chapter articles + chapter index from the ledger ---- */
   S.chapters.forEach(function(c,i){
