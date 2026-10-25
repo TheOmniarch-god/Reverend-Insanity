@@ -748,6 +748,3 @@ html:not([data-theme="dark"]) #search-suggest .s-thumb{border-color:rgba(60,30,1
 /* Pass 30: spotlight Omniarch slide opens its website */
 .slide{position:relative}
 .slide .slide-hit{position:absolute;inset:0;z-index:3;display:block}
-
-/* Pass 31: keep the whole Omniarch figure in the spotlight frame */
-.slot-art img.omni-spot{object-fit:cover;object-position:50% 0%}
