@@ -744,3 +744,7 @@ html:not([data-theme="dark"]) #search-suggest .s-thumb{border-color:rgba(60,30,1
 .wiki-topbar-title{flex:1;min-width:0;margin-left:0.25rem;font-family:var(--tg-font-family-heading);font-size:1.05rem;color:var(--tg-color-base);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
 .wiki-topbar.has-title .wiki-topbar-title{opacity:1;transform:none}
 .wiki-topbar{box-shadow:0 1px 0 var(--tg-color-surface-3)}
+
+/* Pass 30: spotlight slides open their advertised site */
+.slide{position:relative}
+.slide .slide-hit{position:absolute;inset:0;z-index:3;display:block}
