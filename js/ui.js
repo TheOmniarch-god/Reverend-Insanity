@@ -87,3 +87,9 @@
   },{passive:true});
   input.addEventListener('blur',function(){ if(!input.value) setTimeout(function(){setOpen(false)},300); });
 })();
+
+/* spotlight: a tap anywhere on the card (not the dots) opens the current slide's site */
+(function(){ var sc=document.getElementById('slide-card'); if(!sc) return; sc.style.cursor='pointer';
+  sc.addEventListener('click', function(e){ if(e.target.closest && e.target.closest('#slide-dots')) return;
+    e.preventDefault(); e.stopPropagation();
+    var cur=sc.querySelector('.slide.on'); if(cur && cur.getAttribute('data-link')) window.open(cur.getAttribute('data-link'),'_blank','noopener'); }, true); })();

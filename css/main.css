@@ -745,6 +745,3 @@ html:not([data-theme="dark"]) #search-suggest .s-thumb{border-color:rgba(60,30,1
 .wiki-topbar.has-title .wiki-topbar-title{opacity:1;transform:none}
 .wiki-topbar{box-shadow:0 1px 0 var(--tg-color-surface-3)}
 
-/* Pass 32: every spotlight slide opens its own site */
-.slide{position:relative}
-.slide .slide-hit{position:absolute;inset:0;z-index:3;display:block}
