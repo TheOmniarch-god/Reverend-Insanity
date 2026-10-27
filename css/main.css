@@ -745,3 +745,6 @@ html:not([data-theme="dark"]) #search-suggest .s-thumb{border-color:rgba(60,30,1
 .wiki-topbar.has-title .wiki-topbar-title{opacity:1;transform:none}
 .wiki-topbar{box-shadow:0 1px 0 var(--tg-color-surface-3)}
 
+
+/* Pass 33: breathing space between the quote and its attribution */
+.tg-mainpage-featured-quote .tg-quote-footer{margin-top:1.6rem}
